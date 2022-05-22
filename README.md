@@ -1,4 +1,4 @@
-![cute gif](https://tenor.com/view/code-coding-computer-gif-19684211)
+![cute gif](https://c.tenor.com/-buzIaq-QeoAAAAC/code-coding.gif)
 
 - 👋 Hi, I’m @FabioViscuso
 - 👀 I’m interested in music, trips and nature! And cats, of course.
