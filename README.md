@@ -1,4 +1,4 @@
-![cute gif](https://c.tenor.com/-buzIaq-QeoAAAAC/code-coding.gif | width=100)
+<img src="https://c.tenor.com/-buzIaq-QeoAAAAC/code-coding.gif" width="100" height="100">
 
 - 👋 Hi, I’m @FabioViscuso, a Full Stack Developer from Italy!
 - 👀 I’m interested in music, trips and nature! And cats, of course.
@@ -6,7 +6,7 @@
 - 💞️ I’m looking to collaborate on /blank/
 - 📫 How to reach me: 
 - Mail: viscuso.fabio@outlook.it
-- Discordsasizza#1914
+- Discord: sasizza#1914
 
 <!---
 FabioViscuso/FabioViscuso is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
