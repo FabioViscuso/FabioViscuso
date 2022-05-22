@@ -1,4 +1,4 @@
-![cute gif](https://c.tenor.com/-buzIaq-QeoAAAAC/code-coding.gif = 100x100)
+![cute gif](https://c.tenor.com/-buzIaq-QeoAAAAC/code-coding.gif =100x100)
 
 - 👋 Hi, I’m @FabioViscuso, a Full Stack Developer from Italy!
 - 👀 I’m interested in music, trips and nature! And cats, of course.
