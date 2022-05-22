@@ -1,3 +1,5 @@
+![cute gif](https://tenor.com/view/code-coding-computer-gif-19684211)
+
 - 👋 Hi, I’m @FabioViscuso
 - 👀 I’m interested in music, trips and nature! And cats, of course.
 - 🌱 I’m currently learning JS, TS, React.js and Node.js
