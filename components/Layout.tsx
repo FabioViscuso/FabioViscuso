@@ -6,13 +6,13 @@ import classesUtils from '../styles/utils.module.css'
 
 interface Props {
     children: JSX.Element | JSX.Element[]
-    home: boolean
+    home?: boolean
 }
 
 const name = 'Fabio Viscuso';
 export const siteTitle = 'That\'s me!';
 
-export default function Layout({ children, home }: Props) {
+export default function Layout({ children, home = false }: Props) {
     return (
         <div className={classes.container}>
             <Head>
