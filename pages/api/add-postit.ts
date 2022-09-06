@@ -4,7 +4,7 @@ import { MongoClient } from "mongodb";
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const data = req.body;
-        const client = await MongoClient.connect('mongodb+srv://fabio:geronimo@cluster0.potbyzj.mongodb.net/?retryWrites=true&w=majority');
+        const client = await MongoClient.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`);
         const db = client.db();
 
         const collection = db.collection('postits')

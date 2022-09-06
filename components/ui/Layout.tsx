@@ -1,8 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import classes from './Layout.module.css'
-import Navbar from './navigation/Navbar'
+import Footer from '../navigation/Footer'
+import Navbar from '../navigation/Navbar'
 
 interface Props {
     children: JSX.Element | JSX.Element[]
@@ -23,8 +21,10 @@ export default function Layout({ children }: Props) {
                 <meta name="og:title" content="Hello! That's me!" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <main>{children}</main>
-            <footer>Copyright Fabio Viscuso 2022</footer>
+            <div className='p-10 h-full flex flex-col justify-between'>
+                <>{children}</>
+                <Footer />
+            </div>
         </>
     )
 }
