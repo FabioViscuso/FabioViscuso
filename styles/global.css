@@ -29,3 +29,22 @@ img {
   max-width: 100%;
   display: block;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #b2f7ef;        /* color of the tracking area */
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #7bdff2;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid #9da1a1;  /* creates padding around scroll thumb */
+}
