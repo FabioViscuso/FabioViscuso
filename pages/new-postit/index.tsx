@@ -4,7 +4,21 @@ import React, { useReducer } from 'react';
 export default function NewPostitForm() {
     const router = useRouter()
 
-    const formReducer = (state, action) => {
+    interface Action {
+        type: string,
+        inputField: string,
+        payload: string
+    }
+
+    interface FormState {
+        title: string,
+        creator: string,
+        date: string,
+        description: string,
+        colorSelect: string,
+    }
+
+    const formReducer = (state: FormState, action: Action) => {
         switch (action.type) {
             case 'CHANGE@TEXTINPUTS': return { ...state, [action.inputField]: action.payload };
             default: return state;
@@ -48,11 +62,9 @@ export default function NewPostitForm() {
         })
 
         if (response.ok) {
-            router.push('/')
-            console.log('request went ok')
+            router.push('/board')
         } else {
             window.alert('Something went wrong, try again')
-            console.log('something went wrong with the request')
         }
     }
 
