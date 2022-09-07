@@ -3,7 +3,7 @@ import Postit from "../../components/ui/PostIt";
 
 export default function Board({ postits }) {
     return (
-        <div className="flex flex-wrap gap-4">
+        <div className="postit-grid gap-8 pr-52">
             {postits.map(postits => (
                 <Postit
                     key={postits.id}
@@ -11,6 +11,7 @@ export default function Board({ postits }) {
                     title={postits.title}
                     date={postits.date}
                     content={postits.content}
+                    color={postits.color}
                 />
             ))}
         </div>
@@ -20,7 +21,8 @@ export default function Board({ postits }) {
 export async function getStaticProps() {
 
     const client = await MongoClient.connect(
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`);
+        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
+    );
     const db = client.db();
 
     const collection = db.collection('postits');
@@ -34,6 +36,7 @@ export async function getStaticProps() {
                 creator: postit.creator,
                 date: postit.date,
                 content: postit.content,
+                color: postit.color,
                 id: postit._id.toString()
             }))
         },

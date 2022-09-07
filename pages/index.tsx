@@ -15,7 +15,7 @@ export default function Home() {
             src={'/images/me.jpg'}
             width={200} height={200}
             alt='my photo'
-            className='rounded-full border-transparent border-[8px] bg-clip-border bg-gradient-to-br from-teal-400 to-emerald-400' />
+            className='rounded-full img-border bg-clip-border bg-gradient-to-br from-teal-400 to-emerald-400' />
           <h1 className='text-xl'>
             <span className='text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-teal-400 to-emerald-400'>Hello!</span>
             <br />
