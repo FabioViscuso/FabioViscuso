@@ -30,7 +30,7 @@ export default function NewPostitForm() {
         creator: '',
         date: '',
         description: '',
-        colorSelect: '',
+        colorSelect: '#f9f474',
     }
     const [formData, dispatch] = useReducer(formReducer, initialState)
 
