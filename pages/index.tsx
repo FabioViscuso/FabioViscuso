@@ -51,11 +51,11 @@ export default function Home() {
               </li>
               <li className='flex items-center'>
                 <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; My email: <a href='mailto:viscuso.fabio@outlook.it'>viscuso.fabio@outlook.it</a>
+                &nbsp; Email: <a href='mailto:viscuso.fabio@outlook.it'>&nbsp; viscuso.fabio@outlook.it</a>
               </li>
               <li className='flex items-center'>
                 <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Phone: +39 3464922442
+                &nbsp; Phone: +39 3519966861
               </li>
             </ul>
           </article>
