@@ -3,7 +3,7 @@ import Postit from "../../components/ui/PostIt";
 
 export default function Board({ postits }) {
     return (
-        <div className="postit-grid justify-items-center gap-8 md:pr-52">
+        <div className="postit-grid justify-items-center gap-8 pt-20 md:pt-0 md:pr-52">
             {postits.map(postits => (
                 <Postit
                     key={postits.id}
