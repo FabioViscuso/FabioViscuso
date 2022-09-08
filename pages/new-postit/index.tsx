@@ -13,7 +13,6 @@ export default function NewPostitForm() {
     interface FormState {
         title: string,
         creator: string,
-        date: string,
         description: string,
         colorSelect: string,
     }
@@ -28,7 +27,6 @@ export default function NewPostitForm() {
     const initialState = {
         title: '',
         creator: '',
-        date: '',
         description: '',
         colorSelect: '#f9f474',
     }
@@ -49,7 +47,6 @@ export default function NewPostitForm() {
         const postitData = {
             creator: formData.creator,
             title: formData.title,
-            date: formData.date,
             content: formData.description,
             color: formData.colorSelect
         };
@@ -98,21 +95,6 @@ export default function NewPostitForm() {
                         required
                         name='creator'
                         id='creator'
-                        onChange={(e) => inputChangeHandler(e)}
-                        className='rounded-md text-slate-900 p-2'
-                    />
-                </div>
-                <div className='flex flex-col gap-2'>
-                    <label
-                        className='text-xl'
-                        htmlFor='address'>
-                        Date
-                    </label>
-                    <input
-                        type='text'
-                        required
-                        name='date'
-                        id='date'
                         onChange={(e) => inputChangeHandler(e)}
                         className='rounded-md text-slate-900 p-2'
                     />
