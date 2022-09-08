@@ -69,8 +69,8 @@ export default function NewPostitForm() {
     }
 
     return (
-        <div className='h-full flex flex-col gap-5 justify-center items-center'>
-            <h1 className='text-4xl'>Add another post-it to the board!</h1>
+        <div className='h-full flex flex-col gap-5 justify-center items-center pt-20 md:pt-0'>
+            <h1 className='text-5xl main-text-gradient font-semibold text-center'>Add another post-it to the board!</h1>
             <form className='flex flex-col gap-5 justify-between items-center' onSubmit={submitHandler}>
                 <div className='flex flex-col gap-2'>
                     <label
@@ -132,30 +132,35 @@ export default function NewPostitForm() {
                         className='rounded-md text-slate-900 p-2 w-full'
                     ></textarea>
                 </div>
-                <fieldset onChange={(e) => inputChangeHandler(e)} className='flex flex-wrap gap-2 h-10'>
-                    <div className='flex flex-col items-center'>
-                        <label htmlFor="option1" className='w-6 h-6 rounded-full bg-[#74f9e5]'></label>
+
+
+                <p className='text-xl'>
+                    Pick a color
+                </p>
+                <fieldset onChange={(e) => inputChangeHandler(e)} className='flex flex-wrap gap-5 md:gap-8 h-10'>
+                    <div className='flex flex-col items-center relative'>
                         <input type="radio" name="colorSelect" id="option1" value={'#74f9e5'} />
+                        <label htmlFor="option1" className='w-10 h-10 rounded-full bg-[#74f9e5]'></label>
                     </div>
-                    <div className='flex flex-col items-center'>
-                        <label htmlFor="option2" className='w-6 h-6 rounded-full bg-[#f9f474]'></label>
+                    <div className='flex flex-col items-center relative'>
                         <input type="radio" name="colorSelect" id="option2" value={'#f9f474'} defaultChecked={true} />
+                        <label htmlFor="option2" className='w-10 h-10 rounded-full bg-[#f9f474]'></label>
                     </div>
-                    <div className='flex flex-col items-center'>
-                        <label htmlFor="option3" className='w-6 h-6 rounded-full bg-[#f974e1]'></label>
+                    <div className='flex flex-col items-center relative'>
                         <input type="radio" name="colorSelect" id="option3" value={'#f974e1'} />
+                        <label htmlFor="option3" className='w-10 h-10 rounded-full bg-[#f974e1]'></label>
                     </div>
-                    <div className='flex flex-col items-center'>
-                        <label htmlFor="option4" className='w-6 h-6 rounded-full bg-[#dfded2]'></label>
+                    <div className='flex flex-col items-center relative'>
                         <input type="radio" name="colorSelect" id="option4" value={'#dfded2'} />
+                        <label htmlFor="option4" className='w-10 h-10 rounded-full bg-[#dfded2]'></label>
                     </div>
-                    <div className='flex flex-col items-center'>
-                        <label htmlFor="option5" className='w-6  h-6 rounded-full bg-[#f97474]'></label>
+                    <div className='flex flex-col items-center relative'>
                         <input type="radio" name="colorSelect" id="option5" value={'#f97474'} />
+                        <label htmlFor="option5" className='w-10 h-10 rounded-full bg-[#f97474]'></label>
                     </div>
                 </fieldset>
-                <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 rounded-lg text-gray-50">Add post-it</button>
+                <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold">Add this post-it!</button>
             </form>
-        </div>
+        </div >
     );
 }
