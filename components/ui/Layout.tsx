@@ -24,7 +24,7 @@ export default function Layout({ children }: Props) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
                 <link href={`https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap`} rel="stylesheet" />
             </Head>
-            <div className='p-10 h-full flex flex-col justify-between'>
+            <div className='p-4 md:p-10 h-full flex flex-col justify-between text-center md:text-left'>
                 <>{children}</>
                 <Footer />
             </div>
