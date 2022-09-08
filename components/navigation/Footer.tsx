@@ -1,16 +1,16 @@
 export default function Footer() {
     return (
-        <div>
+        <div className="flex flex-col items-center mt-10">
             <p>
                 Made with 💚 by Fabio Viscuso using Next.js. See the project code
                 <a
-                    className="inline-block font-bold bg-clip-text text-transparent bg-gradient-to-br from-teal-400 to-emerald-400"
+                    className="inline-block font-bold main-text-gradient hover:scale-[1.1] hover:mx-2 transition-all"
                     href="https://github.com/FabioViscuso/FabioViscuso">
                     &nbsp;in this repo
                 </a>
                 !
             </p>
-            <p>NOTE: this project is still a stub</p>
+            <p className="mt-1">🚧 This is a WIP project in its first phases, stay tuned! 🚧</p>
         </div>
     )
 }
