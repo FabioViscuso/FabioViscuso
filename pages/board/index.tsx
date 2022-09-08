@@ -9,7 +9,6 @@ export default function Board({ postits }) {
                     key={postits.id}
                     creator={postits.creator}
                     title={postits.title}
-                    date={postits.date}
                     content={postits.content}
                     color={postits.color}
                 />
@@ -34,12 +33,11 @@ export async function getStaticProps() {
             postits: postits.map(postit => ({
                 title: postit.title,
                 creator: postit.creator,
-                date: postit.date,
                 content: postit.content,
                 color: postit.color,
                 id: postit._id.toString()
-            }))
-        },
-        revalidate: 1
+            })),
+            revalidate: 1,
+        }
     }
 }
