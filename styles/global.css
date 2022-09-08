@@ -11,6 +11,13 @@ body {
   color: #eeeeee;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #1c1c1c;
+  font-family: 'Indie Flower', sans-serif;
+}
+
+
 #__next {
   height: 100%;
   width: 100%;

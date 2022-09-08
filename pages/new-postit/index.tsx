@@ -68,53 +68,37 @@ export default function NewPostitForm() {
     return (
         <div className='h-full flex flex-col gap-5 justify-center items-center pt-20 md:pt-0'>
             <h1 className='text-5xl main-text-gradient font-semibold text-center'>Add another post-it to the board!</h1>
-            <form className='flex flex-col gap-5 justify-between items-center' onSubmit={submitHandler}>
-                <div className='flex flex-col gap-2'>
-                    <label
-                        className='text-xl'
-                        htmlFor='title'>
-                        Title
-                    </label>
+            <form className='flex flex-col gap-5 justify-between items-center mt-10' onSubmit={submitHandler}>
+                <div className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words`}>
                     <input
-                        type='text'
-                        required
                         name='title'
                         id='title'
-                        onChange={(e) => inputChangeHandler(e)}
-                        className='rounded-md text-slate-900 p-2'
-                    />
-                </div>
-                <div className='flex flex-col gap-2'>
-                    <label
-                        className='text-xl'
-                        htmlFor='creator'>
-                        Creator
-                    </label>
-                    <input
-                        type='text'
                         required
+                        maxLength={25}
+                        onChange={(e) => inputChangeHandler(e)}
+                        className='bg-transparent text-slate-900 text-2xl resize-none'
+                        placeholder='Insert a title'
+                    />
+                    <input
                         name='creator'
                         id='creator'
+                        required
+                        maxLength={20}
                         onChange={(e) => inputChangeHandler(e)}
-                        className='rounded-md text-slate-900 p-2'
+                        className='bg-transparent text-slate-900 text-xl'
+                        placeholder='Who are you?'
                     />
-                </div>
-                <div className='flex flex-col gap-2'>
-                    <label
-                        className='text-xl'
-                        htmlFor='description'>
-                        Content
-                    </label>
+                    <span className="text-sm leading-3 text-slate-900">----</span>
                     <textarea
                         name='description'
                         id='description'
                         required
-                        rows={5}
+                        maxLength={80}
                         onChange={(e) => inputChangeHandler(e)}
-                        className='rounded-md text-slate-900 p-2 w-full'
+                        className='bg-transparent text-2xl text-slate-900 m-0 h-full max-h-22 overflow-y-auto resize-none'
+                        placeholder='Write something!'
                     ></textarea>
                 </div>
-
 
                 <p className='text-xl'>
                     Pick a color
