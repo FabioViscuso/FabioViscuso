@@ -1,11 +1,25 @@
 /* eslint-disable react/no-unknown-property */
 // ^^^ TEMPORARY FIX: KNOWN ISSUE WITH <a download></a> attribute
 import Head from 'next/head'
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+import React from 'react';
 
 export default function Home() {
-  const router = useRouter()
+  const onCopyHandler = async (e: any) => {
+    const targetID = e.target.id
+    const content = document.getElementById(`${targetID}`).innerHTML
+    const trimmedContent = content.replace(/\s+/g, '').trim()
+    await navigator.clipboard.writeText(trimmedContent);
+    document.getElementById(`${targetID}Popup`).style.visibility = 'visible'
+    document.getElementById(`${targetID}Popup`).style.top = '-20px'
+    document.getElementById(`${targetID}Popup`).style.opacity = '1'
+
+    setTimeout(() => {
+      document.getElementById(`${targetID}Popup`).style.top = '24px'
+      document.getElementById(`${targetID}Popup`).style.opacity = '0'
+      document.getElementById(`${targetID}Popup`).style.visibility = 'hidden'
+    }, 3000);
+  }
   return (
     <>
       <Head>
@@ -91,6 +105,7 @@ export default function Home() {
           <article>
             <h3 className='text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
             <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
+              {/* Github button */}
               <li className='flex items-center'>
                 <a href="https://github.com/FabioViscuso"
                   className='inline-block rounded-full icon-shadow'
@@ -98,6 +113,7 @@ export default function Home() {
                   <Image src={'/icons/github.png'} width={50} height={50} alt={'github link'}></Image>
                 </a>
               </li>
+              {/* LinkedIn button */}
               <li className='flex items-center'>
                 <a href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
                   className='inline-block rounded-md icon-shadow'
@@ -105,17 +121,45 @@ export default function Home() {
                   <Image src={'/icons/linkedin.png'} width={50} height={50} alt={'github link'}></Image>
                 </a>
               </li>
-              <li className='flex flex-col sm:flex-row items-center text-2xl'>
-                <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Email:
-                <a href='mailto:viscuso.fabio@outlook.it'
-                  className='hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400'>
-                  &nbsp; viscuso.fabio@outlook.it
+              {/* email */}
+              <li className='relative z-20 flex flex-col sm:flex-row items-center text-2xl'>
+                <a href='mailto:viscuso.fabio@outlook.it' className={'inline-block rounded-md icon-shadow'}>
+                  <Image
+                    src={'/icons/mail.png'}
+                    width={50}
+                    height={50}
+                    alt={'github link'}
+                    className={'bg-white rounded-md'}
+                  />
                 </a>
+                <p id='emailAddressPopup' className='absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>
+                  Email Copied!
+                </p>
+                <span
+                  onClick={onCopyHandler}
+                  id={'emailAddress'}
+                  className='ml-2 cursor-pointer hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400'
+                >
+                  viscuso.fabio@outlook.it
+                </span>
               </li>
-              <li className='flex flex-col sm:flex-row items-center text-2xl'>
-                <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Phone: <span>&nbsp;+39 351 996 6861</span>
+              {/* phone number */}
+              <li className='relative z-20 flex flex-col sm:flex-row items-center text-2xl'>
+                <a className={'inline-block rounded-md icon-shadow'}>
+                  <Image
+                    src={'/icons/smartphone.png'}
+                    width={50} height={50}
+                    alt={'github link'}
+                    className={'bg-white rounded-md'}
+                  />
+                </a>
+                <p id='phoneNumberPopup' className='absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>Phone number Copied!</p>
+                <span
+                  onClick={onCopyHandler}
+                  id='phoneNumber'
+                  className='ml-2 hover:cursor-pointer hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400'>
+                  +39 351 996 6861
+                </span>
               </li>
             </ul>
           </article>
@@ -124,5 +168,3 @@ export default function Home() {
     </>
   )
 }
-
-
