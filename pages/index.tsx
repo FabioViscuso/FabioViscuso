@@ -24,18 +24,18 @@ export default function Home() {
           <div className='flex flex-col items-center'>
             <div className='flex flex-col md:flex-row items-center gap-2'>
               <span className='text-4xl self-start'>👋</span>
-              <h1 className='text-6xl font-semibold main-text-gradient'>
+              <h1 className='text-4xl lg:text-6xl font-semibold main-text-gradient'>
                 Hello! I&apos;m Fabio!
               </h1>
 
             </div>
-            <h2 className='text-2xl mt-3'>
+            <h2 className='text-2xl lg:text-3xl mt-3'>
               I&apos;m a full-stack developer,
             </h2>
-            <h2 className='text-2xl mt-3'>
+            <h2 className='text-2xl lg:text-3xl mt-3'>
               I like to build awesome stuff,
             </h2>
-            <h2 className='text-2xl mt-3'>
+            <h2 className='text-2xl lg:text-3xl mt-3'>
               and we could build it together! 🚀
             </h2>
           </div>
@@ -48,10 +48,29 @@ export default function Home() {
               {"I've studied a range of web develoment technologies, starting from HTML5 and CSS3 and vanilla JS with some of the latest standards like ES6/7."}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"Then I moved to TypeScript, React (+ Redux) and Node.js. In the meantime I've studied some SQL (PostgreSQL) and NOSQL (MongoDB) database technologies"}
+              {"Then I moved to TypeScript, React (+ Redux) and Node.js. In the meantime I've studied some SQL (PostgreSQL) and NOSQL (MongoDB) database technologies."}
             </p>
-            <a href={`./CV-FabioViscuso_ITA.pdf`} download={'fabioviscuso_cv_ita'}>Download the latest CV</a>
-            <a href={`./CV-FabioViscuso_ITA.pdf`} download={'fabioviscuso_cv_ita'}>Download the latest CV</a>
+            {/* the CV part */}
+            <div className='flex gap-10 items-center flex-col md:flex-row'>
+              <p className='mt-2 md:mt-0 text-xl max-w-4xl flex flex-col md:flex-row items-center'>
+                Need more info? You can download my CV, pick a language
+                <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
+              </p >
+              <a
+                href={`./FabioViscuso-Europass-IT.pdf`}
+                download={'FabioViscuso-Europass-IT'}
+                className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
+              >
+                <Image src={'/icons/flag-it.png'} width={70} height={70} alt={'select italian cv'} />
+              </a>
+              <a
+                href={`./FabioViscuso-Europass-EN.pdf`}
+                download={'FabioViscuso-Europass-EN'}
+                className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
+              >
+                <Image src={'/icons/flag-gb.png'} width={70} height={70} alt={'select english cv'} />
+              </a>
+            </div>
           </article>
 
           <article>
@@ -62,7 +81,7 @@ export default function Home() {
               {"I'm an Italian guy in his early 30s. I'm an introvert, but I fancy myself some social gatherings once in while! Especially with a beer in my hand and some lovely live music in the background!"}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"Professionally speaking, I've eventually found my way in the web development in 2019, starting as a self-taught before landing my first 1-year collaboration"}
+              {"Professionally speaking, I've eventually found my way in the web development in 2019, starting as a self-taught before landing my first 1-year collaboration."}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
               {"My hobbies? Here you go:  ⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺 "}
@@ -96,7 +115,7 @@ export default function Home() {
               </li>
               <li className='flex flex-col sm:flex-row items-center text-2xl'>
                 <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Phone: <span>+39 351 996 6861</span>
+                &nbsp; Phone: <span>&nbsp;+39 351 996 6861</span>
               </li>
             </ul>
           </article>
