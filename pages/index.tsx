@@ -132,7 +132,7 @@ export default function Home() {
                     className={'bg-white rounded-md'}
                   />
                 </a>
-                <p id='emailAddressPopup' className='absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>
+                <p id='emailAddressPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>
                   Email Copied!
                 </p>
                 <span
@@ -153,7 +153,7 @@ export default function Home() {
                     className={'bg-white rounded-md'}
                   />
                 </a>
-                <p id='phoneNumberPopup' className='absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>Phone number Copied!</p>
+                <p id='phoneNumberPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>Phone number Copied!</p>
                 <span
                   onClick={onCopyHandler}
                   id='phoneNumber'
