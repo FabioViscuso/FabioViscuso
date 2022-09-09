@@ -11,6 +11,11 @@ body {
   color: #eeeeee;
 }
 
+::selection {
+  background-color: #6ec3e7;
+  color: #181818;
+}
+
 input::placeholder,
 textarea::placeholder {
   color: #1c1c1c;
