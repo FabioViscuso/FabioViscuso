@@ -1,7 +1,11 @@
+/* eslint-disable react/no-unknown-property */
+// ^^^ TEMPORARY FIX: KNOWN ISSUE WITH <a download></a> attribute
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 export default function Home() {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -46,6 +50,8 @@ export default function Home() {
             <p className='mt-2 text-xl max-w-4xl'>
               {"Then I moved to TypeScript, React (+ Redux) and Node.js. In the meantime I've studied some SQL (PostgreSQL) and NOSQL (MongoDB) database technologies"}
             </p>
+            <a href={`./CV-FabioViscuso_ITA.pdf`} download={'fabioviscuso_cv_ita'}>Download the latest CV</a>
+            <a href={`./CV-FabioViscuso_ITA.pdf`} download={'fabioviscuso_cv_ita'}>Download the latest CV</a>
           </article>
 
           <article>
@@ -53,7 +59,7 @@ export default function Home() {
               But really, who am I?
             </h3>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"I'm an Italian guy in his first 30s. I'm an introvert, but I fancy myself some social gatherings once in while! Especially with a beer in my hand and some lovely live music in the background!"}
+              {"I'm an Italian guy in his early 30s. I'm an introvert, but I fancy myself some social gatherings once in while! Especially with a beer in my hand and some lovely live music in the background!"}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
               {"Professionally speaking, I've eventually found my way in the web development in 2019, starting as a self-taught before landing my first 1-year collaboration"}
@@ -65,26 +71,32 @@ export default function Home() {
 
           <article>
             <h3 className='text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
-            <ul className='mt-2'>
+            <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
               <li className='flex items-center'>
-                <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-300'></div>
-                <a href="https://github.com/FabioViscuso">
-                  &nbsp; Github
+                <a href="https://github.com/FabioViscuso"
+                  className='inline-block rounded-full icon-shadow'
+                >
+                  <Image src={'/icons/github.png'} width={50} height={50} alt={'github link'}></Image>
                 </a>
               </li>
               <li className='flex items-center'>
-                <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                <a href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/">
-                  &nbsp; Linkedin
+                <a href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
+                  className='inline-block rounded-md icon-shadow'
+                >
+                  <Image src={'/icons/linkedin.png'} width={50} height={50} alt={'github link'}></Image>
                 </a>
               </li>
-              <li className='flex items-center'>
+              <li className='flex flex-col sm:flex-row items-center text-2xl'>
                 <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Email: <a href='mailto:viscuso.fabio@outlook.it'>&nbsp; viscuso.fabio@outlook.it</a>
+                &nbsp; Email:
+                <a href='mailto:viscuso.fabio@outlook.it'
+                  className='hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400'>
+                  &nbsp; viscuso.fabio@outlook.it
+                </a>
               </li>
-              <li className='flex items-center'>
+              <li className='flex flex-col sm:flex-row items-center text-2xl'>
                 <div className='w-2 h-2 rounded-full bg-gradient-to-br from-teal-400 to-emerald-400'></div>
-                &nbsp; Phone: +39 3519966861
+                &nbsp; Phone: <span>+39 351 996 6861</span>
               </li>
             </ul>
           </article>
