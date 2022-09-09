@@ -58,6 +58,8 @@ input[type='radio']:checked + label {
   justify-items: center;
 }
 
+
+/* CUSTOM SCROLLBAR */
 *::-webkit-scrollbar {
   width: 10px;               /* width of the entire scrollbar */
 }
@@ -71,4 +73,3 @@ input[type='radio']:checked + label {
   background-color: #484848;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
-
