@@ -47,6 +47,18 @@ textarea::placeholder {
   background-image: linear-gradient(to bottom right, #0ea5e9, #6ee7b7);
 }
 
+/* Those are the divs that transition from the dark page to the light one and viceversa */
+.separator--d-to-l {
+  height: 6rem;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #1c1c1c 49%, #eeeeee 51%);
+}
+.separator--l-to-d {
+  height: 6rem;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #eeeeee 49%, #1c1c1c 51%);
+}
+
 input[type='radio'] {
   position: absolute;
   opacity: 0;

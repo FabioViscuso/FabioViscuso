@@ -27,38 +27,48 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='flex flex-col justify-center items-center gap-10 h-full py-10'>
-        <section className='flex flex-col md:flex-row items-center md:gap-10'>
-          <Image
-            src={'/images/me.jpg'}
-            width={200} height={200}
-            alt='my photo'
-            className='rounded-full img-border bg-clip-border bg-gradient-to-br from-sky-500 to-emerald-300'
-          />
-          <div className='flex flex-col items-center'>
-            <div className='flex flex-col md:flex-row items-center gap-2'>
-              <span className='text-4xl self-start'>👋</span>
-              <h1 className='text-4xl lg:text-6xl font-semibold main-text-gradient'>
-                Hello! I&apos;m Fabio!
-              </h1>
-
+      <main className='flex flex-col justify-center items-center h-full'>
+        {/* section 1: photo and introduction */}
+        <section className='min-h-screen w-full flex flex-col justify-between items-center md:gap-10'>
+          {/* inner container */}
+          <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 pt-[35vmin]'>
+            <Image
+              src={'/images/me.jpg'}
+              width={200} height={200}
+              alt='my photo'
+              className='rounded-full img-border bg-clip-border bg-gradient-to-br from-sky-500 to-emerald-300'
+            />
+            {/* introduction container */}
+            <div className='flex flex-col items-center'>
+              {/* emoji + h1 container */}
+              <div className='flex flex-col md:flex-row items-center gap-2'>
+                <span className='text-4xl self-start'>👋</span>
+                <h1 className='text-4xl lg:text-6xl font-semibold main-text-gradient'>
+                  Hello! I&apos;m Fabio!
+                </h1>
+              </div>
+              <h2 className='text-2xl lg:text-3xl mt-3'>
+                I&apos;m a full-stack developer,
+              </h2>
+              <h2 className='text-2xl lg:text-3xl mt-3'>
+                I like to build awesome stuff,
+              </h2>
+              <h2 className='text-2xl lg:text-3xl mt-3'>
+                and we could build the next big thing
+              </h2>
+              <h2 className='text-2xl lg:text-3xl mt-3'>
+                together! 🚀
+              </h2>
             </div>
-            <h2 className='text-2xl lg:text-3xl mt-3'>
-              I&apos;m a full-stack developer,
-            </h2>
-            <h2 className='text-2xl lg:text-3xl mt-3'>
-              I like to build awesome stuff,
-            </h2>
-            <h2 className='text-2xl lg:text-3xl mt-3'>
-              and we could build it together! 🚀
-            </h2>
           </div>
+          <div className='separator--d-to-l'></div>
         </section>
-
-        <section className='flex flex-col justify-center gap-10 h-full'>
-          <article>
-            <h3 className='text-2xl font-semibold main-text-gradient'>What can I do?</h3>
-            <p className='mt-2 text-xl max-w-4xl'>
+        {/* END OF: section 1: photo and introduction */}
+        {/* second section: what can I do */}
+        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center gap-10 h-full bg-[#eee] text-[#1c1c1c]'>
+          <article className='pt-[35vmin]'>
+            <h3 className='text-4xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>What can I do?</h3>
+            <p className='mt-4 text-xl max-w-4xl'>
               {"I've studied a range of web develoment technologies, starting from HTML5 and CSS3 and vanilla JS with some of the latest standards like ES6/7."}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
@@ -86,12 +96,16 @@ export default function Home() {
               </a>
             </div>
           </article>
-
-          <article>
-            <h3 className='text-2xl font-semibold main-text-gradient'>
+          <div className='separator--l-to-d'></div>
+        </section>
+        {/* END OF section 2: what can I do */}
+        {/* section 3: who am I */}
+        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center gap-10'>
+          <article className='pt-[35vmin]'>
+            <h3 className='text-4xl font-semibold main-text-gradient leading-relaxed'>
               But really, who am I?
             </h3>
-            <p className='mt-2 text-xl max-w-4xl'>
+            <p className='mt-4 text-xl max-w-4xl'>
               {"I'm an Italian guy in his early 30s. I'm an introvert, but I fancy myself some social gatherings once in while! Especially with a beer in my hand and some lovely live music in the background!"}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
@@ -100,10 +114,8 @@ export default function Home() {
             <p className='mt-2 text-xl max-w-4xl'>
               {"My hobbies? Here you go:  ⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺 "}
             </p>
-          </article>
 
-          <article>
-            <h3 className='text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
+            <h3 className='mt-10 text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
             <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
               {/* Github button */}
               <li className='flex items-center'>
