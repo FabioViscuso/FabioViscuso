@@ -13,7 +13,7 @@ body {
 
 ::selection {
   background-color: #6ec3e7;
-  color: #181818;
+  color: #1c1c1c;
 }
 
 input::placeholder,
@@ -51,11 +51,13 @@ textarea::placeholder {
 .separator--d-to-l {
   height: 6rem;
   width: 100%;
+  margin-bottom: -1px;
   background-image: linear-gradient(to bottom right, #1c1c1c 49%, #eeeeee 51%);
 }
 .separator--l-to-d {
   height: 6rem;
   width: 100%;
+  margin-bottom: -1px;
   background-image: linear-gradient(to bottom right, #eeeeee 49%, #1c1c1c 51%);
 }
 
@@ -70,7 +72,7 @@ input[type='radio']:checked + label {
 }
 .postit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   justify-content: start;
   justify-items: center;
 }
@@ -82,11 +84,14 @@ input[type='radio']:checked + label {
 }
 
 *::-webkit-scrollbar-track {
-  background: #9292925b;        /* color of the tracking area */
-  border-radius: 20px;
+  background: #1c1c1c;        /* color of the tracking area */
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #484848;    /* color of the scroll thumb */
+  background-color: #5dd4e199;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid #1c1c1c;
 }
+
+

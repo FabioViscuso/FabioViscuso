@@ -4,17 +4,21 @@ import Postit from "../../components/ui/PostIt";
 
 export default function Board({ postits }) {
     return (
-        <div className="postit-grid justify-items-center gap-8 pt-20 px-10 md:pt-10 md:pr-52">
-            {postits.map(postits => (
-                <Postit
-                    key={postits.id}
-                    creator={postits.creator}
-                    title={postits.title}
-                    content={postits.content}
-                    color={postits.color}
-                />
-            ))}
-        </div>
+        <main className="px-10 pt-16 md:pt-10 md:pr-52">
+            <h1 className="text-6xl text-left md:text-center mb-10 main-text-gradient">Hello!</h1>
+            <h2 className="text-3xl text-left md:text-center mb-14">Don&apos;t be shy, leave a message</h2>
+            <div className="postit-grid justify-items-center gap-8 ">
+                {postits.map(postits => (
+                    <Postit
+                        key={postits.id}
+                        creator={postits.creator}
+                        title={postits.title}
+                        content={postits.content}
+                        color={postits.color}
+                    />
+                ))}
+            </div>
+        </main>
     )
 }
 
