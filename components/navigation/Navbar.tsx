@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 export default function Navbar() {
     const router = useRouter()
     return (
-        <nav className="fixed top-0 left-0 right-0 md:left-auto  flex md:flex-col gap-5 justify-center md:justify-end z-50">
+        <nav className="fixed top-2 md:top-10 right-0 flex flex-col gap-5 justify-center md:justify-end z-50">
             {router.pathname !== '/' &&
                 <Link href='/'>
-                    <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 rounded-lg text-gray-800 font-semibold">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold  backdrop-blur-sm bg-opacity-50">
                         Home
                     </button>
                 </Link>
@@ -15,7 +15,7 @@ export default function Navbar() {
             {
                 router.pathname !== '/board' &&
                 <Link href='/board'>
-                    <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 rounded-lg text-gray-800 font-semibold">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold  backdrop-blur-sm bg-opacity-50">
                         Go to my Post-it board!
                     </button>
                 </Link>
@@ -23,7 +23,7 @@ export default function Navbar() {
             {
                 router.pathname === '/board' &&
                 <Link href='/new-postit'>
-                    <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 rounded-lg text-gray-800 font-semibold">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold">
                         Add post-it
                     </button>
                 </Link>

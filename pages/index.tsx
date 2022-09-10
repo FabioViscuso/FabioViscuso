@@ -18,7 +18,7 @@ export default function Home() {
       document.getElementById(`${targetID}Popup`).style.top = '24px'
       document.getElementById(`${targetID}Popup`).style.opacity = '0'
       document.getElementById(`${targetID}Popup`).style.visibility = 'hidden'
-    }, 3000);
+    }, 2000);
   }
   return (
     <>
@@ -29,9 +29,9 @@ export default function Home() {
 
       <main className='flex flex-col justify-center items-center h-full'>
         {/* section 1: photo and introduction */}
-        <section className='min-h-screen w-full flex flex-col justify-between items-center md:gap-10'>
+        <section className='min-h-screen w-full flex flex-col items-center pt-10'>
           {/* inner container */}
-          <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 pt-[35vmin]'>
+          <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'>
             <Image
               src={'/images/me.jpg'}
               width={200} height={200}
@@ -65,18 +65,18 @@ export default function Home() {
         </section>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className='min-h-screen w-full flex flex-col justify-between items-center gap-10 h-full bg-[#eee] text-[#1c1c1c]'>
-          <article className='pt-[35vmin] px-2'>
-            <h3 className='text-4xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>What can I do?</h3>
-            <p className='mt-4 text-xl max-w-4xl'>
+        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] pt-20'>
+          <article className='my-auto px-2  max-w-4xl'>
+            <h3 className='text-5xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>What can I do?</h3>
+            <p className='mt-4 text-xl'>
               {"I've studied a range of web develoment technologies, starting from HTML5 and CSS3 and vanilla JS with some of the latest standards like ES6/7."}
             </p>
-            <p className='mt-2 text-xl max-w-4xl'>
+            <p className='mt-2 text-xl'>
               {"Then I moved to TypeScript, React (+ Redux) and Node.js. In the meantime I've studied some SQL (PostgreSQL) and NOSQL (MongoDB) database technologies."}
             </p>
             {/* the CV part */}
             <div className='flex gap-10 items-center flex-col md:flex-row'>
-              <p className='mt-2 md:mt-0 text-xl max-w-4xl flex flex-col md:flex-row items-center'>
+              <p className='mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center'>
                 Need more info? You can download my CV, pick a language
                 <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
               </p >
@@ -100,22 +100,26 @@ export default function Home() {
         </section>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
-        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center gap-10'>
-          <article className='pt-[35vmin]'>
-            <h3 className='text-4xl font-semibold main-text-gradient leading-relaxed'>
-              But really, who am I?
+        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20'>
+          <article className='my-auto max-w-4xl'>
+            <h3 className='text-5xl font-semibold main-text-gradient leading-relaxed'>
+              Who am I?
             </h3>
             <p className='mt-4 text-xl max-w-4xl'>
-              {"I'm an Italian guy in his early 30s. I'm an introvert, but I fancy myself some social gatherings once in while! Especially with a beer in my hand and some lovely live music in the background!"}
+              {"I'm an Italian guy in his early 30s. I see myself as an introvert, but I fancy myself some social gatherings once in while, especially with a beer in my hand and some lovely live music in the background!"}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"Professionally speaking, I've eventually found my way in the web development in 2019, starting as a self-taught before landing my first 1-year collaboration."}
+              {"Professionally speaking, I've eventually found my own path in web development in 2019, starting as a self-taught before landing my first 1-year collaboration."}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"My hobbies? Here you go:  ⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺 "}
+              My hobbies? Here you go: <span className='text-3xl'>⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
 
             <h3 className='mt-10 text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
+            <p className='mt-3 text-xl'>
+              Be my guest! Check out my Github and LinkedIn profiles,
+              or click my contacts to copy them automatically. Woah, magic!
+            </p>
             <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
               {/* Github button */}
               <li className='flex items-center'>
@@ -144,7 +148,7 @@ export default function Home() {
                     className={'bg-white rounded-md'}
                   />
                 </a>
-                <p id='emailAddressPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>
+                <p id='emailAddressPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1'>
                   Email Copied!
                 </p>
                 <span
@@ -165,7 +169,9 @@ export default function Home() {
                     className={'bg-white rounded-md'}
                   />
                 </a>
-                <p id='phoneNumberPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all'>Phone number Copied!</p>
+                <p id='phoneNumberPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1'>
+                  Phone number Copied!
+                </p>
                 <span
                   onClick={onCopyHandler}
                   id='phoneNumber'
