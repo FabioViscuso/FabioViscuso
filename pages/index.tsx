@@ -65,8 +65,8 @@ export default function Home() {
         </section>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center gap-10 h-full bg-[#eee] text-[#1c1c1c]'>
-          <article className='pt-[35vmin]'>
+        <section className='min-h-screen w-full flex flex-col justify-between items-center gap-10 h-full bg-[#eee] text-[#1c1c1c]'>
+          <article className='pt-[35vmin] px-2'>
             <h3 className='text-4xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>What can I do?</h3>
             <p className='mt-4 text-xl max-w-4xl'>
               {"I've studied a range of web develoment technologies, starting from HTML5 and CSS3 and vanilla JS with some of the latest standards like ES6/7."}
