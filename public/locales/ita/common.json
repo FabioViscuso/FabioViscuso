@@ -1,7 +1,7 @@
 {
     "header-postit-board": "Vai ai Post-it!",
-    "header-add-postit": "Aggiungi Post-it",
-    "change-locale": "Switch to EN",
+    "header-add-postit": "Nuovo Post-it",
+    "change-locale": "Switch to",
     "greeting": "Ciao! Sono Fabio!",
     "intro-line1": "Sono uno sviluppatore full-stack,",
     "intro-line2": "mi piace costruire progetti fantastici,",
@@ -19,6 +19,8 @@
     "contacts-p": "Accomodati! Visita i miei profili GitHub e LinkedIn, o clicca sui miei contatti per copiarli automaticamente. Magia!",
     "copied-mail": "Email copiata!",
     "copied-phone": "Numero copiato!",
+    "board-header": "Ciao!",
+    "board-subhead": "Lascia pure un messaggio",
     "footer-main": "Scritto con 💚 da Fabio Viscuso usando Next.js. Guarda il codice",
     "footer-link": "in questa repo",
     "footer-notice": "Questo progetto è nelle prime fasi di sviluppo. Stay tuned!"

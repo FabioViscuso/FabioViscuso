@@ -1,7 +1,12 @@
 import { useRouter } from 'next/router';
 import React, { useReducer } from 'react';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import translation function
+import { useTranslation, Trans } from 'next-i18next';
+
 export default function NewPostitForm() {
+    const { t } = useTranslation()
     const router = useRouter()
 
     interface Action {
@@ -129,4 +134,12 @@ export default function NewPostitForm() {
             </form>
         </div >
     );
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common']))
+        }
+    }
 }

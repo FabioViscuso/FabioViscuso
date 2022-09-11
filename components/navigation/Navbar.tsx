@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 
 // import translation function
 import { useTranslation, Trans } from 'next-i18next';
+import Image from "next/image";
 
 export default function Navbar() {
     const router = useRouter()
     const { t } = useTranslation()
 
-    const onToggleLanguageClick = (newLocale) => {
+    const onToggleLanguageClick = (newLocale: string) => {
         const { pathname, asPath, query } = router
         router.push({ pathname, query }, asPath, { locale: newLocale })
     }
@@ -39,8 +40,10 @@ export default function Navbar() {
                     </button>
                 </Link>
             }
-            <button onClick={() => onToggleLanguageClick(changeTo)} className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
-                {t('change-locale', { changeTo })}
+            <button onClick={() => onToggleLanguageClick(changeTo)} className="flex flex-col items-center w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                {t('change-locale')}
+                {router.locale === 'en' && <Image src={'/icons/flag-it.png'} width={30} height={30} alt={''} />}
+                {router.locale === 'ita' && <Image src={'/icons/flag-gb.png'} width={30} height={30} alt={''} />}
             </button>
         </nav>
     )
