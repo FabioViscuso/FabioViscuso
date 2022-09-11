@@ -21,6 +21,12 @@
     "copied-phone": "Phone number copied!",
     "board-header": "Hello!",
     "board-subhead": "Don't be shy, leave a message",
+    "form-head": "Add another post-it to the board!",
+    "form-placehldr-1":"Insert a title",
+    "form-placehldr-2":"Who are you?",
+    "form-placehldr-3":"Write something!",
+    "form-colorpick": "Pick a color",
+    "form-submit": "Add this Post-it!",
     "footer-main": "Made with 💚 by Fabio Viscuso using Next.js. See the project code",
     "footer-link": "in this repo",
     "footer-notice": "This is a WIP project in its first phases, stay tuned!"

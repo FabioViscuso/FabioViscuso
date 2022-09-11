@@ -21,6 +21,12 @@
     "copied-phone": "Numero copiato!",
     "board-header": "Ciao!",
     "board-subhead": "Lascia pure un messaggio",
+    "form-head": "Aggiungi un post-it alla bacheca!",
+    "form-placehldr-1":"Titolo",
+    "form-placehldr-2":"Chi sei?",
+    "form-placehldr-3":"Scrivi qualcosa!",
+    "form-colorpick": "Scegli un colore",
+    "form-submit": "Aggiungi Post-it!",
     "footer-main": "Scritto con 💚 da Fabio Viscuso usando Next.js. Guarda il codice",
     "footer-link": "in questa repo",
     "footer-notice": "Questo progetto è nelle prime fasi di sviluppo. Stay tuned!"
