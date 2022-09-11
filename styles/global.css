@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat/Montserrat-Semibold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "Indie Flower";
+  src: url("../fonts/indieflower/IndieFlower-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   min-height: 100vh;

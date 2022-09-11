@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className="fixed top-2 md:top-10 right-0 flex flex-col gap-5 justify-center md:justify-end z-50">
             {router.pathname !== '/' &&
                 <Link href='/'>
-                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold  backdrop-blur-sm bg-opacity-50">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                         Home
                     </button>
                 </Link>
@@ -15,7 +15,7 @@ export default function Navbar() {
             {
                 router.pathname !== '/board' &&
                 <Link href='/board'>
-                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold  backdrop-blur-sm bg-opacity-50">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                         Go to my Post-it board!
                     </button>
                 </Link>
@@ -23,7 +23,7 @@ export default function Navbar() {
             {
                 router.pathname === '/board' &&
                 <Link href='/new-postit'>
-                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] px-4 py-2 rounded-l-lg text-gray-800 font-semibold">
+                    <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                         Add post-it
                     </button>
                 </Link>

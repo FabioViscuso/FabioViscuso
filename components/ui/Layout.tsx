@@ -20,9 +20,6 @@ export default function Layout({ children }: Props) {
                 />
                 <meta name="og:title" content="Hello! That's me!" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
-                <link href={`https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@400;600&family=Noto+Sans:wght@300;600&display=swap`} rel="stylesheet" />
             </Head>
             <div className='h-full flex flex-col justify-between text-center md:text-left'>
                 <>{children}</>
