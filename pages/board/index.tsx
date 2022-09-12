@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // import translation function
 import { useTranslation, Trans } from 'next-i18next';
 
-export default function Board({ postits }) {
+export default function Board({ postits, ...props }) {
     const { t } = useTranslation()
     return (
         <main className="px-10 pt-16 md:pt-10 md:pr-52">
@@ -41,14 +41,14 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['common'])),
             postits: postits.map(postit => ({
                 title: postit.title,
                 creator: postit.creator,
                 content: postit.content,
                 color: postit.color,
                 id: postit._id.toString()
-            }))
+            })),
+            ...(await serverSideTranslations(locale, ['common'])),
         }
     }
 }
