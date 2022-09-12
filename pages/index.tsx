@@ -1,25 +1,19 @@
 /* eslint-disable react/no-unknown-property */
 // ^^^ TEMPORARY FIX: KNOWN ISSUE WITH <a download></a> attribute
-import Head from 'next/head'
+import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 
-export default function Home() {
-  const onCopyHandler = async (e: any) => {
-    const targetID = e.target.id
-    const content = document.getElementById(`${targetID}`).innerHTML
-    const trimmedContent = content.replace(/\s+/g, '').trim()
-    await navigator.clipboard.writeText(trimmedContent);
-    document.getElementById(`${targetID}Popup`).style.visibility = 'visible'
-    document.getElementById(`${targetID}Popup`).style.top = '-20px'
-    document.getElementById(`${targetID}Popup`).style.opacity = '1'
+// the function that copies text and triggers the copy pop-up
+import onCopyHandler from '../lib/useCopyHandler';
+// needed for i18next functionality with SSG / SSR
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import translation function
+import { useTranslation, Trans } from 'next-i18next';
 
-    setTimeout(() => {
-      document.getElementById(`${targetID}Popup`).style.top = '24px'
-      document.getElementById(`${targetID}Popup`).style.opacity = '0'
-      document.getElementById(`${targetID}Popup`).style.visibility = 'hidden'
-    }, 2000);
-  }
+export default function Home() {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
@@ -44,20 +38,20 @@ export default function Home() {
               <div className='flex flex-col md:flex-row items-center gap-2'>
                 <span className='text-4xl self-start'>👋</span>
                 <h1 className='text-4xl lg:text-6xl font-semibold main-text-gradient'>
-                  Hello! I&apos;m Fabio!
+                  {t('greeting')}
                 </h1>
               </div>
               <h2 className='text-2xl lg:text-3xl mt-3'>
-                I&apos;m a full-stack developer,
+                {t('intro-line1')}
               </h2>
               <h2 className='text-2xl lg:text-3xl mt-3'>
-                I like to build awesome stuff,
+                {t('intro-line2')}
               </h2>
               <h2 className='text-2xl lg:text-3xl mt-3'>
-                and we could build the next big thing
+                {t('intro-line3')}
               </h2>
               <h2 className='text-2xl lg:text-3xl mt-3'>
-                together! 🚀
+                {t('intro-line4')}
               </h2>
             </div>
           </div>
@@ -67,17 +61,19 @@ export default function Home() {
         {/* second section: what can I do */}
         <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] pt-20'>
           <article className='my-auto px-2  max-w-4xl'>
-            <h3 className='text-5xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>What can I do?</h3>
+            <h3 className='text-5xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
+              {t('section-2-heading')}
+            </h3>
             <p className='mt-4 text-xl'>
-              {"I've studied a range of web develoment technologies, starting from HTML5 and CSS3 and vanilla JS with some of the latest standards like ES6/7."}
+              {t('section-2-p1')}
             </p>
             <p className='mt-2 text-xl'>
-              {"Then I moved to TypeScript, React (+ Redux) and Node.js. In the meantime I've studied some SQL (PostgreSQL) and NOSQL (MongoDB) database technologies."}
+              {t('section-2-p2')}
             </p>
             {/* the CV part */}
             <div className='flex gap-10 items-center flex-col md:flex-row'>
               <p className='mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center'>
-                Need more info? You can download my CV, pick a language
+                {t('section-2-p3')}
                 <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
               </p >
               <a
@@ -103,22 +99,23 @@ export default function Home() {
         <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20'>
           <article className='my-auto max-w-4xl'>
             <h3 className='text-5xl font-semibold main-text-gradient leading-relaxed'>
-              Who am I?
+              {t('section-3-heading')}
             </h3>
             <p className='mt-4 text-xl max-w-4xl'>
-              {"I'm an Italian guy in his early 30s. I see myself as an introvert, but I fancy myself some social gatherings once in while, especially with a beer in my hand and some lovely live music in the background!"}
+              {t('section-3-p1')}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              {"Professionally speaking, I've eventually found my own path in web development in 2019, starting as a self-taught before landing my first 1-year collaboration."}
+              {t('section-3-p2')}
             </p>
             <p className='mt-2 text-xl max-w-4xl'>
-              My hobbies? Here you go: <span className='text-3xl'>⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
+              {t('section-3-p3')} <span className='text-3xl'>⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
 
-            <h3 className='mt-10 text-2xl font-semibold main-text-gradient'>Want to reach out?</h3>
+            <h3 className='mt-10 text-2xl font-semibold main-text-gradient'>
+              {t('contacts-heading')}
+            </h3>
             <p className='mt-3 text-xl'>
-              Be my guest! Check out my Github and LinkedIn profiles,
-              or click my contacts to copy them automatically. Woah, magic!
+              {t('contacts-p')}
             </p>
             <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
               {/* Github button */}
@@ -149,7 +146,7 @@ export default function Home() {
                   />
                 </a>
                 <p id='emailAddressPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1'>
-                  Email Copied!
+                  {t('copied-mail')}
                 </p>
                 <span
                   onClick={onCopyHandler}
@@ -170,7 +167,7 @@ export default function Home() {
                   />
                 </a>
                 <p id='phoneNumberPopup' className='pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1'>
-                  Phone number Copied!
+                  {t('copied-phone')}
                 </p>
                 <span
                   onClick={onCopyHandler}
@@ -185,4 +182,12 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common']))
+    }
+  }
 }

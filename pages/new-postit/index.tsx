@@ -1,7 +1,12 @@
 import { useRouter } from 'next/router';
 import React, { useReducer } from 'react';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import translation function
+import { useTranslation, Trans } from 'next-i18next';
+
 export default function NewPostitForm() {
+    const { t } = useTranslation()
     const router = useRouter()
 
     interface Action {
@@ -67,7 +72,7 @@ export default function NewPostitForm() {
 
     return (
         <div className='h-full flex flex-col gap-5 justify-center items-center pt-32'>
-            <h1 className='text-5xl main-text-gradient font-semibold text-center'>Add another post-it to the board!</h1>
+            <h1 className='text-5xl main-text-gradient font-semibold text-center leading-relaxed'>{t('form-head')}</h1>
             <form className='flex flex-col gap-5 justify-between items-center mt-10' onSubmit={submitHandler}>
                 <div className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words`}>
                     <input
@@ -77,7 +82,7 @@ export default function NewPostitForm() {
                         maxLength={25}
                         onChange={(e) => inputChangeHandler(e)}
                         className='bg-transparent text-slate-900 text-2xl resize-none'
-                        placeholder='Insert a title'
+                        placeholder={t('form-placehldr-1')}
                     />
                     <input
                         name='creator'
@@ -86,7 +91,7 @@ export default function NewPostitForm() {
                         maxLength={20}
                         onChange={(e) => inputChangeHandler(e)}
                         className='bg-transparent text-slate-900 text-xl'
-                        placeholder='Who are you?'
+                        placeholder={t('form-placehldr-2')}
                     />
                     <span className="text-sm leading-3 text-slate-900">----</span>
                     <textarea
@@ -96,12 +101,12 @@ export default function NewPostitForm() {
                         maxLength={80}
                         onChange={(e) => inputChangeHandler(e)}
                         className='bg-transparent text-2xl text-slate-900 m-0 h-full max-h-22 overflow-y-auto resize-none'
-                        placeholder='Write something!'
+                        placeholder={t('form-placehldr-3')}
                     ></textarea>
                 </div>
 
                 <p className='text-xl'>
-                    Pick a color
+                    {t('form-colorpick')}
                 </p>
                 <fieldset onChange={(e) => inputChangeHandler(e)} className='flex flex-wrap gap-5 md:gap-8 h-10'>
                     <div className='flex flex-col items-center relative'>
@@ -125,8 +130,18 @@ export default function NewPostitForm() {
                         <label htmlFor="option5" className='w-10 h-10 rounded-full bg-[#f97474]'></label>
                     </div>
                 </fieldset>
-                <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold">Add this post-it!</button>
+                <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold">
+                    {t('form-submit')}
+                </button>
             </form>
         </div >
     );
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common']))
+        }
+    }
 }
