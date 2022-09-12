@@ -41,7 +41,7 @@ export default function Navbar() {
                 </Link>
             }
             <button onClick={() => onToggleLanguageClick(changeTo)} className="flex flex-col items-center w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
-                {t('change-locale')}
+                <span className="text-2xl leading-none">&#8631;</span>
                 {router.locale === 'en' && <Image src={'/icons/flag-it.png'} width={30} height={30} alt={''} />}
                 {router.locale === 'ita' && <Image src={'/icons/flag-gb.png'} width={30} height={30} alt={''} />}
             </button>

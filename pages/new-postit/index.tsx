@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation, Trans } from 'next-i18next';
 
 export default function NewPostitForm() {
-    const { t } = useTranslation()
+    const { t } = useTranslation('page-new-postit')
     const router = useRouter()
 
     interface Action {
@@ -141,7 +141,7 @@ export default function NewPostitForm() {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['common']))
+            ...(await serverSideTranslations(locale, ['common', 'page-new-postit']))
         }
     }
 }

@@ -8,7 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation, Trans } from 'next-i18next';
 
 export default function Board({ postits, ...props }) {
-    const { t } = useTranslation()
+    const { t } = useTranslation('page-board')
     return (
         <main className="px-10 pt-16 md:pt-10 md:pr-52">
             <h1 className="text-6xl text-left md:text-center mb-10 main-text-gradient">{t('board-header')}</h1>
@@ -48,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
                 color: postit.color,
                 id: postit._id.toString()
             })),
-            ...(await serverSideTranslations(locale, ['common'])),
+            ...(await serverSideTranslations(locale, ['common', 'page-board'])),
         }
     }
 }

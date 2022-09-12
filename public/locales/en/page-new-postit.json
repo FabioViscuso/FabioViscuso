@@ -1,0 +1,8 @@
+{
+    "form-head": "Add another post-it to the board!",
+    "form-placehldr-1":"Insert a title",
+    "form-placehldr-2":"Who are you?",
+    "form-placehldr-3":"Write something!",
+    "form-colorpick": "Pick a color",
+    "form-submit": "Add this Post-it!"
+}
