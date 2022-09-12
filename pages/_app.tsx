@@ -21,3 +21,5 @@ const App = ({ Component, pageProps }) => {
         </>
     )
 }
+
+export default appWithTranslation(App)
