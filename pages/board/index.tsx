@@ -10,7 +10,7 @@ import { useTranslation, Trans } from 'next-i18next';
 export default function Board({ postits, ...props }) {
     const { t } = useTranslation('page-board')
     return (
-        <main className="px-10 pt-16 md:pt-10 md:pr-52">
+        <main className="px-10 pt-24 md:pt-10 md:pr-52">
             <h1 className="text-6xl text-left md:text-center mb-10 main-text-gradient">{t('board-header')}</h1>
             <h2 className="text-3xl text-left md:text-center mb-14">{t('board-subhead')}</h2>
             <div className="postit-grid justify-items-center gap-8 ">

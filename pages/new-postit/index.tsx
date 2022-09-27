@@ -71,8 +71,8 @@ export default function NewPostitForm() {
     }
 
     return (
-        <div className='h-full flex flex-col gap-5 justify-center items-center pt-32'>
-            <h1 className='text-5xl main-text-gradient font-semibold text-center leading-relaxed'>{t('form-head')}</h1>
+        <div className='h-full flex flex-col gap-5 justify-center items-center pt-24 md:pt-10'>
+            <h1 className='text-5xl main-text-gradient text-center leading-relaxed'>{t('form-head')}</h1>
             <form className='flex flex-col gap-5 justify-between items-center mt-10' onSubmit={submitHandler}>
                 <div className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words`}>
                     <input
