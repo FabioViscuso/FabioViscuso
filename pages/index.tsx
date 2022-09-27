@@ -1,8 +1,8 @@
-/* eslint-disable react/no-unknown-property */
-// ^^^ TEMPORARY FIX: KNOWN ISSUE WITH <a download></a> attribute
 import Image from 'next/image';
 import React from 'react';
 
+// import avatar image
+import avatar from '../public/images/me.jpg';
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from '../lib/useCopyHandler';
 // needed for i18next functionality with SSG / SSR
@@ -16,13 +16,15 @@ export default function Home() {
   return (
     <main className='flex flex-col justify-center items-center h-full'>
       {/* section 1: photo and introduction */}
-      <section className='min-h-screen w-full flex flex-col items-center pt-10'>
+      <section className='min-h-screen pt-24 md:pt-0 w-full flex flex-col items-center'>
         {/* inner container */}
         <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'>
           <Image
-            width={280} height={280}
-            src={'/images/me.jpg'}
+            src={avatar}
+            width={300} height={300}
             alt='my photo'
+            priority
+            placeholder='blur'
             className='rounded-full img-border bg-clip-border bg-gradient-to-br from-sky-500 to-emerald-300'
           />
           {/* introduction container */}

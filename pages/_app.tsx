@@ -4,9 +4,20 @@ import { useRouter } from 'next/router'
 import Layout from '../components/ui/Layout'
 import '../styles/global.css'
 
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react'
+
+
 const App = ({ Component, pageProps }) => {
     const router = useRouter()
     const formattedPath = router.pathname.replace(/\//, '').replace(/-/, ' ');
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
     return (
         <>
             <Head>
