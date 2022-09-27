@@ -27,7 +27,7 @@ export default function Navbar() {
             <div onClick={toggleHamburgerMenu} className="h-20 fixed top-0 left-0 right-0 flex md:hidden z-50 bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                 <div className="h-full w-full relative">
                     <div className="hamburger-btn"></div>
-                    <button onClick={() => onToggleLanguageClick(changeTo)} className="flex flex-col justify-center items-center mr-5 text-lg absolute top-0 bottom-0 right-0">
+                    <button onClick={() => onToggleLanguageClick(changeTo)} title="language-switch" className="flex flex-col justify-center items-center mr-5 text-lg absolute top-0 bottom-0 right-0">
                         {router.locale === 'en' && <Image src={'/icons/flag-it.png'} width={30} height={30} alt={''} />}
                         {router.locale === 'it' && <Image src={'/icons/flag-gb.png'} width={30} height={30} alt={''} />}
                     </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
                         </button>
                     </Link>
                 }
-                <button onClick={() => onToggleLanguageClick(changeTo)} className="flex flex-col items-center w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                <button onClick={() => onToggleLanguageClick(changeTo)} title="language-switch" className="flex flex-col items-center w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                     {router.locale === 'en' && <Image src={'/icons/flag-it.png'} width={30} height={30} alt={''} />}
                     {router.locale === 'it' && <Image src={'/icons/flag-gb.png'} width={30} height={30} alt={''} />}
                 </button>
