@@ -84,7 +84,7 @@ export default function Home() {
             <p className='mb-8'> {t('section-2-instructions')}</p>
             {/* Frontend skills */}
             <h4 className='text-3xl'>Frontend skills</h4>
-            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+            <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
               {/* HTML5 */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={html5} width={60} height={60} alt="html5" />
@@ -138,7 +138,7 @@ export default function Home() {
 
             {/* Backend skills */}
             <h4 className='text-3xl'>Backend skills</h4>
-            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+            <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
               {/* Node */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={nodejs} width={60} height={60} alt="nodejs" />
@@ -178,7 +178,7 @@ export default function Home() {
 
             {/* Other skills */}
             <h4 className='text-3xl'>And also...</h4>
-            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+            <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={git} width={60} height={60} alt="git" />
                 <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
