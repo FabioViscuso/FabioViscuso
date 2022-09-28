@@ -1,8 +1,19 @@
 import Image from 'next/image';
 import React from 'react';
 
-// import avatar image
+// import images
 import avatar from '../public/images/me.jpg';
+import html5 from '../public/icons/skills/html-5.png';
+import css3 from '../public/icons/skills/css-3.png';
+import javascript from '../public/icons/skills/javascript.png';
+import typescript from '../public/icons/skills/typescript.png';
+import react from '../public/icons/skills/react.png';
+import next from '../public/icons/skills/next-js.png';
+import nodejs from '../public/icons/skills/node-js.png';
+import sql from '../public/icons/skills/sql.png';
+import mongodb from '../public/icons/skills/mongodb.png';
+import git from '../public/icons/skills/git.png';
+import vscode from '../public/icons/skills/vs-code.png';
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from '../lib/useCopyHandler';
 // needed for i18next functionality with SSG / SSR
@@ -59,21 +70,107 @@ export default function Home() {
         </section>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] pt-20'>
+        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] pt-20 md:pt-0'>
           <article className='my-auto px-2  max-w-4xl'>
-            <h3 className='text-5xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
+            <h3 className='text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
               {t('section-2-heading')}
             </h3>
-            <p className='mt-4 text-xl'>
-              {t('section-2-p1')}
-            </p>
-            <p className='mt-2 text-xl'>
-              {t('section-2-p2')}
-            </p>
+            <p className='mb-8'> {t('section-2-instructions')}</p>
+            {/* Frontend skills */}
+            <h4 className='text-3xl'>Frontend skills</h4>
+            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+              {/* HTML5 */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={html5} width={60} height={60} alt="html5" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  HTML5
+                </p>
+              </div>
+              {/* CSS3 */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={css3} width={60} height={60} alt="css3" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  CSS3
+                </p>
+              </div>
+              {/* JavaScript */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={javascript} width={60} height={60} alt="javascript" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  JavaScript ES6+
+                </p>
+              </div>
+              {/* React */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={react} width={60} height={60} alt="react" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  React
+                </p>
+              </div>
+              {/* Next */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={next} width={60} height={60} alt="next" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  Next.js
+                </p>
+              </div>
+            </div>
+            {/* Backend skills */}
+            <h4 className='text-3xl'>Backend skills</h4>
+            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+              {/* Node */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={nodejs} width={60} height={60} alt="nodejs" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  Node.js
+                </p>
+              </div>
+              {/* SQL */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={sql} width={60} height={60} alt="sql" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  SQL (PostgreSQL)
+                </p>
+              </div>
+              {/* MongoDB */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={mongodb} width={60} height={60} alt="mongodb" className='rounded-full bg-green-200' />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  MongoDB
+                </p>
+              </div>
+
+
+
+            </div>
+            {/* Other skills */}
+            <h4 className='text-3xl'>And also...</h4>
+            <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={git} width={60} height={60} alt="git" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  Git and GitHub
+                </p>
+              </div>
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={vscode} width={60} height={60} alt="visual studio code" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  Visual Studio Code
+                </p>
+              </div>
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={typescript} width={60} height={60} alt="typecript" />
+                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                  TypeScript
+                </p>
+              </div>
+
+
+            </div>
             {/* the CV part */}
             <div className='flex gap-10 items-center flex-col md:flex-row'>
               <p className='mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center'>
-                {t('section-2-p3')}
+                {t('section-2-cv')}
                 <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
               </p >
               <a
@@ -81,24 +178,24 @@ export default function Home() {
                 download={'FabioViscuso-Europass-IT'}
                 className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
               >
-                <Image src={'/icons/flag-it.png'} width={70} height={70} alt={'select italian cv'} />
+                <Image src={'/icons/flag-it.png'} width={60} height={60} alt={'select italian cv'} />
               </a>
               <a
                 href={`./FabioViscuso-Europass-EN.pdf`}
                 download={'FabioViscuso-Europass-EN'}
                 className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
               >
-                <Image src={'/icons/flag-gb.png'} width={70} height={70} alt={'select english cv'} />
+                <Image src={'/icons/flag-gb.png'} width={60} height={60} alt={'select english cv'} />
               </a>
             </div>
           </article>
-          <div className='separator--l-to-d'></div>
+          <div className='separator--l-to-d mt-20 md:mt-0'></div>
         </section>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
         <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20'>
           <article className='my-auto max-w-4xl'>
-            <h3 className='text-5xl font-semibold main-text-gradient leading-relaxed'>
+            <h3 className='text-6xl font-semibold main-text-gradient leading-relaxed'>
               {t('section-3-heading')}
             </h3>
             <p className='mt-4 text-xl max-w-4xl'>
@@ -111,13 +208,13 @@ export default function Home() {
               {t('section-3-p3')} <span className='text-3xl'>⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
 
-            <h3 className='mt-10 text-2xl font-semibold main-text-gradient'>
+            <h3 className='mt-10 text-4xl font-semibold main-text-gradient'>
               {t('contacts-heading')}
             </h3>
-            <p className='mt-3 text-xl'>
+            <p className='mt-5 text-xl'>
               {t('contacts-p')}
             </p>
-            <ul className='mt-6 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
+            <ul className='mt-8 flex flex-col md:flex-row items-center gap-10 flex-wrap'>
               {/* Github button */}
               <li className='flex items-center'>
                 <a href="https://github.com/FabioViscuso"
