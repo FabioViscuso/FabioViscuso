@@ -3,17 +3,23 @@ import React from 'react';
 
 // import images
 import avatar from '../public/images/me.jpg';
-import html5 from '../public/icons/skills/html-5.png';
-import css3 from '../public/icons/skills/css-3.png';
+import html5 from '../public/icons/skills/html5.png';
+import css3 from '../public/icons/skills/css3.png';
 import javascript from '../public/icons/skills/javascript.png';
 import typescript from '../public/icons/skills/typescript.png';
 import react from '../public/icons/skills/react.png';
 import next from '../public/icons/skills/next-js.png';
-import nodejs from '../public/icons/skills/node-js.png';
+import bootstrap from '../public/icons/skills/bootstrap.png';
+import tailwind from '../public/icons/skills/tailwindcss.png';
+import nodejs from '../public/icons/skills/nodejs.png';
+import express from '../public/icons/skills/expressjs.png';
 import sql from '../public/icons/skills/sql.png';
 import mongodb from '../public/icons/skills/mongodb.png';
+import prisma from '../public/icons/skills/prisma.png';
 import git from '../public/icons/skills/git.png';
-import vscode from '../public/icons/skills/vs-code.png';
+import vscode from '../public/icons/skills/vscode.png';
+import flagit from '../public/icons/flag-it.png';
+import flaguk from '../public/icons/flag-gb.png';
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from '../lib/useCopyHandler';
 // needed for i18next functionality with SSG / SSR
@@ -82,90 +88,115 @@ export default function Home() {
               {/* HTML5 */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={html5} width={60} height={60} alt="html5" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   HTML5
                 </p>
               </div>
               {/* CSS3 */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={css3} width={60} height={60} alt="css3" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   CSS3
                 </p>
               </div>
               {/* JavaScript */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={javascript} width={60} height={60} alt="javascript" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   JavaScript ES6+
                 </p>
               </div>
               {/* React */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={react} width={60} height={60} alt="react" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   React
                 </p>
               </div>
               {/* Next */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={next} width={60} height={60} alt="next" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   Next.js
                 </p>
               </div>
+              {/* Bootstrap */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={bootstrap} width={60} height={60} alt="bootstrap" />
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
+                  Bootstrap 4/5
+                </p>
+              </div>
+              {/* Tailwind */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={tailwind} width={60} height={60} alt="tailwind" />
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
+                  TailwindCSS
+                </p>
+              </div>
             </div>
+
             {/* Backend skills */}
             <h4 className='text-3xl'>Backend skills</h4>
             <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
               {/* Node */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={nodejs} width={60} height={60} alt="nodejs" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   Node.js
+                </p>
+              </div>
+              {/* Express */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={express} width={60} height={60} alt="expressjs" />
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
+                  Express 4.17+
                 </p>
               </div>
               {/* SQL */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={sql} width={60} height={60} alt="sql" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   SQL (PostgreSQL)
                 </p>
               </div>
               {/* MongoDB */}
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={mongodb} width={60} height={60} alt="mongodb" className='rounded-full bg-green-200' />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   MongoDB
                 </p>
               </div>
-
-
-
+              {/* Prisma */}
+              <div className='relative skills-icon cursor-pointer'>
+                <Image src={prisma} width={60} height={60} alt="prisma" />
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
+                  Prisma ORM
+                </p>
+              </div>
             </div>
+
             {/* Other skills */}
             <h4 className='text-3xl'>And also...</h4>
             <div className='flex gap-10 flex-wrap items-center mt-4 mb-8'>
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={git} width={60} height={60} alt="git" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   Git and GitHub
                 </p>
               </div>
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={vscode} width={60} height={60} alt="visual studio code" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   Visual Studio Code
                 </p>
               </div>
               <div className='relative skills-icon cursor-pointer'>
                 <Image src={typescript} width={60} height={60} alt="typecript" />
-                <p className='skills-icon-popup bg-slate-600 text-white rounded-md p-2'>
+                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
                   TypeScript
                 </p>
               </div>
-
-
             </div>
             {/* the CV part */}
             <div className='flex gap-10 items-center flex-col md:flex-row'>
@@ -178,14 +209,14 @@ export default function Home() {
                 download={'FabioViscuso-Europass-IT'}
                 className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
               >
-                <Image src={'/icons/flag-it.png'} width={60} height={60} alt={'select italian cv'} />
+                <Image src={flagit} width={60} height={60} alt={'select italian cv'} />
               </a>
               <a
                 href={`./FabioViscuso-Europass-EN.pdf`}
                 download={'FabioViscuso-Europass-EN'}
                 className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
               >
-                <Image src={'/icons/flag-gb.png'} width={60} height={60} alt={'select english cv'} />
+                <Image src={flaguk} width={60} height={60} alt={'select english cv'} />
               </a>
             </div>
           </article>
