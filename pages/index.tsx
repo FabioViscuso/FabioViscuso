@@ -38,7 +38,7 @@ export default function Home() {
       </Head>
       <main className='flex flex-col justify-center items-center h-full'>
         {/* section 1: photo and introduction */}
-        <section className='min-h-screen pt-24 md:pt-0 w-full flex flex-col items-center'>
+        <section className='min-h-[calc(100vh-6rem)] py-24 md:pt-0 w-full flex flex-col items-center'>
           {/* inner container */}
           <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'>
             <Image
@@ -72,11 +72,11 @@ export default function Home() {
               </h2>
             </div>
           </div>
-          <div className='separator--d-to-l'></div>
         </section>
+        <div className='separator--d-to-l'></div>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] pt-20 md:pt-0'>
+        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] py-20 md:py-0'>
           <article className='my-auto px-2  max-w-4xl'>
             <h3 className='text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
               {t('section-2-heading')}
@@ -220,8 +220,8 @@ export default function Home() {
               </a>
             </div>
           </article>
-          <div className='separator--l-to-d mt-20 md:mt-0'></div>
         </section>
+        <div className='separator--l-to-d -mt-1'></div>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
         <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20'>
