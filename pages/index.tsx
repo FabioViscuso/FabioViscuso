@@ -8,7 +8,7 @@ import css3 from '../public/icons/skills/css3.png';
 import javascript from '../public/icons/skills/javascript.png';
 import typescript from '../public/icons/skills/typescript.png';
 import react from '../public/icons/skills/react.png';
-import next from '../public/icons/skills/next-js.png';
+import next from '../public/icons/skills/nextjs.png';
 import bootstrap from '../public/icons/skills/bootstrap.png';
 import tailwind from '../public/icons/skills/tailwindcss.png';
 import nodejs from '../public/icons/skills/nodejs.png';

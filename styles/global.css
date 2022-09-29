@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/** CUSTOM FONTS **/
 @font-face{
   font-family: "Montserrat";
   src: url("../public/fonts/montserrat/Montserrat-Regular.ttf") format('truetype');
@@ -26,6 +27,7 @@
   font-display: swap;
 }
 
+/** GENERAL **/
 html,
 body {
   min-height: 100vh;
@@ -67,53 +69,48 @@ body {
 }
 
 /** NAVBAR **/
+.hamburger-btn,
+.hamburger-btn::before,
+.hamburger-btn::after {
+  height: 3px;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+}
 .hamburger-btn {
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1rem;
-  height: 3px;
-  background-color: #1c1c1c;
-  border-radius: 4px;
 }
+.hamburger-btn::before,
 .hamburger-btn::after {
   display: block;
   content: "";
   position: absolute;
-  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 1.6rem;
-  height: 3px;
-  background-color: #1c1c1c;
-  border-radius: 4px;
+}
+.hamburger-btn::after {
+  top: -8px;
 }
 .hamburger-btn::before {
-  display: block;
-  content: "";
-  position: absolute;
   top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1.6rem;
-  height: 3px;
-  background-color: #1c1c1c;
-  border-radius: 4px;
 }
 
 /** HOMEPAGE **/
 /* Those are the divs that transition from the dark page to the light one and viceversa */
-.separator--d-to-l {
-  height: 6rem;
-  width: 100%;
-  margin-bottom: -1px;
-  background-image: linear-gradient(to bottom right, #1c1c1c 49%, #eeeeee 51%);
-}
+.separator--d-to-l,
 .separator--l-to-d {
   height: 6rem;
   width: 100%;
   margin-bottom: -1px;
+}
+.separator--d-to-l {
+  background-image: linear-gradient(to bottom right, #1c1c1c 49%, #eeeeee 51%);
+}
+.separator--l-to-d {
   background-image: linear-gradient(to bottom right, #eeeeee 49%, #1c1c1c 51%);
 }
 .img-border {
