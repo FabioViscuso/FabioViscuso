@@ -72,9 +72,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1.2rem;
-  height: 2px;
+  width: 1rem;
+  height: 3px;
   background-color: #1c1c1c;
+  border-radius: 4px;
 }
 .hamburger-btn::after {
   display: block;
@@ -84,8 +85,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 1.6rem;
-  height: 2px;
+  height: 3px;
   background-color: #1c1c1c;
+  border-radius: 4px;
 }
 .hamburger-btn::before {
   display: block;
@@ -95,8 +97,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 1.6rem;
-  height: 2px;
+  height: 3px;
   background-color: #1c1c1c;
+  border-radius: 4px;
 }
 
 /** HOMEPAGE **/
