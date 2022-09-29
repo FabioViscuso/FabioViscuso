@@ -28,16 +28,19 @@ export default function Navbar() {
     return (
         <>
             {/* Hamburger menu */}
-            <div onClick={toggleHamburgerMenu} className="h-20 fixed top-0 left-0 right-0 flex md:hidden z-50 bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+            <div onClick={toggleHamburgerMenu} className="fixed top-4 right-4 flex md:hidden z-50 bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] text-gray-800 font-semibold backdrop-blur-sm h-16 w-16 rounded-full transition-all">
                 <div className="h-full w-full relative">
                     <div className="hamburger-btn"></div>
-                    <button onClick={(e: React.MouseEvent) => { e.stopPropagation(); return onToggleLanguageClick(changeTo) }} title="language-switch" className="flex flex-col justify-center items-center mr-5 text-lg absolute top-0 bottom-0 right-0">
-                        {router.locale === 'en' && <Image src={flagit} width={30} height={30} alt={''} />}
-                        {router.locale === 'it' && <Image src={flaguk} width={30} height={30} alt={''} />}
-                    </button>
                 </div>
             </div>
-            {isHamburgerMenuVisible && <nav onClick={toggleHamburgerMenu} className="w-full fixed top-20 bottom-0 z-50 flex flex-col justify-center items-center gap-5 bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] py-2 text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+            {isHamburgerMenuVisible && <nav onClick={toggleHamburgerMenu} className="w-full fixed top-0 bottom-0 z-40 flex flex-col justify-center items-center gap-5 bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] py-2 text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                <button
+                    onClick={(e: React.MouseEvent) => { e.stopPropagation(); return onToggleLanguageClick(changeTo) }}
+                    title="language-switch"
+                    className="flex justify-center items-center w-full text-xl text-center py-1 bg-slate-900 bg-opacity-30">
+                    {router.locale === 'en' && <Image src={flagit} width={50} height={50} alt={''} />}
+                    {router.locale === 'it' && <Image src={flaguk} width={50} height={50} alt={''} />}
+                </button>
                 {router.pathname !== '/' &&
                     <Link href='/'>
                         <a className="block w-full text-xl text-center py-4 bg-slate-900 bg-opacity-30">
@@ -64,7 +67,7 @@ export default function Navbar() {
             </nav>}
 
             {/* Main nav layout */}
-            <nav className="hidden fixed top-2 md:top-10 right-0 md:flex flex-col gap-5 justify-center md:justify-end z-50">
+            <nav className="hidden fixed top-2 md:top-6 right-0 md:flex flex-col gap-5 justify-center md:justify-end z-50">
                 {router.pathname !== '/' &&
                     <Link href='/'>
                         <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
