@@ -14,7 +14,13 @@ const App = ({ Component, pageProps }) => {
     const formattedPath = router.pathname.replace(/\//, '').replace(/-/, ' ');
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 800,     // Animation duration in milliseconds
+            delay: 200,        // Delay before animations start in milliseconds
+            offset: 100,       // Offset (in pixels) from the original trigger point
+            easing: 'ease',    // Easing function
+            once: true,        // Only animate elements once (on scroll)
+        });
         AOS.refresh();
     }, []);
 

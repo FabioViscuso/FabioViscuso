@@ -6,7 +6,7 @@ import flagit from '../../public/icons/flag-it.png';
 import flaguk from '../../public/icons/flag-gb.png';
 
 // import translation function
-import { useTranslation, Trans } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -67,31 +67,31 @@ export default function Navbar() {
             </nav>}
 
             {/* Main nav layout */}
-            <nav className="hidden fixed top-2 md:top-6 right-0 md:flex flex-col gap-5 justify-center md:justify-end z-50">
+            <nav className="hidden fixed top-2 md:top-6 right-2 md:flex flex-col gap-5 justify-center md:justify-end z-50">
                 {router.pathname !== '/' &&
                     <Link href='/'>
-                        <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
-                            Home
+                        <button className="w-16 h-16 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-2 py-2 rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                            🏠
                         </button>
                     </Link>
                 }
                 {
                     router.pathname !== '/board' &&
                     <Link href='/board'>
-                        <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
-                            {t('header-postit-board')}
+                        <button className="w-16 h-16 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-2 py-2 rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                            📒
                         </button>
                     </Link>
                 }
                 {
                     router.pathname === '/board' &&
                     <Link href='/new-postit'>
-                        <button className="w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
-                            {t('header-add-postit')}
+                        <button className="w-16 h-16 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-2 py-2 rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                            📒+
                         </button>
                     </Link>
                 }
-                <button onClick={() => onToggleLanguageClick(changeTo)} title="language-switch" className="flex flex-col items-center w-24 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-4 py-2 rounded-l-lg text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
+                <button onClick={() => onToggleLanguageClick(changeTo)} title="language-switch" className="flex justify-center items-center w-16 h-16 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] px-2 py-2 rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all">
                     {router.locale === 'en' && <Image src={flagit} width={30} height={30} alt={''} />}
                     {router.locale === 'it' && <Image src={flaguk} width={30} height={30} alt={''} />}
                 </button>

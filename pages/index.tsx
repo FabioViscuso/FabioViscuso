@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 
+import AOS from 'aos';
+import { useEffect } from 'react';
+
 // import images
 import avatar from '../public/images/me.jpg';
 import html5 from '../public/icons/skills/html5.png';
@@ -25,11 +28,16 @@ import onCopyHandler from '../lib/useCopyHandler';
 // needed for i18next functionality with SSG / SSR
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // import translation function
-import { useTranslation, Trans } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import { IconSkill } from '../components/ui/IconSkill';
 
 export default function Home() {
-  const { t } = useTranslation('page-home')
+  const { t } = useTranslation('page-home');
+
+  useEffect(() => {
+    AOS.refresh();
+}, []);
 
   return (
     <>
@@ -38,9 +46,10 @@ export default function Home() {
       </Head>
       <main className='flex flex-col justify-center items-center h-full'>
         {/* section 1: photo and introduction */}
-        <section className='min-h-[calc(100vh-6rem)] py-24 md:pt-0 w-full flex flex-col items-center'>
+        <section className='min-h-[calc(100vh-6rem)] py-24 md:pt-0 w-full flex flex-col items-center bg-dark'>
           {/* inner container */}
-          <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'>
+          <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'
+                data-aos="fade-up">
             <Image
               src={avatar}
               width={300} height={300}
@@ -76,128 +85,33 @@ export default function Home() {
         <div className='separator--d-to-l'></div>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-[#eee] text-[#1c1c1c] py-20 md:py-0'>
-          <article className='my-auto px-2  max-w-4xl'>
+        <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-light py-20 md:py-0'>
+          <article className='my-auto px-2 max-w-4xl'
+                    data-aos="fade-up">
             <h3 className='text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
               {t('section-2-heading')}
             </h3>
             <p className='mb-8'> {t('section-2-instructions')}</p>
             {/* Frontend skills */}
-            <h4 className='text-3xl'>Frontend skills</h4>
+            <h4 className='text-3xl'>{t('section-2-skills')}</h4>
             <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
-              {/* HTML5 */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={html5} width={60} height={60} alt="html5" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  HTML5
-                </p>
-              </div>
-              {/* CSS3 */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={css3} width={60} height={60} alt="css3" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  CSS3
-                </p>
-              </div>
-              {/* JavaScript */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={javascript} width={60} height={60} alt="javascript" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  JavaScript ES6+
-                </p>
-              </div>
-              {/* React */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={react} width={60} height={60} alt="react" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  React
-                </p>
-              </div>
-              {/* Next */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={next} width={60} height={60} alt="next" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Next.js
-                </p>
-              </div>
-              {/* Bootstrap */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={bootstrap} width={60} height={60} alt="bootstrap" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Bootstrap 4/5
-                </p>
-              </div>
-              {/* Tailwind */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={tailwind} width={60} height={60} alt="tailwind" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  TailwindCSS
-                </p>
-              </div>
+              <IconSkill src={html5} alt='html5' label='HTML5' />
+              <IconSkill src={css3} alt="css3" label='CSS3' />
+              <IconSkill src={javascript} alt="javascript" label='JavaScript ES6+' />
+              <IconSkill src={react} alt='react' label='React' />
+              <IconSkill src={next} alt='next' label='Next.js' />
+              <IconSkill src={bootstrap} alt='bootstrap' label='Bootstrap 4/5' />
+              <IconSkill src={tailwind} alt="tailwind" label='TailwindCSS' />
+              <IconSkill src={nodejs} alt='nodejs' label='NodeJS' />
+              <IconSkill src={express} alt="express" label='Express 4.17+' />
+              <IconSkill src={sql} alt="postgresql" label='PostgreSQL' />
+              <IconSkill src={mongodb} alt="mongoDB" label='MongoDB' additionalCSS='bg-green-200' />
+              <IconSkill src={prisma} alt="prisma" label='Prisma ORM' additionalCSS='rounded-none' />
+              <IconSkill src={git} alt='git' label='Git (& GitHub/GitLab)' />
+              <IconSkill src={vscode} alt='vs code' label='Visual Studio Code' />
+              <IconSkill src={typescript} alt='typescript' label='TypeScript' />
             </div>
 
-            {/* Backend skills */}
-            <h4 className='text-3xl'>Backend skills</h4>
-            <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
-              {/* Node */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={nodejs} width={60} height={60} alt="nodejs" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Node.js
-                </p>
-              </div>
-              {/* Express */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={express} width={60} height={60} alt="expressjs" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Express 4.17+
-                </p>
-              </div>
-              {/* SQL */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={sql} width={60} height={60} alt="sql" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  SQL (PostgreSQL)
-                </p>
-              </div>
-              {/* MongoDB */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={mongodb} width={60} height={60} alt="mongodb" className='rounded-full bg-green-200' />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  MongoDB
-                </p>
-              </div>
-              {/* Prisma */}
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={prisma} width={60} height={60} alt="prisma" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Prisma ORM
-                </p>
-              </div>
-            </div>
-
-            {/* Other skills */}
-            <h4 className='text-3xl'>And also...</h4>
-            <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={git} width={60} height={60} alt="git" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Git and GitHub
-                </p>
-              </div>
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={vscode} width={60} height={60} alt="visual studio code" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  Visual Studio Code
-                </p>
-              </div>
-              <div className='relative skills-icon cursor-pointer'>
-                <Image src={typescript} width={60} height={60} alt="typecript" />
-                <p className='skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2'>
-                  TypeScript
-                </p>
-              </div>
-            </div>
             {/* the CV part */}
             <div className='flex gap-10 items-center flex-col md:flex-row'>
               <p className='mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center'>
@@ -205,18 +119,18 @@ export default function Home() {
                 <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
               </p >
               <a
-                href={`./FabioViscuso-Europass-IT.pdf`}
-                download={'FabioViscuso-Europass-IT'}
-                className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
+                href={`./CV_Fabio_Viscuso.pdf`}
+                download={'CV_Fabio_Viscuso.pdf'}
+                className='inline-block rounded-full icon-shadow transition-all'
               >
-                <Image src={flagit} width={60} height={60} alt={'select italian cv'} />
+                <Image src={flagit} alt={'select italian cv'} className='h-14 w-14'/>
               </a>
               <a
-                href={`./FabioViscuso-Europass-EN.pdf`}
-                download={'FabioViscuso-Europass-EN'}
-                className='inline-block hover:border-emerald-400 border-transparent border-b-4 transition-all'
+                href={`./CV_Fabio_Viscuso.pdf`}
+                download={'CV_Fabio_Viscuso.pdf'}
+                className='inline-block rounded-full icon-shadow transition-all'
               >
-                <Image src={flaguk} width={60} height={60} alt={'select english cv'} />
+                <Image src={flaguk} alt={'select english cv'} className='h-14 w-14'/>
               </a>
             </div>
           </article>
@@ -224,8 +138,9 @@ export default function Home() {
         <div className='separator--l-to-d -mt-1'></div>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
-        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20'>
-          <article className='my-auto max-w-4xl'>
+        <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20 bg-dark'>
+          <article className='my-auto max-w-4xl'
+                    data-aos="fade-up">
             <h3 className='text-6xl font-semibold main-text-gradient leading-relaxed'>
               {t('section-3-heading')}
             </h3>
