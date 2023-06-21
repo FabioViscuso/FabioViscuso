@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(spinner.css);
+
 /** CUSTOM FONTS **/
 @font-face{
   font-family: "Montserrat";

@@ -1,8 +1,8 @@
+import React, {useEffect} from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
-import React from 'react';
-
 import AOS from 'aos';
-import { useEffect } from 'react';
+import { IconSkill } from '../components/ui/IconSkill';
 
 // import images
 import avatar from '../public/images/me.jpg';
@@ -29,8 +29,6 @@ import onCopyHandler from '../lib/useCopyHandler';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // import translation function
 import { useTranslation } from 'next-i18next';
-import Head from 'next/head';
-import { IconSkill } from '../components/ui/IconSkill';
 
 export default function Home() {
   const { t } = useTranslation('page-home');
