@@ -25,18 +25,18 @@ const App = ({ Component, pageProps }) => {
         console.log("on useeffect", isLoading)
 
             AOS.init({
-                duration: 800,     // Animation duration in milliseconds
-                delay: 200,        // Delay before animations start in milliseconds
-                offset: 100,       // Offset (in pixels) from the original trigger point
-                easing: 'ease',    // Easing function
-                once: true,        // Only animate elements once (on scroll)
+                duration: 800,
+                delay: 200,
+                offset: 100,
+                easing: 'ease',
+                once: true,
             });
             AOS.refresh();
 
         return () => {
-            router.events.off('routeChangeStart', handleStart)
-            router.events.off('routeChangeComplete', handleComplete)
-            router.events.off('routeChangeError', handleComplete)
+            router.events.off('routeChangeStart', handleStart);
+            router.events.off('routeChangeComplete', handleComplete);
+            router.events.off('routeChangeError', handleComplete);
         }
     }, []);
 
