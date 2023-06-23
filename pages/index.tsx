@@ -3,32 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import AOS from 'aos';
 import { IconSkill } from '../components/homepage/SkillIcon';
-
-// import images
-import avatar from '../public/images/me.jpg';
-import html5 from '../public/icons/skills/html5.png';
-import css3 from '../public/icons/skills/css3.png';
-import javascript from '../public/icons/skills/javascript.png';
-import typescript from '../public/icons/skills/typescript.png';
-import react from '../public/icons/skills/react.png';
-import next from '../public/icons/skills/nextjs.png';
-import bootstrap from '../public/icons/skills/bootstrap.png';
-import tailwind from '../public/icons/skills/tailwindcss.png';
-import nodejs from '../public/icons/skills/nodejs.png';
-import express from '../public/icons/skills/expressjs.png';
-import sql from '../public/icons/skills/sql.png';
-import mongodb from '../public/icons/skills/mongodb.png';
-import prisma from '../public/icons/skills/prisma.png';
-import git from '../public/icons/skills/git.png';
-import vscode from '../public/icons/skills/vscode.png';
-import flagit from '../public/icons/flag-it.png';
-import flaguk from '../public/icons/flag-gb.png';
+import icons from '../components/ui/IconImport';
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from '../lib/useCopyHandler';
 // needed for i18next functionality with SSG / SSR
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // import translation function
 import { useTranslation } from 'next-i18next';
+import { CVDownloadButton } from '../components/homepage/CVDowloadButton';
 
 export default function Home() {
   const { t } = useTranslation('page-home');
@@ -49,7 +31,7 @@ export default function Home() {
           <div className='flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto'
                 data-aos="fade-up">
             <Image
-              src={avatar}
+              src={icons.avatar}
               width={300} height={300}
               alt='my photo'
               priority
@@ -93,21 +75,21 @@ export default function Home() {
             {/* Frontend skills */}
             <p className='text-xl'>{t('section-2-skills')}</p>
             <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
-              <IconSkill src={html5} alt='html5' label='HTML5' />
-              <IconSkill src={css3} alt="css3" label='CSS3' />
-              <IconSkill src={javascript} alt="javascript" label='JavaScript ES6+' />
-              <IconSkill src={react} alt='react' label='React' />
-              <IconSkill src={next} alt='next' label='Next.js' />
-              <IconSkill src={bootstrap} alt='bootstrap' label='Bootstrap 4/5' />
-              <IconSkill src={tailwind} alt="tailwind" label='TailwindCSS' />
-              <IconSkill src={nodejs} alt='nodejs' label='NodeJS' />
-              <IconSkill src={express} alt="express" label='Express 4.17+' />
-              <IconSkill src={sql} alt="postgresql" label='PostgreSQL' />
-              <IconSkill src={mongodb} alt="mongoDB" label='MongoDB' additionalCSS='bg-green-200' />
-              <IconSkill src={prisma} alt="prisma" label='Prisma ORM' additionalCSS='rounded-none' />
-              <IconSkill src={git} alt='git' label='Git (& GitHub/GitLab)' />
-              <IconSkill src={vscode} alt='vs code' label='Visual Studio Code' />
-              <IconSkill src={typescript} alt='typescript' label='TypeScript' />
+              <IconSkill src={icons.html5} alt='html5' label='HTML5' />
+              <IconSkill src={icons.css3} alt="css3" label='CSS3' />
+              <IconSkill src={icons.javascript} alt="javascript" label='JavaScript ES6+' />
+              <IconSkill src={icons.react} alt='react' label='React' />
+              <IconSkill src={icons.next} alt='next' label='Next.js' />
+              <IconSkill src={icons.bootstrap} alt='bootstrap' label='Bootstrap 4/5' />
+              <IconSkill src={icons.tailwind} alt="tailwind" label='TailwindCSS' />
+              <IconSkill src={icons.nodejs} alt='nodejs' label='NodeJS' />
+              <IconSkill src={icons.express} alt="express" label='Express 4.17+' />
+              <IconSkill src={icons.sql} alt="postgresql" label='PostgreSQL' />
+              <IconSkill src={icons.mongodb} alt="mongoDB" label='MongoDB' additionalCSS='bg-green-200' />
+              <IconSkill src={icons.prisma} alt="prisma" label='Prisma ORM' additionalCSS='rounded-none' />
+              <IconSkill src={icons.git} alt='git' label='Git (& GitHub/GitLab)' />
+              <IconSkill src={icons.vscode} alt='vs code' label='Visual Studio Code' />
+              <IconSkill src={icons.typescript} alt='typescript' label='TypeScript' />
             </div>
             {/* the CV part */}
             <div className='flex gap-10 flex-col md:flex-row items-center md:items-stretch'>
@@ -115,20 +97,8 @@ export default function Home() {
                 {t('section-2-cv')}
               </p >
               <div className='flex gap-10 items-center'>
-                <a
-                  href={`./CV_Fabio_Viscuso.pdf`}
-                  download={'CV_Fabio_Viscuso.pdf'}
-                  className='inline-block rounded-full icon-shadow transition-all'
-                >
-                  <Image src={flagit} alt={'select italian cv'} className='h-14 w-14'/>
-                </a>
-                <a
-                  href={`./CV_Fabio_Viscuso-ENG.pdf`}
-                  download={'CV_Fabio_Viscuso-ENG.pdf'}
-                  className='inline-block rounded-full icon-shadow transition-all'
-                >
-                  <Image src={flaguk} alt={'select english cv'} className='h-14 w-14'/>
-                </a>
+                <CVDownloadButton src={icons.flagit} lang={"italian"}/>
+                <CVDownloadButton src={icons.flaguk} lang={"english"}/>
               </div>
             </div>
           </article>
