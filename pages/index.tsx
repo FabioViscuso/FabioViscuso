@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import AOS from 'aos';
-import { IconSkill } from '../components/ui/IconSkill';
+import { IconSkill } from '../components/homepage/SkillIcon';
 
 // import images
 import avatar from '../public/images/me.jpg';
@@ -86,12 +86,12 @@ export default function Home() {
         <section className='min-h-screen w-full flex flex-col justify-between items-center h-full bg-light py-20 md:py-0'>
           <article className='my-auto px-2 max-w-4xl'
                     data-aos="fade-up">
-            <h3 className='text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed'>
+            <h3 className='text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed text-center'>
               {t('section-2-heading')}
             </h3>
-            <p className='mb-8'> {t('section-2-instructions')}</p>
+            <p className='mb-8 text-xl'> {t('section-2-instructions')}</p>
             {/* Frontend skills */}
-            <h4 className='text-3xl'>{t('section-2-skills')}</h4>
+            <p className='text-xl'>{t('section-2-skills')}</p>
             <div className='flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10'>
               <IconSkill src={html5} alt='html5' label='HTML5' />
               <IconSkill src={css3} alt="css3" label='CSS3' />
@@ -109,27 +109,27 @@ export default function Home() {
               <IconSkill src={vscode} alt='vs code' label='Visual Studio Code' />
               <IconSkill src={typescript} alt='typescript' label='TypeScript' />
             </div>
-
             {/* the CV part */}
-            <div className='flex gap-10 items-center flex-col md:flex-row'>
+            <div className='flex gap-10 flex-col md:flex-row items-center md:items-stretch'>
               <p className='mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center'>
                 {t('section-2-cv')}
-                <span className='rotate-90 md:rotate-0'>&nbsp;👉</span>
               </p >
-              <a
-                href={`./CV_Fabio_Viscuso.pdf`}
-                download={'CV_Fabio_Viscuso.pdf'}
-                className='inline-block rounded-full icon-shadow transition-all'
-              >
-                <Image src={flagit} alt={'select italian cv'} className='h-14 w-14'/>
-              </a>
-              <a
-                href={`./CV_Fabio_Viscuso.pdf`}
-                download={'CV_Fabio_Viscuso.pdf'}
-                className='inline-block rounded-full icon-shadow transition-all'
-              >
-                <Image src={flaguk} alt={'select english cv'} className='h-14 w-14'/>
-              </a>
+              <div className='flex gap-10 items-center'>
+                <a
+                  href={`./CV_Fabio_Viscuso.pdf`}
+                  download={'CV_Fabio_Viscuso.pdf'}
+                  className='inline-block rounded-full icon-shadow transition-all'
+                >
+                  <Image src={flagit} alt={'select italian cv'} className='h-14 w-14'/>
+                </a>
+                <a
+                  href={`./CV_Fabio_Viscuso-ENG.pdf`}
+                  download={'CV_Fabio_Viscuso-ENG.pdf'}
+                  className='inline-block rounded-full icon-shadow transition-all'
+                >
+                  <Image src={flaguk} alt={'select english cv'} className='h-14 w-14'/>
+                </a>
+              </div>
             </div>
           </article>
         </section>
@@ -139,7 +139,7 @@ export default function Home() {
         <section className='min-h-screen w-full px-2 flex flex-col justify-between items-center py-20 bg-dark'>
           <article className='my-auto max-w-4xl'
                     data-aos="fade-up">
-            <h3 className='text-6xl font-semibold main-text-gradient leading-relaxed'>
+            <h3 className='text-6xl font-semibold main-text-gradient leading-relaxed text-center'>
               {t('section-3-heading')}
             </h3>
             <p className='mt-4 text-xl max-w-4xl'>
@@ -152,7 +152,7 @@ export default function Home() {
               {t('section-3-p3')} <span className='text-3xl'>⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
 
-            <h3 className='mt-10 text-4xl font-semibold main-text-gradient'>
+            <h3 className='mt-28 text-6xl font-semibold main-text-gradient leading-relaxed text-center'>
               {t('contacts-heading')}
             </h3>
             <p className='mt-5 text-xl'>

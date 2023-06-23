@@ -76,7 +76,7 @@ export default function NewPostitForm() {
             <Head>
                 <meta name="description" content="page for adding a new post-it" />
             </Head>
-            <div className='h-full flex flex-col gap-5 justify-center items-center pt-24 md:pt-10'>
+            <div className='bg-dark h-full flex flex-col gap-5 justify-center items-center pt-24 md:pt-10'>
                 <h1 className='text-5xl main-text-gradient text-center leading-relaxed'>{t('form-head')}</h1>
                 <form className='flex flex-col gap-5 justify-between items-center mt-10' onSubmit={submitHandler}>
                     <div className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words`}>

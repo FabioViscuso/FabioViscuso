@@ -20,18 +20,17 @@ const App = ({ Component, pageProps }) => {
 
         router.events.on('routeChangeStart', handleStart);
         router.events.on('routeChangeComplete', handleComplete);
+        //TODO: need a handleError method
         router.events.on('routeChangeError', handleComplete);
 
-        console.log("on useeffect", isLoading)
-
-            AOS.init({
-                duration: 800,
-                delay: 200,
-                offset: 100,
-                easing: 'ease',
-                once: true,
-            });
-            AOS.refresh();
+        AOS.init({
+            duration: 800,
+            delay: 200,
+            offset: 100,
+            easing: 'ease',
+            once: true,
+        });
+        AOS.refresh();
 
         return () => {
             router.events.off('routeChangeStart', handleStart);

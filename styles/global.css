@@ -147,6 +147,7 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: all .3s ease;
+  text-align: center;
 }
 .skills-icon:hover > .skills-icon-popup {
   visibility: visible;
