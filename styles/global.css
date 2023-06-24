@@ -86,37 +86,6 @@ body {
     background-image: linear-gradient(to bottom right, #0ea5e9, #6ee7b7);
   }
 
-  /** NAVBAR **/
-  .hamburger-btn,
-  .hamburger-btn::before,
-  .hamburger-btn::after {
-    height: 3px;
-    background-color: #1c1c1c;
-    border-radius: 4px;
-  }
-  .hamburger-btn {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1rem;
-  }
-  .hamburger-btn::before,
-  .hamburger-btn::after {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1.6rem;
-  }
-  .hamburger-btn::after {
-    top: -8px;
-  }
-  .hamburger-btn::before {
-    top: 8px;
-  }
-
   /** HOMEPAGE **/
   /* Those are the divs that transition from the dark page to the light one and viceversa */
   .separator--d-to-l,
