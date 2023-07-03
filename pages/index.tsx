@@ -32,10 +32,10 @@ export default function Home() {
   useEffect(() => {
     AOS.refresh();
 
-    document.addEventListener('mousemove', (e) => {
-      const cursor = document.querySelector('.custom-cursor') as HTMLElement;
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.querySelector(".custom-cursor") as HTMLElement;
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
     });
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
@@ -58,10 +58,11 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-1"
-          className="h-screen py-24 md:pt-0 w-full flex flex-col items-center justify-center bg-dark"
+          className="min-h-screen w-full px-10 py-4 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-20 px-20">
+          <div>{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-20">
             {/* introduction container */}
             <div className="flex flex-col align-center justify-center lg:[flex-basis: 70%]">
               {/* emoji + h1 container */}
@@ -69,78 +70,95 @@ export default function Home() {
                 className="flex flex-col md:flex-row gap-2 relative"
                 data-aos="fade-right"
                 data-aos-delay="200"
+                data-aos-duration="1000"
               >
-                <span className="absolute -top-4 -left-14 text-4xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
+                <span className="absolute -top-5 -left-12 text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
                   👋
                 </span>
-                <h1 className="text-6xl lg:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
+                <h1 className="text-8xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
                   {t("greeting")}
                 </h1>
               </div>
               <p
-                className="mt-12 text-2xl lg:text-5xl"
+                className="mt-12 text-2xl lg:text-4xl"
                 data-aos="fade-right"
                 data-aos-delay="400"
+                data-aos-duration="1000"
               >
                 {t("intro-line1")}
               </p>
               <p
-                className="text-2xl lg:text-5xl mt-3"
+                className="text-2xl lg:text-4xl mt-3"
                 data-aos="fade-right"
                 data-aos-delay="600"
+                data-aos-duration="1000"
               >
                 {t("intro-line2")}
               </p>
               <p
-                className="text-2xl lg:text-5xl mt-3"
+                className="text-2xl lg:text-4xl mt-3"
                 data-aos="fade-right"
                 data-aos-delay="800"
+                data-aos-duration="1000"
               >
                 {t("intro-line3")}
               </p>
+              <div className="flex items-center gap-6">
+                <p
+                  className="text-2xl underline lg:text-6xl mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                  data-aos="fade-right"
+                  data-aos-delay="1000"
+                  data-aos-duration="1000"
+                >
+                  {t("intro-line4")}
+                </p>
+                <p 
+                  className="text-6xl drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                  data-aos="fade-up-right"
+                  data-aos-delay="1000"
+                >
+                  🚀
+                </p>
+              </div>
               <p
-                className="text-2xl lg:text-6xl mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                data-aos="fade-right"
-                data-aos-delay="1000"
+                className="text-lg lg:text-lg mt-10"
+                data-aos="fade"
+                data-aos-delay="3000"
+                data-aos-duration="1000"
               >
-                {t("intro-line4")}
+                {"(Yes, I'm kind of a minimalist too.)"}
               </p>
             </div>
-{/*             <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
-              <Image
-                src={icons.avatar}
-                alt="my photo"
-                priority
-                placeholder="blur"
-                className=" self-start h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                data-aos="fade-left"
-              />
-              <Image
-                src={icons.avatar2}
-                alt="my photo"
-                priority
-                placeholder="blur"
-                className=" self-end h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                data-aos="fade-left"
-              />
-            </div> */}
+          </div>
+          <div
+            className="flex items-center gap-10"
+            data-aos="fade-up"
+            data-aos-delay="2000"
+            data-aos-duration="1000"
+            data-aos-offset="-500"
+          >
+            <p className="text-lg">Let's find out more!</p>
+            <div className="scroll-downs">
+              <div className="mousey">
+                <div className="scroller"></div>
+              </div>
+            </div>
           </div>
         </section>
-        <div className="separator--d-to-l"></div>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
         <section
           id="bg-2"
-          className="h-screen w-full flex flex-col justify-between items-center bg-light py-20 md:py-0"
+          className="min-h-screen w-full px-10 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
-          <article className="my-auto px-2 max-w-4xl">
+          <article className="my-auto max-w-4xl">
             <h3
-              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed"
+              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
               data-aos="fade-up"
             >
               {t("section-2-heading")}
             </h3>
-            <p className="mb-8 text-xl" data-aos="fade-up">
+            <p className="mt-8 mb-8 text-xl" data-aos="fade-up">
               {t("section-2-instructions")}
             </p>
             {/* Frontend skills */}
@@ -225,21 +243,20 @@ export default function Home() {
             </div>
           </article>
         </section>
-        <div className="separator--l-to-d -mt-1"></div>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
         <section
           id="bg-3"
-          className="h-screen w-full px-2 flex flex-col justify-between items-center py-20 bg-dark"
+          className="min-h-screen w-full px-10 pt-32 md:py-10 flex flex-col justify-between items-center py-20 bg-dark"
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-6xl font-semibold leading-relaxed drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("section-3-heading")}
             </h3>
-            <p className="mt-4 text-xl max-w-4xl" data-aos="fade-up">
+            <p className="mt-8 text-xl max-w-4xl" data-aos="fade-up">
               {t("section-3-p1")}
             </p>
             <p className="mt-2 text-xl max-w-4xl" data-aos="fade-up">
@@ -250,20 +267,38 @@ export default function Home() {
               <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
           </article>
+{/*       <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
+              <Image
+                src={icons.avatar}
+                alt="my photo"
+                priority
+                placeholder="blur"
+                className=" self-start h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                data-aos="fade-left"
+              />
+              <Image
+                src={icons.avatar2}
+                alt="my photo"
+                priority
+                placeholder="blur"
+                className=" self-end h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                data-aos="fade-left"
+              />
+            </div> */}
         </section>
         {/* section 4: contacts */}
         <section
           id="bg-4"
-          className="h-screen w-full flex flex-row justify-center items-center py-20 px-10 md:py-0"
+          className="min-h-screen w-full flex flex-col md:flex-row gap-10 justify-center items-center py-20 px-10 md:py-0"
         >
-          <div className="flex flex-col w-[50%]">
+          <div className="flex flex-col md:w-[50%] max-w-4xl">
             <h3
-              className="text-7xl font-semibold leading-relaxed drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("contacts-heading")}
             </h3>
-            <p className="mt-5 text-2xl" data-aos="fade-up">
+            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-up">
               {t("contacts-p")}
             </p>
           </div>

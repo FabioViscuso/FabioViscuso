@@ -24,6 +24,7 @@ const App = ({ Component, pageProps }) => {
     router.events.on("routeChangeError", handleComplete);
 
     AOS.init({
+      startEvent: 'DOMContentLoaded',
       duration: 800,
       delay: 200,
       offset: 100,
