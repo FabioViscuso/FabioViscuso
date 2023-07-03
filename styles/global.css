@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url(spinner.css);
-@import url(rocket.css);
+@import url(animated-emojis.css);
 @import url(animated-mouse.css);
 @import url(fonts.css);
 
