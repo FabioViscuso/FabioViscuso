@@ -10,7 +10,7 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   // Variables to track touch positions
-  const [isSidebarClosed, setIsSidebarClosed] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const touchStartX = useRef(null);
 
   const handleTouchStart = (event) => {
@@ -21,14 +21,14 @@ export default function Layout({ children }: Props) {
     const distX = event.touches[0].pageX - touchStartX.current;
 
     if (Math.abs(distX) > 50) {
-      if (distX < 0 && isSidebarClosed) {
+      if (distX < 0 && isSidebarOpen) {
         // Swipe left
-        console.log('swipe left, should be true', isSidebarClosed);
-        setIsSidebarClosed(false);
-      } else if (distX > 0 && !isSidebarClosed) {
-        setIsSidebarClosed(true);
+        setIsSidebarOpen(false);
+        console.log('swipe left, should be true', isSidebarOpen, distX);
+      } else if (distX > 0 && !isSidebarOpen) {
+        setIsSidebarOpen(true);
         // Swipe right
-        console.log('swipe left, should be false', isSidebarClosed);
+        console.log('swipe left, should be false', isSidebarOpen, distX);
       }
     }
   };
@@ -56,14 +56,14 @@ export default function Layout({ children }: Props) {
         <meta name="og:title" content="Hello! That's me!" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <Navbar isOpen={isSidebarOpen} />
       <div
         className="h-full flex flex-col justify-between"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <Navbar isClosed={isSidebarClosed} />
         <div className="custom-cursor invisible md:visible"></div>
-        <>{children}</>
+        {children}
         <Footer />
       </div>
     </>
