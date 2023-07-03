@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import AOS from "aos";
 import { SkillIcon } from "../components/homepage/SkillIcon";
 import icons from "../components/ui/IconImport";
 // the function that copies text and triggers the copy pop-up
@@ -52,21 +51,21 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-1"
-          className=" h-dynHeight w-full px-8 py-4 md:py-10 flex flex-col items-center justify-between"
+          className="h-dynHeight w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
           <div className=" hidden md:block">{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-20">
             {/* introduction container */}
-            <div className="flex flex-col align-center justify-center lg:[flex-basis: 70%]">
-              {/* emoji + h1 container */}
+            <div className="flex flex-col align-center justify-center">
               <div
+                /* emoji + h1 container */
                 className="flex flex-col md:flex-row gap-2 relative"
                 data-aos="fade-right"
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <span className="waving-hand absolute -top-3 -left-8 sm:-top-5 sm:-left-12 text-4xl sm:text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
+                <span className="hidden md:block waving-hand absolute -top-3 -left-8 sm:-top-5 sm:-left-12 text-4xl sm:text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
                   👋
                 </span>
                 <h1 className="text-7xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
@@ -125,7 +124,7 @@ export default function Home() {
             data-aos-duration="1000"
             data-aos-offset="-500"
           >
-            <p className="text-lg">{t("intro-cta")}</p>
+            <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
             <a href="#bg-2" className="cursor-none">
               <div className="scroll-downs">
                 <div className="mousey">
@@ -139,7 +138,7 @@ export default function Home() {
         {/* second section: what can I do */}
         <section
           id="bg-2"
-          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center"
+          className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
             <h3
@@ -237,7 +236,7 @@ export default function Home() {
         {/* section 3: who am I */}
         <section
           id="bg-3"
-          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center"
+          className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
             <h3
@@ -279,7 +278,7 @@ export default function Home() {
         {/* section 4: contacts */}
         <section
           id="bg-4"
-          className="min-h-screen w-full flex flex-col md:flex-row gap-10 justify-center items-center py-20 px-8 md:py-0"
+          className="min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl">
             <h3

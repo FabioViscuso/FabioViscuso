@@ -1,7 +1,7 @@
 import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../navigation/Footer";
 import Navbar from "../navigation/Navbar";
-import { useEffect } from "react";
 import Aos from "aos";
 
 interface Props {
@@ -9,6 +9,25 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
+  const touchStartX = useRef(null);
+  // Variables to track touch positions
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSwipeGesture = (event) => {
+    const distX = event.changedTouches[0].pageX - touchStartX.current;
+
+    if (Math.abs(distX) > 50) {
+      // Swipe is horizontal
+      if (distX < 0) {
+        // Swipe left
+        setIsSidebarOpen(true);
+      } else {
+        // Swipe right
+        setIsSidebarOpen(false);
+      }
+    }
+  };
+
   useEffect(() => {
     Aos.refresh();
 
@@ -32,8 +51,17 @@ export default function Layout({ children }: Props) {
         <meta name="og:title" content="Hello! That's me!" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="h-full flex flex-col justify-between">
-        <Navbar />
+      <div
+        ref={touchStartX}
+        className="h-full flex flex-col justify-between"
+        onTouchStart={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          touchStartX.current = event.touches[0].pageX
+        }}
+        onTouchEnd={handleSwipeGesture}
+      >
+        <Navbar isOpen={isSidebarOpen} />
         <div className="custom-cursor invisible md:visible"></div>
         <>{children}</>
         <Footer />
