@@ -147,7 +147,7 @@ export default function Home() {
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
+              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
               data-aos="fade-up"
             >
               {t("section-2-heading")}
@@ -245,7 +245,7 @@ export default function Home() {
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("section-3-heading")}
@@ -287,7 +287,7 @@ export default function Home() {
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl">
             <h3
-              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("contacts-heading")}
