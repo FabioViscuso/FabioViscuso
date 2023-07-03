@@ -16,10 +16,10 @@ export default function Board({ postits, ...props }) {
         <meta name="description" content="post-it board page" />
       </Head>
       <main className="bg-notebook px-10 pt-24 md:pt-10 md:pr-52 bg-dark">
-        <h1 className="font-indieFlower text-8xl text-left md:text-center mb-10 drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
+        <h1 className="font-indieFlower text-8xl text-center mb-10 drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
           {t("board-header")}
         </h1>
-        <p className="font-indieFlower text-3xl text-left md:text-center mb-14">
+        <p className="font-indieFlower text-3xl text-center mb-14">
           {t("board-subhead")}
         </p>
         <div className="postit-grid justify-items-center gap-8 ">

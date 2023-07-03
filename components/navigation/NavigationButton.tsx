@@ -9,7 +9,7 @@ interface Props {
 export default function NavigationButton({ slug, content }: Props) {
   return (
     <Link href={slug}>
-      <button className="cursor-none w-16 h-16 text-3xl bg-slate-500 hover:bg-slate-800 rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all whitespace-nowrap">
+      <button className={`cursor-none w-16 h-16 text-3xl bg-slate-500 hover:bg-slate-800 rounded-full text-gray-800 hover:text-gray-300 font-semibold backdrop-blur-sm bg-opacity-50 transition-all whitespace-nowrap`}>
         {typeof content === "string" ? (
           content
         ) : (

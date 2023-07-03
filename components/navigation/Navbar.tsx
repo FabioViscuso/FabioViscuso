@@ -12,9 +12,11 @@ import { LanguageSelector } from "./LanguageSelector";
 export default function Navbar() {
   const router = useRouter();
   const { t } = useTranslation();
+  const homeCSSConfig = "fixed top-6 md:top-6 right-2 md:right-4 md:left-[unset] flex flex-col gap-5 justify-end lg:justify-end z-50";
+  const boardCSSConfig = "fixed top-2 md:top-6 left-0 right-0 md:right-2 md:left-[unset] flex lg:flex-col gap-5 justify-center lg:justify-end z-50";
 
   return (
-    <nav className="fixed top-2 md:top-6 right-1 md:right-2 md:left-[unset] flex flex-col gap-5 justify-end z-50">
+    <nav className={`${router.pathname === "/" ? homeCSSConfig : boardCSSConfig}`}>
       {/* Main nav layout */}
       {router.pathname !== "/" && <NavigationButton slug="/" content="🏠" />}
       {router.pathname !== "/board" && (
