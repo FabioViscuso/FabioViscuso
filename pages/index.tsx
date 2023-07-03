@@ -52,7 +52,7 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-1"
-          className="min-h-screen w-full px-8 py-4 md:py-10 flex flex-col items-center justify-between"
+          className=" h-dynHeight w-full px-8 py-4 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
           <div className=" hidden md:block">{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
@@ -132,11 +132,13 @@ export default function Home() {
             data-aos-offset="-500"
           >
             <p className="text-lg">{t("intro-cta")}</p>
-            <div className="scroll-downs">
-              <div className="mousey">
-                <div className="scroller"></div>
+            <a href="#bg-2" className="cursor-none">
+              <div className="scroll-downs">
+                <div className="mousey">
+                  <div className="scroller"></div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </section>
         {/* END OF: section 1: photo and introduction */}
