@@ -77,7 +77,7 @@ export default function NewPostitForm() {
       <Head>
         <meta name="description" content="page for adding a new post-it" />
       </Head>
-      <div className="bg-notebook min-h-screen flex flex-col gap-5 justify-center items-center">
+      <div className="bg-notebook min-h-screen flex flex-col gap-5 justify-center items-center pt-24">
         <h1 className="font-indieFlower text-6xl text-center drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
           {t("form-head")}
         </h1>
