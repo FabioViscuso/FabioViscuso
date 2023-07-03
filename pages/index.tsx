@@ -109,7 +109,7 @@ export default function Home() {
                 <AnimatedRocket />
               </div>
               <p
-                className="text-lg lg:text-lg mt-10"
+                className="text-sm mt-10"
                 data-aos="fade"
                 data-aos-delay="3000"
                 data-aos-duration="1000"
