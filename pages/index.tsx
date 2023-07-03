@@ -52,10 +52,10 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-1"
-          className="min-h-screen w-full px-10 py-4 md:py-10 flex flex-col items-center justify-between"
+          className="min-h-screen w-full px-8 py-4 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
-          <div>{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
+          <div className=" hidden md:block">{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-20">
             {/* introduction container */}
             <div className="flex flex-col align-center justify-center lg:[flex-basis: 70%]">
@@ -74,7 +74,7 @@ export default function Home() {
                 </h1>
               </div>
               <p
-                className="mt-12 text-2xl lg:text-4xl"
+                className="mt-12 text-xl lg:text-4xl"
                 data-aos="fade-right"
                 data-aos-delay="400"
                 data-aos-duration="1000"
@@ -82,7 +82,7 @@ export default function Home() {
                 {t("intro-line1")}
               </p>
               <p
-                className="text-2xl lg:text-4xl mt-3"
+                className="text-xl lg:text-4xl mt-3"
                 data-aos="fade-right"
                 data-aos-delay="600"
                 data-aos-duration="1000"
@@ -90,7 +90,7 @@ export default function Home() {
                 {t("intro-line2")}
               </p>
               <p
-                className="text-2xl lg:text-4xl mt-3"
+                className="text-xl lg:text-4xl mt-3"
                 data-aos="fade-right"
                 data-aos-delay="800"
                 data-aos-duration="1000"
@@ -143,7 +143,7 @@ export default function Home() {
         {/* second section: what can I do */}
         <section
           id="bg-2"
-          className="min-h-screen w-full px-10 pt-32 md:py-10 flex flex-col justify-between items-center"
+          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
             <h3
@@ -241,7 +241,7 @@ export default function Home() {
         {/* section 3: who am I */}
         <section
           id="bg-3"
-          className="min-h-screen w-full px-10 pt-32 md:py-10 flex flex-col justify-between items-center py-20 bg-dark"
+          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center py-20 bg-dark"
         >
           <article className="my-auto max-w-4xl">
             <h3
@@ -283,7 +283,7 @@ export default function Home() {
         {/* section 4: contacts */}
         <section
           id="bg-4"
-          className="min-h-screen w-full flex flex-col md:flex-row gap-10 justify-center items-center py-20 px-10 md:py-0"
+          className="min-h-screen w-full flex flex-col md:flex-row gap-10 justify-center items-center py-20 px-8 md:py-0"
         >
           <div className="flex flex-col md:w-[50%] max-w-4xl">
             <h3
