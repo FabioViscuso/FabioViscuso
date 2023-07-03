@@ -20,10 +20,7 @@ export default function Navbar({isOpen}) {
   return (
     <nav
       className={
-        `${router.pathname === "/" ? homeCSSConfig : boardCSSConfig}
-        ${isOpen ? "" : "-right-12 md:-right-12" }
-        transition-all
-      `}
+        `${router.pathname === "/" ? homeCSSConfig : boardCSSConfig} ${isOpen ? "" : "-right-12 md:-right-12" } transition-all`}
     >
       {/* Main nav layout */}
       {router.pathname !== "/" && <NavigationButton slug="/" content="🏠" />}
