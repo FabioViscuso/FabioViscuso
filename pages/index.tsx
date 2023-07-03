@@ -66,7 +66,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <span className="invisible md:visible absolute -top-5 -left-12 text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
+                <span className="waving-hand absolute -top-3 -left-8 sm:-top-5 sm:-left-12 text-4xl sm:text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
                   👋
                 </span>
                 <h1 className="text-7xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
