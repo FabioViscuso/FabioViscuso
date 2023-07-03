@@ -1,5 +1,6 @@
 // import images
 import avatar from '../../public/images/me.jpg';
+import avatar2 from '../../public/images/myself.jpg';
 import html5 from '../../public/icons/skills/html5.png';
 import css3 from '../../public/icons/skills/css3.png';
 import javascript from '../../public/icons/skills/javascript.png';
@@ -17,9 +18,12 @@ import git from '../../public/icons/skills/git.png';
 import vscode from '../../public/icons/skills/vscode.png';
 import flagit from '../../public/icons/flag-it.png';
 import flaguk from '../../public/icons/flag-gb.png';
+import github from '../../public/icons/github.png';
+import linkedin from '../../public/icons/linkedin.png';
 
 export const icons = {
     avatar,
+    avatar2,
     html5,
     css3,
     javascript,
@@ -36,7 +40,9 @@ export const icons = {
     git,
     vscode,
     flagit,
-    flaguk
+    flaguk,
+    github,
+    linkedin
 }
 
 export default icons;

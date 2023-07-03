@@ -16,13 +16,13 @@ export function LanguageSelector() {
     <button
       onClick={() => onToggleLanguageClick(changeTo)}
       title="language-switch"
-      className="flex justify-center items-center w-16 h-16 p-4 text-lg bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] hover:from-[#2dd4bfdd] hover:to-[#34d399dd] rounded-full text-gray-800 font-semibold backdrop-blur-sm bg-opacity-50 transition-all"
+      className="cursor-none flex justify-center items-center w-16 h-16 p-2 bg-slate-500 hover:bg-slate-900 rounded-full text-gray-800 backdrop-blur-sm bg-opacity-50 transition-all"
     >
       {router.locale === "en" && (
-        <Image src={icons.flagit} width={30} height={30} alt={""} />
+        <Image src={icons.flagit} width={40} height={40} alt={""} />
       )}
       {router.locale === "it" && (
-        <Image src={icons.flaguk} width={30} height={30} alt={""} />
+        <Image src={icons.flaguk} width={40} height={40} alt={""} />
       )}
     </button>
   );

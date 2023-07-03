@@ -14,7 +14,7 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed top-2 md:top-6 right-0 md:right-2 left-0 md:left-[unset] flex md:flex-col gap-5 justify-center md:justify-end z-50">
+    <nav className="fixed top-2 md:top-6 right-1 md:right-2 md:left-[unset] flex flex-col gap-5 justify-end z-50">
       {/* Main nav layout */}
       {router.pathname !== "/" && <NavigationButton slug="/" content="🏠" />}
       {router.pathname !== "/board" && (

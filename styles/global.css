@@ -3,47 +3,46 @@
 @tailwind utilities;
 
 @import url(spinner.css);
+@import url(animated-mouse.css);
+@import url(fonts.css);
 
-/** CUSTOM FONTS **/
-@font-face {
-  font-family: "Montserrat";
-  src: url("../public/fonts/montserrat/Montserrat-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../public/fonts/montserrat/Montserrat-SemiBold.ttf")
-    format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Indie Flower";
-  src: url("../public/fonts/indieflower/IndieFlower-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 /** GENERAL **/
 html,
 body {
+  cursor: none;
   min-height: 100vh;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #1c1c1c;
-  color: #eeeeee;
+  background-color: #d6d6d6;
+  color: #191919;
+  transition: all 2s ease;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Ensure the cursor doesn't interfere with mouse events */
+  z-index: 9999; /* Set a high value to ensure the cursor appears on top */
+  backdrop-filter: invert(70%);
+  /* Add any additional styling for the custom cursor, like the SVG background */
+  background-size: contain;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Abril Fatface';
+  letter-spacing: 4px;
+}
+
+p, span {
+  font-family: 'Spline Sans Mono';
 }
 
 ::selection {
-  background-color: #6ee7b7;
+  background-color: #e3e3e3;
   color: #1c1c1c;
 }
 
@@ -58,27 +57,33 @@ body {
   width: 10px; /* width of the entire scrollbar */
 }
 *::-webkit-scrollbar-track {
-  background: #1c1c1c; /* color of the tracking area */
-  border-radius: 10px;
+  background: #343434; /* color of the tracking area */
+  /* border-radius: 10px; */
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #5dd4e199; /* color of the scroll thumb */
+  background-color: #e2e2e2; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  border: 2px solid #1c1c1c;
+  border: 2px solid #343434;
 }
+
+.bg-common {
+  background-blend-mode: hard-light;
+  transition: all 2s ease;
+}
+.bg-1 {
+  background-color: #ffaaaa;
+}
+.bg-2 {
+  background-color: #b9e9ff;
+}
+.bg-3 {
+  background-color: #cfffd3;
+}
+.bg-4 {
+  background-color: #fff9ab;
+}
+
 @layer components {
-  .bg-dark {
-    background: linear-gradient(to bottom,#1c1c1c, #1c1c1c), url(../public/images/noise.svg);
-    background-blend-mode: hard-light;
-    color: #eeeeee;
-  }
-
-  .bg-light {
-    background: linear-gradient(to bottom,#e2e2e2, #e2e2e2), url(../public/images/noise.svg);
-    background-blend-mode: hard-light;
-    color: #1c1c1c;
-  }
-
   .main-text-gradient {
     background-clip: text;
     -webkit-background-clip: text;
@@ -88,23 +93,6 @@ body {
 
   /** HOMEPAGE **/
   /* Those are the divs that transition from the dark page to the light one and viceversa */
-  .separator--d-to-l,
-  .separator--l-to-d {
-    height: 6rem;
-    width: 100%;
-    margin-bottom: -1px;
-    padding: 30px 0;
-  }
-  .separator--d-to-l {
-    background: linear-gradient(to bottom, #303030 50%, #bbbbbb 51%),
-      url(../public/images/noise.svg);
-    background-blend-mode: hard-light;
-  }
-  .separator--l-to-d {
-    background: linear-gradient(to bottom, #bbbbbb 50%, #303030 51%),
-      url(../public/images/noise.svg);
-    background-blend-mode: hard-light;
-  }
   .img-border {
     border: 6px solid transparent !important;
   }
