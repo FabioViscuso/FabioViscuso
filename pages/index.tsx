@@ -69,7 +69,7 @@ export default function Home() {
                 <span className="invisible md:visible absolute -top-5 -left-12 text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
                   👋
                 </span>
-                <h1 className="text-8xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
+                <h1 className="text-7xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
                   {t("greeting")}
                 </h1>
               </div>
@@ -99,7 +99,7 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-6">
                 <p
-                  className="text-2xl underline lg:text-6xl mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                  className="text-2xl lg:text-6xl underline mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
                   data-aos="fade-right"
                   data-aos-delay="1000"
                   data-aos-duration="1000"
@@ -107,7 +107,7 @@ export default function Home() {
                   {t("intro-line4")}
                 </p>
                 <p 
-                  className="text-6xl drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                  className="text-3xl lg:text-6xl drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
                   data-aos="fade-up-right"
                   data-aos-delay="1000"
                 >
