@@ -147,7 +147,7 @@ export default function Home() {
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
+              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
               data-aos="fade-up"
             >
               {t("section-2-heading")}
@@ -241,11 +241,11 @@ export default function Home() {
         {/* section 3: who am I */}
         <section
           id="bg-3"
-          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center py-20 bg-dark"
+          className="min-h-screen w-full px-8 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("section-3-heading")}
@@ -285,9 +285,9 @@ export default function Home() {
           id="bg-4"
           className="min-h-screen w-full flex flex-col md:flex-row gap-10 justify-center items-center py-20 px-8 md:py-0"
         >
-          <div className="flex flex-col md:w-[50%] max-w-4xl">
+          <div className="flex flex-col md:w-[50%] md:max-w-4xl">
             <h3
-              className="text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("contacts-heading")}
