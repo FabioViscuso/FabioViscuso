@@ -9,21 +9,26 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  const touchStartX = useRef(null);
   // Variables to track touch positions
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarClosed, setIsSidebarClosed] = useState(false);
+  const touchStartX = useRef(null);
 
-  const handleSwipeGesture = (event) => {
-    const distX = event.changedTouches[0].pageX - touchStartX.current;
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].pageX;
+  };
+
+  const handleTouchMove = (event) => {
+    const distX = event.touches[0].pageX - touchStartX.current;
 
     if (Math.abs(distX) > 50) {
-      // Swipe is horizontal
-      if (distX < 0) {
+      if (distX < 0 && isSidebarClosed) {
         // Swipe left
-        setIsSidebarOpen(true);
-      } else {
+        console.log('swipe left, should be true', isSidebarClosed);
+        setIsSidebarClosed(false);
+      } else if (distX > 0 && !isSidebarClosed) {
+        setIsSidebarClosed(true);
         // Swipe right
-        setIsSidebarOpen(false);
+        console.log('swipe left, should be false', isSidebarClosed);
       }
     }
   };
@@ -52,16 +57,11 @@ export default function Layout({ children }: Props) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div
-        ref={touchStartX}
         className="h-full flex flex-col justify-between"
-        onTouchStart={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          touchStartX.current = event.touches[0].pageX
-        }}
-        onTouchEnd={handleSwipeGesture}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
-        <Navbar isOpen={isSidebarOpen} />
+        <Navbar isClosed={isSidebarClosed} />
         <div className="custom-cursor invisible md:visible"></div>
         <>{children}</>
         <Footer />

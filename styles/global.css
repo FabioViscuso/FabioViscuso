@@ -27,9 +27,8 @@ body {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none; /* Ensure the cursor doesn't interfere with mouse events */
-  z-index: 9999; /* Set a high value to ensure the cursor appears on top */
+  z-index: 9999;
   backdrop-filter: invert(70%);
-  /* Add any additional styling for the custom cursor, like the SVG background */
   background-size: contain;
 }
 
@@ -103,12 +102,6 @@ span {
 }
 
 @layer components {
-  .main-text-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to bottom right, #0ea5e9, #6ee7b7);
-  }
 
   /** HOMEPAGE **/
   /* Those are the divs that transition from the dark page to the light one and viceversa */
