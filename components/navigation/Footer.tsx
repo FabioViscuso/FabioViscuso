@@ -8,7 +8,7 @@ export default function Footer() {
   const router = useRouter();
 
   return (
-    <div className={`${(router.pathname === "/board" || "/new-postit") ? "bg-notebook " : " "} flex flex-col items-center py-10 px-4 bg-dark text-center`}>
+    <div className={`${(router.pathname === "/board" || router.pathname === "/new-postit") ? "bg-notebook " : " "} flex flex-col items-center py-10 px-4 bg-dark text-center`}>
       <p>
         {t("footer-main")}
         <a
