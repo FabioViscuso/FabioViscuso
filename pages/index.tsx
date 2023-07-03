@@ -126,7 +126,7 @@ export default function Home() {
                 data-aos-delay="3000"
                 data-aos-duration="1000"
               >
-                {"(Yes, I'm kind of a minimalist too.)"}
+                {""}
               </p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Home() {
             data-aos-duration="1000"
             data-aos-offset="-500"
           >
-            <p className="text-lg">Let's find out more!</p>
+            <p className="text-lg">{t("intro-cta")}</p>
             <div className="scroll-downs">
               <div className="mousey">
                 <div className="scroller"></div>
