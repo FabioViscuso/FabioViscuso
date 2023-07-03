@@ -1,8 +1,8 @@
 {
     "greeting": "Hello! I'm Fabio!",
     "intro-line1": "I'm a full-stack developer,",
-    "intro-line2": "I like to build awesome stuff,",
-    "intro-line3": "and we could build the next big thing",
+    "intro-line2": "and I love to create amazing experiences.",
+    "intro-line3": "Let's build the next big thing",
     "intro-line4": "together! 🚀",
     "section-2-heading": "What can I do?",
     "section-2-instructions": "My curiosity and passion ranges across a variety of topics and project types. Be it a modern e-commerce, the next trendy webapp, a catchy landing page, or the backend of a product that users love, I love to leave my mark and do my part to give value to users and clients.",
@@ -14,6 +14,6 @@
     "section-3-p3": "My hobbies? Here you go:",
     "contacts-heading": "Want to reach out?",
     "contacts-p": "Be my guest! Check out my Github and LinkedIn profiles, or click my contacts to copy them automatically. Woah, magic!",
-    "copied-mail": "Email copied!",
-    "copied-phone": "Phone number copied!"
+    "copied-mail": "Copied!",
+    "copied-phone": "Copied!"
 }

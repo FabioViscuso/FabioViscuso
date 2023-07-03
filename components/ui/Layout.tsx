@@ -9,7 +9,6 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Navbar />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -21,7 +20,9 @@ export default function Layout({ children }: Props) {
         <meta name="og:title" content="Hello! That's me!" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="h-full flex flex-col justify-between text-center md:text-left">
+      <div className="h-full flex flex-col justify-between">
+        <Navbar />
+        <div className="custom-cursor"></div>
         <>{children}</>
         <Footer />
       </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import AOS from "aos";
-import { IconSkill } from "../components/homepage/SkillIcon";
+import { SkillIcon } from "../components/homepage/SkillIcon";
 import icons from "../components/ui/IconImport";
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from "../lib/useCopyHandler";
@@ -15,8 +15,38 @@ import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
 export default function Home() {
   const { t } = useTranslation("page-home");
 
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // Adjust the threshold as needed
+  };
+  const handleIntersect = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        document.body.className = `bg-common ${sectionId}`;
+      }
+    });
+  };
+
   useEffect(() => {
     AOS.refresh();
+
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.custom-cursor') as HTMLElement;
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const sectionElements = document.querySelectorAll("section");
+
+    sectionElements.forEach((section) => {
+      observer.observe(section);
+    });
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -26,111 +56,165 @@ export default function Home() {
       </Head>
       <main className="flex flex-col justify-center items-center h-full">
         {/* section 1: photo and introduction */}
-        <section className="min-h-[calc(100vh-6rem)] py-24 md:pt-0 w-full flex flex-col items-center bg-dark">
+        <section
+          id="bg-1"
+          className="h-screen py-24 md:pt-0 w-full flex flex-col items-center justify-center bg-dark"
+        >
           {/* inner container */}
-          <div
-            className="flex flex-col md:flex-row justify-center items-center gap-10 px-2 my-auto"
-            data-aos="fade-up"
-          >
-            <Image
-              src={icons.avatar}
-              alt="my photo"
-              priority
-              placeholder="blur"
-              className="h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-sky-500 to-emerald-300"
-            />
+          <div className="flex flex-col md:flex-row justify-center items-center gap-20 px-20">
             {/* introduction container */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col align-center justify-center lg:[flex-basis: 70%]">
               {/* emoji + h1 container */}
-              <div className="flex flex-col md:flex-row items-center gap-2">
-                <span className="text-4xl self-center md:self-start">👋</span>
-                <h1 className="text-4xl lg:text-6xl font-semibold main-text-gradient">
+              <div
+                className="flex flex-col md:flex-row gap-2 relative"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <span className="absolute -top-4 -left-14 text-4xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
+                  👋
+                </span>
+                <h1 className="text-6xl lg:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
                   {t("greeting")}
                 </h1>
               </div>
-              <h2 className="text-2xl lg:text-3xl text-center mt-3">
+              <p
+                className="mt-12 text-2xl lg:text-5xl"
+                data-aos="fade-right"
+                data-aos-delay="400"
+              >
                 {t("intro-line1")}
-              </h2>
-              <h2 className="text-2xl lg:text-3xl text-center mt-3">
+              </p>
+              <p
+                className="text-2xl lg:text-5xl mt-3"
+                data-aos="fade-right"
+                data-aos-delay="600"
+              >
                 {t("intro-line2")}
-              </h2>
-              <h2 className="text-2xl lg:text-3xl text-center mt-3">
+              </p>
+              <p
+                className="text-2xl lg:text-5xl mt-3"
+                data-aos="fade-right"
+                data-aos-delay="800"
+              >
                 {t("intro-line3")}
-              </h2>
-              <h2 className="text-2xl lg:text-3xl text-center mt-3">
+              </p>
+              <p
+                className="text-2xl lg:text-6xl mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                data-aos="fade-right"
+                data-aos-delay="1000"
+              >
                 {t("intro-line4")}
-              </h2>
+              </p>
             </div>
+{/*             <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
+              <Image
+                src={icons.avatar}
+                alt="my photo"
+                priority
+                placeholder="blur"
+                className=" self-start h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                data-aos="fade-left"
+              />
+              <Image
+                src={icons.avatar2}
+                alt="my photo"
+                priority
+                placeholder="blur"
+                className=" self-end h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                data-aos="fade-left"
+              />
+            </div> */}
           </div>
         </section>
         <div className="separator--d-to-l"></div>
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
-        <section className="min-h-screen w-full flex flex-col justify-between items-center h-full bg-light py-20 md:py-0">
-          <article className="my-auto px-2 max-w-4xl" data-aos="fade-up">
-            <h3 className="text-6xl font-semibold main-text-gradient drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed text-center">
+        <section
+          id="bg-2"
+          className="h-screen w-full flex flex-col justify-between items-center bg-light py-20 md:py-0"
+        >
+          <article className="my-auto px-2 max-w-4xl">
+            <h3
+              className="text-6xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-relaxed"
+              data-aos="fade-up"
+            >
               {t("section-2-heading")}
             </h3>
-            <p className="mb-8 text-xl"> {t("section-2-instructions")}</p>
+            <p className="mb-8 text-xl" data-aos="fade-up">
+              {t("section-2-instructions")}
+            </p>
             {/* Frontend skills */}
-            <p className="text-xl">{t("section-2-skills")}</p>
-            <div className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10">
-              <IconSkill src={icons.html5} alt="html5" label="HTML5" />
-              <IconSkill src={icons.css3} alt="css3" label="CSS3" />
-              <IconSkill
+            <p className="text-xl" data-aos="fade-up">
+              {t("section-2-skills")}
+            </p>
+            <div
+              className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10"
+              data-aos="fade-up"
+            >
+              <SkillIcon src={icons.html5} alt="html5" label="HTML5" />
+              <SkillIcon src={icons.css3} alt="css3" label="CSS3" />
+              <SkillIcon
                 src={icons.javascript}
                 alt="javascript"
                 label="JavaScript ES6+"
               />
-              <IconSkill src={icons.react} alt="react" label="React" />
-              <IconSkill src={icons.next} alt="next" label="Next.js" />
-              <IconSkill
+              <SkillIcon src={icons.react} alt="react" label="React" />
+              <SkillIcon src={icons.next} alt="next" label="Next.js" />
+              <SkillIcon
                 src={icons.bootstrap}
                 alt="bootstrap"
                 label="Bootstrap 4/5"
               />
-              <IconSkill
+              <SkillIcon
                 src={icons.tailwind}
                 alt="tailwind"
                 label="TailwindCSS"
               />
-              <IconSkill src={icons.nodejs} alt="nodejs" label="NodeJS" />
-              <IconSkill
+              <SkillIcon src={icons.nodejs} alt="nodejs" label="NodeJS" />
+              <SkillIcon
                 src={icons.express}
                 alt="express"
                 label="Express 4.17+"
               />
-              <IconSkill src={icons.sql} alt="postgresql" label="PostgreSQL" />
-              <IconSkill
+              <SkillIcon
+                src={icons.sql}
+                alt="postgresql"
+                label="PostgreSQL"
+                additionalCSS="rounded-none"
+              />
+              <SkillIcon
                 src={icons.mongodb}
                 alt="mongoDB"
                 label="MongoDB"
                 additionalCSS="bg-green-200"
               />
-              <IconSkill
+              <SkillIcon
                 src={icons.prisma}
                 alt="prisma"
                 label="Prisma ORM"
                 additionalCSS="rounded-none"
               />
-              <IconSkill
+              <SkillIcon
                 src={icons.git}
                 alt="git"
                 label="Git (& GitHub/GitLab)"
               />
-              <IconSkill
+              <SkillIcon
                 src={icons.vscode}
                 alt="vs code"
                 label="Visual Studio Code"
               />
-              <IconSkill
+              <SkillIcon
                 src={icons.typescript}
                 alt="typescript"
                 label="TypeScript"
               />
             </div>
             {/* the CV part */}
-            <div className="flex gap-10 flex-col md:flex-row items-center md:items-stretch">
+            <div
+              className="flex gap-10 flex-col md:flex-row items-center md:items-stretch"
+              data-aos="fade-up"
+            >
               <p className="mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center">
                 {t("section-2-cv")}
               </p>
@@ -144,111 +228,114 @@ export default function Home() {
         <div className="separator--l-to-d -mt-1"></div>
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
-        <section className="min-h-screen w-full px-2 flex flex-col justify-between items-center py-20 bg-dark">
-          <article className="my-auto max-w-4xl" data-aos="fade-up">
-            <h3 className="text-6xl font-semibold main-text-gradient leading-relaxed text-center">
+        <section
+          id="bg-3"
+          className="h-screen w-full px-2 flex flex-col justify-between items-center py-20 bg-dark"
+        >
+          <article className="my-auto max-w-4xl">
+            <h3
+              className="text-6xl font-semibold leading-relaxed drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              data-aos="fade-up"
+            >
               {t("section-3-heading")}
             </h3>
-            <p className="mt-4 text-xl max-w-4xl">{t("section-3-p1")}</p>
-            <p className="mt-2 text-xl max-w-4xl">{t("section-3-p2")}</p>
-            <p className="mt-2 text-xl max-w-4xl">
+            <p className="mt-4 text-xl max-w-4xl" data-aos="fade-up">
+              {t("section-3-p1")}
+            </p>
+            <p className="mt-2 text-xl max-w-4xl" data-aos="fade-up">
+              {t("section-3-p2")}
+            </p>
+            <p className="mt-2 text-xl max-w-4xl" data-aos="fade-up">
               {t("section-3-p3")}{" "}
               <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
-
-            <h3 className="mt-28 text-6xl font-semibold main-text-gradient leading-relaxed text-center">
-              {t("contacts-heading")}
-            </h3>
-            <p className="mt-5 text-xl">{t("contacts-p")}</p>
-            <ul className="mt-8 flex flex-col md:flex-row items-center gap-10 flex-wrap">
-              {/* Github button */}
-              <li className="flex items-center">
-                <a
-                  href="https://github.com/FabioViscuso"
-                  className="inline-block rounded-full icon-shadow"
-                >
-                  <Image
-                    src={"/icons/github.png"}
-                    width={50}
-                    height={50}
-                    alt={"github link"}
-                  ></Image>
-                </a>
-              </li>
-              {/* LinkedIn button */}
-              <li className="flex items-center">
-                <a
-                  href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
-                  className="inline-block rounded-md icon-shadow"
-                >
-                  <Image
-                    src={"/icons/linkedin.png"}
-                    width={50}
-                    height={50}
-                    alt={"github link"}
-                  ></Image>
-                </a>
-              </li>
-              {/* email */}
-              <li className="relative z-20 flex flex-col sm:flex-row items-center text-2xl">
-                <a
-                  href="mailto:viscuso.fabio@outlook.it"
-                  className={"inline-block rounded-md icon-shadow"}
-                >
-                  <Image
-                    src={"/icons/mail.png"}
-                    width={50}
-                    height={50}
-                    alt={"github link"}
-                    className={"bg-white rounded-md"}
-                  />
-                </a>
-                <p
-                  id="emailAddressPopup"
-                  className="pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1"
-                >
-                  {t("copied-mail")}
-                </p>
-                <span
-                  onClick={onCopyHandler}
-                  id={"emailAddress"}
-                  className="ml-2 cursor-pointer hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400"
-                >
-                  viscuso.fabio@outlook.it
-                </span>
-              </li>
-              {/* phone number */}
-              <li className="relative z-20 flex flex-col sm:flex-row items-center text-2xl">
-                <div
-                  className={
-                    "inline-block rounded-md icon-shadow hover:cursor-pointer"
-                  }
-                >
-                  <Image
-                    src={"/icons/smartphone.png"}
-                    width={50}
-                    height={50}
-                    alt={"github link"}
-                    className={"bg-white rounded-md"}
-                  />
-                </div>
-                <p
-                  id="phoneNumberPopup"
-                  className="pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg z-0 transition-all bg-[#1c1c1c99] rounded-md p-1"
-                >
-                  {t("copied-phone")}
-                </p>
-                <span
-                  onClick={onCopyHandler}
-                  id="phoneNumber"
-                  className="ml-2 hover:cursor-pointer hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-teal-400 to-emerald-400"
-                >
-                  +39 351 996 6861
-                </span>
-              </li>
-            </ul>
           </article>
         </section>
+        {/* section 4: contacts */}
+        <section
+          id="bg-4"
+          className="h-screen w-full flex flex-row justify-center items-center py-20 px-10 md:py-0"
+        >
+          <div className="flex flex-col w-[50%]">
+            <h3
+              className="text-7xl font-semibold leading-relaxed drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              data-aos="fade-up"
+            >
+              {t("contacts-heading")}
+            </h3>
+            <p className="mt-5 text-2xl" data-aos="fade-up">
+              {t("contacts-p")}
+            </p>
+          </div>
+          <ul
+            className="flex flex-col items-center gap-10 flex-wrap"
+            data-aos="fade-up"
+          >
+            {/* Github button */}
+            <li className="flex items-center">
+              <a
+                href="https://github.com/FabioViscuso"
+                className="cursor-none inline-block hover:scale-110 transition-transform"
+                target="_blank"
+              >
+                <Image
+                  src={icons.github}
+                  width={60}
+                  height={60}
+                  alt={"github link"}
+                ></Image>
+              </a>
+            </li>
+            {/* LinkedIn button */}
+            <li className="flex items-center">
+              <a
+                href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
+                className="cursor-none inline-block [filter:brightness(0.15)] hover:scale-110 transition-transform"
+                target="_blank"
+              >
+                <Image
+                  src={icons.linkedin}
+                  width={60}
+                  height={60}
+                  alt={"linkedin link"}
+                ></Image>
+              </a>
+            </li>
+            {/* email */}
+            <li className="relative z-20 flex flex-col sm:flex-row items-center text-2xl">
+              <p
+                id="emailAddressPopup"
+                className="pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg text-center z-0 transition-all bg-[#1c1c1c99] rounded-md p-1"
+              >
+                {t("copied-mail")}
+              </p>
+              <span
+                onClick={onCopyHandler}
+                id={"emailAddress"}
+                className="hover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              >
+                viscuso.fabio@outlook.it
+              </span>
+            </li>
+            {/* phone number */}
+            <li className="relative z-20 flex flex-col sm:flex-row items-center text-2xl">
+              <p
+                id="phoneNumberPopup"
+                className="pointer-events-none absolute invisible top-6 opacity-0 right-0 text-lg text-center z-0 transition-all bg-[#1c1c1c99] rounded-md p-1"
+              >
+                {t("copied-phone")}
+              </p>
+              <span
+                onClick={onCopyHandler}
+                id="phoneNumber"
+                className="-mt-3 hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              >
+                +39 351 996 6861
+              </span>
+            </li>
+          </ul>
+        </section>
+        {/* END OF section 4: contacts */}
       </main>
     </>
   );

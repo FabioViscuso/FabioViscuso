@@ -7,13 +7,13 @@ interface Props {
   additionalCSS?: string | null;
 }
 
-export function IconSkill({ src, alt, label, additionalCSS }: Props) {
+export function SkillIcon({ src, alt, label, additionalCSS }: Props) {
   return (
-    <div className="relative skills-icon cursor-pointer">
+    <div className="relative skills-icon">
       <Image
         src={src}
         alt={alt}
-        className={`rounded-full h-14 w-14 ${additionalCSS || ""}`}
+        className={`rounded-full h-14 w-14 drop-shadow-[0px_0px_1px_rgb(0,0,0)] hover:scale-110 transition-transform ${additionalCSS || ""}`}
       />
       <p className="skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2">
         {label}

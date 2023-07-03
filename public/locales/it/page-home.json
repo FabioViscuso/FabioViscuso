@@ -1,8 +1,8 @@
 {
     "greeting": "Ciao! Sono Fabio!",
-    "intro-line1": "Sono uno sviluppatore full-stack,",
-    "intro-line2": "mi piace costruire progetti fantastici,",
-    "intro-line3": "e potremmo costruire il prossimo",
+    "intro-line1": "Sono uno sviluppatore full-stack",
+    "intro-line2": "e mi piace creare esperienze fantastiche.",
+    "intro-line3": "Costruiamo la prossima",
     "intro-line4": "insieme! 🚀",
     "section-2-heading": "Cosa so fare?",
     "section-2-instructions": "La mia passione e la mia curiosità si estendono su varie tipologie di progetti. Che sia un e-commerce all'ultimo grido, la webapp del momento, una landing page che non passa inosservata, o il backend di un prodotto che gli utenti amano, amo lasciare il segno e fare la mia parte nel dare valore ai clienti e agli utenti finali.",
@@ -14,6 +14,6 @@
     "section-3-p3": "I miei hobby? Ecco qua:",
     "contacts-heading": "Vuoi scambiare due chiacchiere?",
     "contacts-p": "Accomodati! Visita i miei profili GitHub e LinkedIn, o clicca sui miei contatti per copiarli automaticamente. Magia!",
-    "copied-mail": "Email copiata!",
-    "copied-phone": "Numero copiato!"
+    "copied-mail": "Copiata!",
+    "copied-phone": "Copiato!"
 }
