@@ -86,7 +86,7 @@ export default function NewPostitForm() {
           onSubmit={submitHandler}
         >
           <div
-            className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words shadow-lg`}
+            className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words shadow-lg transition-all`}
           >
             <input
               name="title"

@@ -11,11 +11,12 @@ export default function Footer() {
     <div className={`${(router.pathname === "/board" || router.pathname === "/new-postit") ? "bg-notebook " : " "} flex flex-col items-center py-10 px-4 bg-dark text-center`}>
       <p>
         {t("footer-main")}
+        &nbsp;
         <a
-          className="inline-block font-bold underline hover:scale-[1.1] hover:mx-2 transition-all"
+          className="inline-block font-bold underline hover:scale-[1.1] hover:mx-2 transition-all whitespace-nowrap"
           href="https://github.com/FabioViscuso/FabioViscuso"
         >
-          &nbsp;{t("footer-link")}
+          {t("footer-link")}
         </a>
         !
       </p>
