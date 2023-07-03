@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         indieFlower: ['Indie Flower', 'sans-serif']
+      },
+      height: {
+        dynHeight: '100dvh' 
       }
     },
   },
