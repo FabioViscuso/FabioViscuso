@@ -27,27 +27,21 @@ export default function Home() {
         document.body.className = `bg-common ${sectionId}`;
       }
     });
+
   };
-
-  useEffect(() => {
-    AOS.refresh();
-
-    document.addEventListener("mousemove", (e) => {
-      const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-    });
-
+  
+  useEffect(()=> {
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
     const sectionElements = document.querySelectorAll("section");
-
+    
     sectionElements.forEach((section) => {
       observer.observe(section);
     });
+    
     return () => {
       observer.disconnect();
     };
-  });
+  })
 
   return (
     <>

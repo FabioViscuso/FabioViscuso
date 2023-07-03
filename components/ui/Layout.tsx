@@ -1,12 +1,24 @@
 import Head from "next/head";
 import Footer from "../navigation/Footer";
 import Navbar from "../navigation/Navbar";
+import { useEffect } from "react";
+import Aos from "aos";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
 export default function Layout({ children }: Props) {
+  useEffect(() => {
+    Aos.refresh();
+
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.querySelector(".custom-cursor") as HTMLElement;
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+  });
+
   return (
     <>
       <Head>

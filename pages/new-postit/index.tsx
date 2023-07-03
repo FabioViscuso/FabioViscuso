@@ -77,8 +77,8 @@ export default function NewPostitForm() {
       <Head>
         <meta name="description" content="page for adding a new post-it" />
       </Head>
-      <div className="bg-dark h-full flex flex-col gap-5 justify-center items-center pt-24 md:pt-10">
-        <h1 className="text-5xl main-text-gradient text-center leading-relaxed">
+      <div className="bg-notebook min-h-screen flex flex-col gap-5 justify-center items-center pt-24 md:pt-10">
+        <h1 className="text-6xl text-center drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
           {t("form-head")}
         </h1>
         <form
@@ -86,7 +86,7 @@ export default function NewPostitForm() {
           onSubmit={submitHandler}
         >
           <div
-            className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words`}
+            className={`flex flex-col gap-2 p-5 w-64 h-64 bg-[${formData.colorSelect}] font-indieFlower break-words shadow-lg`}
           >
             <input
               name="title"
@@ -117,11 +117,10 @@ export default function NewPostitForm() {
               placeholder={t("form-placehldr-3")}
             ></textarea>
           </div>
-
-          <p className="text-xl">{t("form-colorpick")}</p>
           <fieldset
             onChange={(e) => inputChangeHandler(e)}
-            className="flex flex-wrap gap-5 md:gap-8 h-10"
+            className="mt-8 flex flex-wrap gap-5 md:gap-8 h-10 cursor-none"
+            title="color picker"
           >
             <div className="flex flex-col items-center relative">
               <input
@@ -185,7 +184,7 @@ export default function NewPostitForm() {
               ></label>
             </div>
           </fieldset>
-          <button className="text-lg bg-gradient-to-bl from-teal-400 to-emerald-400 px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold">
+          <button className={`cursor-none font-indieFlower text-lg bg-[${formData.colorSelect}] px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold border border-slate-400 hover:scale-110 transition-all`}>
             {t("form-submit")}
           </button>
         </form>
