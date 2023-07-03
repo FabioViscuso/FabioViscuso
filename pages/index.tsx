@@ -11,6 +11,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import translation function
 import { useTranslation } from "next-i18next";
 import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
+import AnimatedRocket from "../components/homepage/AnimatedRocket";
 
 export default function Home() {
   const { t } = useTranslation("page-home");
@@ -27,9 +28,8 @@ export default function Home() {
         document.body.className = `bg-common ${sectionId}`;
       }
     });
-
   };
-  
+
   useEffect(()=> {
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
     const sectionElements = document.querySelectorAll("section");
@@ -106,13 +106,7 @@ export default function Home() {
                 >
                   {t("intro-line4")}
                 </p>
-                <p 
-                  className="text-3xl lg:text-6xl drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                  data-aos="fade-up-right"
-                  data-aos-delay="1000"
-                >
-                  🚀
-                </p>
+                <AnimatedRocket />
               </div>
               <p
                 className="text-lg lg:text-lg mt-10"
@@ -149,7 +143,7 @@ export default function Home() {
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
+              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
               data-aos="fade-up"
             >
               {t("section-2-heading")}
@@ -247,7 +241,7 @@ export default function Home() {
         >
           <article className="my-auto max-w-4xl">
             <h3
-              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("section-3-heading")}
@@ -289,7 +283,7 @@ export default function Home() {
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl">
             <h3
-              className="text-5xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               data-aos="fade-up"
             >
               {t("contacts-heading")}

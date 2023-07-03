@@ -1,0 +1,29 @@
+.fly {
+  transform: translate(0, 0);
+  transition: all 1s ease-in-out;
+  animation: flyAwayAnimation 2s ease-in-out;
+}
+
+@keyframes flyAwayAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(-50px, 50px);
+    }
+    70% {
+        transform: translate(999px, -999px);
+    }
+    71% {
+        transform: translate(999px, -999px);
+    }
+    72% {
+        transform: translate(999px, 999px);
+    }
+    73% {
+        transform: translate(-999px, 999px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
