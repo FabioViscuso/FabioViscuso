@@ -38,7 +38,7 @@ const App = ({ Component, pageProps }) => {
       router.events.off("routeChangeComplete", handleComplete);
       router.events.off("routeChangeError", handleComplete);
     };
-  }, []);
+  }, [router.events]);
 
   return (
     <>

@@ -22,7 +22,7 @@ export default function Layout({ children }: Props) {
       </Head>
       <div className="h-full flex flex-col justify-between">
         <Navbar />
-        <div className="custom-cursor"></div>
+        <div className="custom-cursor invisible md:visible"></div>
         <>{children}</>
         <Footer />
       </div>
