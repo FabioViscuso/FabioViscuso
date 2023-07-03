@@ -15,6 +15,7 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #d6d6d6;
   color: #191919;
+  scroll-behavior: smooth;
   transition: all 2s ease;
 }
 
