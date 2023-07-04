@@ -273,8 +273,8 @@ export default function Home() {
           id="bg-4"
           className=" min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
         >
-          <div className="flex flex-col md:w-[50%] md:max-w-4xl">
-            <Heading content={t("contacts-heading")} additionalCSS={' break-all '} />
+          <div className="flex flex-col md:w-[50%] md:max-w-4xl ">
+            <Heading content={t("contacts-heading")} additionalCSS={' break-all lg:break-normal '} />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-up">
               {t("contacts-p")}
             </p>
@@ -324,7 +324,7 @@ export default function Home() {
               <span
                 onClick={onCopyHandler}
                 id={"emailAddress"}
-                className=" text-xl md:text-3xlhover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               >
                 viscuso.fabio@outlook.it
               </span>
