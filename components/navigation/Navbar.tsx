@@ -17,7 +17,7 @@ export default function Navbar({isOpen}) {
   return (
     <nav
       className={
-        `fixed z-50 top-6 lg:right-10 ${isOpen ? " -right-12 " : " right-4 sm:right-4 " } flex flex-col gap-5 justify-end  transition-all`}
+        `fixed z-50 top-6 lg:right-10 ${isOpen ? " right-4 sm:right-4 " : " -right-12 " } flex flex-col gap-5 justify-end  transition-all`}
     >
       {/* Main nav layout */}
       {router.pathname !== "/" && <NavigationButton slug="/" content="🏠" />}

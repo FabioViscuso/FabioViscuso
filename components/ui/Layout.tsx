@@ -21,12 +21,12 @@ export default function Layout({ children }: Props) {
     const distX = event.touches[0].pageX - touchStartX.current;
 
     if (Math.abs(distX) > 50) {
-      if (distX < 0 && isSidebarOpen) {
+      if (distX < 0 && !isSidebarOpen) {
         // Swipe left
-        setIsSidebarOpen(false);
         console.log('swipe left, should be true', isSidebarOpen, distX);
-      } else if (distX > 0 && !isSidebarOpen) {
         setIsSidebarOpen(true);
+      } else if (distX > 0 && isSidebarOpen) {
+        setIsSidebarOpen(false);
         // Swipe right
         console.log('swipe left, should be false', isSidebarOpen, distX);
       }
