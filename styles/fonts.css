@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Abril Fatface";
-  src: url("../public/fonts/abril/AbrilFatface-Regular.ttf") format("truetype");
-  font-weight: 600;
+  font-family: "TT Travels";
+  src: url("../public/fonts/tttravels/TT-Travels-Next-Trial-Bold.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
