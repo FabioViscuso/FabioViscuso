@@ -12,8 +12,6 @@ import { LanguageSelector } from "./LanguageSelector";
 export default function Navbar({isOpen}) {
   const router = useRouter();
   // const { t } = useTranslation(); might revert or add text
-
-  console.log(isOpen)
   return (
     <nav
       className={

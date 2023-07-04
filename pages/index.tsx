@@ -11,14 +11,15 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
 import AnimatedRocket from "../components/homepage/AnimatedRocket";
+import Heading from "../components/homepage/Heading";
 
 export default function Home() {
   const { t } = useTranslation("page-home");
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.5, // Adjust the threshold as needed
+    rootMargin: "-30px 0px 0px 0px",
+    threshold: 0.3, // Adjust the threshold as needed
   };
   const handleIntersect = (entries) => {
     entries.forEach((entry) => {
@@ -29,18 +30,18 @@ export default function Home() {
     });
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
     const sectionElements = document.querySelectorAll("section");
-    
+
     sectionElements.forEach((section) => {
       observer.observe(section);
     });
-    
+
     return () => {
       observer.disconnect();
     };
-  })
+  });
 
   return (
     <>
@@ -51,10 +52,12 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-1"
-          className="h-dynHeight w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
+          className="h-dynHeight transition-all duration-500 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
-          <div className=" hidden md:block">{/* I know it's bad to have this empty div. Don't judge me yet. */}</div>
+          <div className=" hidden md:block">
+            {/* I know it's bad to have this empty div. Don't judge me yet. */}
+          </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-20">
             {/* introduction container */}
             <div className="flex flex-col align-center justify-center">
@@ -113,7 +116,7 @@ export default function Home() {
                 data-aos-delay="3000"
                 data-aos-duration="1000"
               >
-                {t('intro-line5')}
+                {t("intro-line5")}
               </p>
             </div>
           </div>
@@ -141,12 +144,7 @@ export default function Home() {
           className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
-            <h3
-              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)] leading-none "
-              data-aos="fade-up"
-            >
-              {t("section-2-heading")}
-            </h3>
+            <Heading content={t("section-2-heading")} />
             <p className="mt-8 mb-8 text-xl" data-aos="fade-up">
               {t("section-2-instructions")}
             </p>
@@ -239,12 +237,7 @@ export default function Home() {
           className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
-            <h3
-              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-              data-aos="fade-up"
-            >
-              {t("section-3-heading")}
-            </h3>
+            <Heading content={t("section-3-heading")} />
             <p className="mt-8 text-xl max-w-4xl" data-aos="fade-up">
               {t("section-3-p1")}
             </p>
@@ -256,7 +249,7 @@ export default function Home() {
               <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
             </p>
           </article>
-{/*       <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
+          {/*       <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
               <Image
                 src={icons.avatar}
                 alt="my photo"
@@ -278,15 +271,10 @@ export default function Home() {
         {/* section 4: contacts */}
         <section
           id="bg-4"
-          className="min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
+          className=" min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl">
-            <h3
-              className="text-5xl lg:text-7xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-              data-aos="fade-up"
-            >
-              {t("contacts-heading")}
-            </h3>
+            <Heading content={t("contacts-heading")} additionalCSS={' break-all '} />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-up">
               {t("contacts-p")}
             </p>
@@ -336,7 +324,7 @@ export default function Home() {
               <span
                 onClick={onCopyHandler}
                 id={"emailAddress"}
-                className="hover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                className=" text-xl md:text-3xlhover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               >
                 viscuso.fabio@outlook.it
               </span>
@@ -352,7 +340,7 @@ export default function Home() {
               <span
                 onClick={onCopyHandler}
                 id="phoneNumber"
-                className="-mt-3 hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
               >
                 +39 351 996 6861
               </span>
