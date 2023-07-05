@@ -25,11 +25,11 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
   pointer-events: none; /* Ensure the cursor doesn't interfere with mouse events */
   z-index: 9999;
   backdrop-filter: invert(70%);
   background-size: contain;
+  will-change: transform;
 }
 
 h1,

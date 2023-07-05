@@ -20,15 +20,13 @@ export default function Layout({ children }: Props) {
   const handleTouchMove = (event) => {
     const distX = event.touches[0].pageX - touchStartX.current;
 
-    if (Math.abs(distX) > 50) {
+    if (Math.abs(distX) > 60) {
       if (distX < 0 && !isSidebarOpen) {
         // Swipe left
-        console.log('swipe left, should be true', isSidebarOpen, distX);
         setIsSidebarOpen(true);
       } else if (distX > 0 && isSidebarOpen) {
         setIsSidebarOpen(false);
         // Swipe right
-        console.log('swipe left, should be false', isSidebarOpen, distX);
       }
     }
   };
@@ -38,8 +36,7 @@ export default function Layout({ children }: Props) {
 
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
+      cursor.style.transform = `translate(${e.clientX - 8}px, ${e.clientY - 8}px)`;
     });
   });
 

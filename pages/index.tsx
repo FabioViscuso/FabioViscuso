@@ -128,7 +128,7 @@ export default function Home() {
             data-aos-offset="-500"
           >
             <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
-            <a href="#bg-2" className="cursor-none">
+            <a href="#bg-2" title="sroll to section 2" className="cursor-none">
               <div className="scroll-downs">
                 <div className="mousey">
                   <div className="scroller"></div>
