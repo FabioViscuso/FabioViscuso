@@ -58,6 +58,12 @@ span {
   overflow-x: hidden;
 }
 
+/* Avoid rendering the default cursor on selectable elements */
+a,
+button {
+  cursor: none;
+}
+
 /** CUSTOM SCROLLBAR **/
 *::-webkit-scrollbar {
   width: 8px;

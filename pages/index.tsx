@@ -128,7 +128,7 @@ export default function Home() {
             data-aos-offset="-500"
           >
             <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
-            <a href="#bg-2" title="sroll to section 2" className="cursor-none">
+            <a href="#bg-2" title="sroll to section 2">
               <div className="scroll-downs">
                 <div className="mousey">
                   <div className="scroller"></div>
@@ -287,7 +287,7 @@ export default function Home() {
             <li className="flex items-center">
               <a
                 href="https://github.com/FabioViscuso"
-                className="cursor-none inline-block hover:scale-110 transition-transform"
+                className="  inline-block hover:scale-110 transition-transform"
                 target="_blank"
               >
                 <Image
@@ -302,7 +302,7 @@ export default function Home() {
             <li className="flex items-center">
               <a
                 href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
-                className="cursor-none inline-block [filter:brightness(0.15)] hover:scale-110 transition-transform"
+                className="  inline-block [filter:brightness(0.15)] hover:scale-110 transition-transform"
                 target="_blank"
               >
                 <Image

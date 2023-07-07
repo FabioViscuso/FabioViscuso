@@ -119,7 +119,7 @@ export default function NewPostitForm() {
           </div>
           <fieldset
             onChange={(e) => inputChangeHandler(e)}
-            className="mt-8 flex flex-wrap gap-5 md:gap-8 h-10 cursor-none"
+            className="mt-8 flex flex-wrap gap-5 md:gap-8 h-10  "
             title="color picker"
           >
             <div className="flex flex-col items-center relative">
@@ -184,7 +184,7 @@ export default function NewPostitForm() {
               ></label>
             </div>
           </fieldset>
-          <button className={`cursor-none font-indieFlower text-lg bg-[${formData.colorSelect}] px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold border border-slate-400 hover:scale-110 transition-all`}>
+          <button className={`  font-indieFlower text-lg bg-[${formData.colorSelect}] px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold border border-slate-400 hover:scale-110 transition-all`}>
             {t("form-submit")}
           </button>
         </form>

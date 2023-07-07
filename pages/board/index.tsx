@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 import { GetServerSideProps } from "next";
-import Postit from "../../components/ui/PostIt";
+import Postit from "../../components/postit-board-page/PostIt";
 
 // needed for i18next functionality with SSG / SSR
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
