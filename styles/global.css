@@ -69,7 +69,7 @@ button {
   width: 8px;
 }
 *::-webkit-scrollbar-track {
-  background: #191919;
+  background: #19191950;
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
@@ -93,16 +93,16 @@ button {
 .bg-common {
   transition: all 2s ease;
 }
-.bg-1 {
+.bg-ffaaaa {
   background-color: #ffaaaa;
 }
-.bg-2 {
+.bg-b9e9ff {
   background-color: #b9e9ff;
 }
-.bg-3 {
+.bg-cfffd3 {
   background-color: #cfffd3;
 }
-.bg-4 {
+.bg-fff9ab {
   background-color: #fff9ab;
 }
 

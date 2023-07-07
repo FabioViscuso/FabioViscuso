@@ -24,8 +24,11 @@ export default function Home() {
   const handleIntersect = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        const html = document.querySelector('html');
         const sectionId = entry.target.id;
         document.body.className = `bg-common ${sectionId}`;
+        const colorValue = `#${sectionId.substring(3)}`;
+        html.style.backgroundColor = colorValue;
       }
     });
   };
@@ -51,7 +54,7 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center h-full">
         {/* section 1: photo and introduction */}
         <section
-          id="bg-1"
+          id="bg-ffaaaa"
           className="h-dynHeight transition-all duration-500 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
@@ -140,7 +143,7 @@ export default function Home() {
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
         <section
-          id="bg-2"
+          id="bg-b9e9ff"
           className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
@@ -233,7 +236,7 @@ export default function Home() {
         {/* END OF section 2: what can I do */}
         {/* section 3: who am I */}
         <section
-          id="bg-3"
+          id="bg-cfffd3"
           className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
         >
           <article className="my-auto max-w-4xl">
@@ -270,7 +273,7 @@ export default function Home() {
         </section>
         {/* section 4: contacts */}
         <section
-          id="bg-4"
+          id="bg-fff9ab"
           className=" min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl ">
