@@ -12,12 +12,12 @@ html,
 body {
   cursor: none;
   min-height: 100vh;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #d6d6d6;
+  background-color: #eeeeee;
   color: #191919;
   scroll-behavior: smooth;
-  transition: all 2s ease;
+  transition: background-color 2s ease;
 }
 
 .custom-cursor {
@@ -48,8 +48,8 @@ span {
 }
 
 ::selection {
-  background-color: #e3e3e3;
-  color: #1c1c1c;
+  background-color: #e2e2e2;
+  color: #191919;
 }
 
 #__next {
@@ -60,16 +60,16 @@ span {
 
 /** CUSTOM SCROLLBAR **/
 *::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
+  width: 8px;
 }
 *::-webkit-scrollbar-track {
-  background: #343434; /* color of the tracking area */
-  /* border-radius: 10px; */
+  background: #191919;
+  border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #e2e2e2; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 2px solid #343434;
+  background-color: #e2e2e2;
+  border-radius: 20px;
+  border: 2px solid #191919;
 }
 
 .bg-notebook {
@@ -85,7 +85,6 @@ span {
   background-size: 100% 1.2em;
 }
 .bg-common {
-  background-blend-mode: hard-light;
   transition: all 2s ease;
 }
 .bg-1 {
@@ -102,12 +101,7 @@ span {
 }
 
 @layer components {
-
   /** HOMEPAGE **/
-  /* Those are the divs that transition from the dark page to the light one and viceversa */
-  .img-border {
-    border: 6px solid transparent !important;
-  }
   .skills-icon-popup {
     position: absolute;
     top: -20px;
@@ -115,21 +109,13 @@ span {
     transform: translate(-50%, -100%);
     visibility: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
     text-align: center;
   }
   .skills-icon:hover > .skills-icon-popup {
     visibility: visible;
     opacity: 1;
-    transition: all 0.3s ease;
-  }
-  .icon-shadow {
-    box-shadow: 0px -2px 8px 2px transparent, inset 0px -2px 6px 2px transparent;
-    transition: all 0.3s ease;
-  }
-  .icon-shadow:hover {
-    box-shadow: 0px -2px 8px 2px #0ea5e9, inset 0px -2px 6px 2px #6ee7b7;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
   }
 
   /** NEW POST-IT PAGE **/
