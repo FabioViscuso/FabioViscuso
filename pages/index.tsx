@@ -81,7 +81,7 @@ export default function Home() {
               <p
                 className="mt-12 text-xl lg:text-4xl"
                 data-aos="fade-right"
-                data-aos-delay="400"
+                data-aos-delay="600"
                 data-aos-duration="1000"
               >
                 {t("intro-line1")}
@@ -89,7 +89,7 @@ export default function Home() {
               <p
                 className="text-xl lg:text-4xl mt-3"
                 data-aos="fade-right"
-                data-aos-delay="600"
+                data-aos-delay="1000"
                 data-aos-duration="1000"
               >
                 {t("intro-line2")}
@@ -97,7 +97,7 @@ export default function Home() {
               <p
                 className="text-xl lg:text-4xl mt-3"
                 data-aos="fade-right"
-                data-aos-delay="800"
+                data-aos-delay="1400"
                 data-aos-duration="1000"
               >
                 {t("intro-line3")}
@@ -106,7 +106,7 @@ export default function Home() {
                 <p
                   className="text-2xl lg:text-6xl underline mt-3 "
                   data-aos="fade-right"
-                  data-aos-delay="1000"
+                  data-aos-delay="1800"
                   data-aos-duration="1000"
                 >
                   {t("intro-line4")}
@@ -126,7 +126,7 @@ export default function Home() {
           <div
             className="flex items-center gap-10"
             data-aos="fade-up"
-            data-aos-delay="2000"
+            data-aos-delay="3000"
             data-aos-duration="1000"
             data-aos-offset="-500"
           >
@@ -268,15 +268,14 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
               <div className="lg:flex-1">
                 <Heading content={t("section-3-heading")} />
-                <p className="mt-8 text-lg" data-aos="fade-up">
+                <p className="mt-8 text-lg" data-aos="fade-right">
                   {t("section-3-p1")}
                 </p>
-                <p className="mt-8 text-lg" data-aos="fade-up">
+                <p className="mt-8 text-lg" data-aos="fade-right">
                   {t("section-3-p2")}
                 </p>
-                <p className="mt-8 text-lg" data-aos="fade-up">
-                  {t("section-3-p3")}{" "}
-                  <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
+                <p className="mt-8 text-lg" data-aos="fade-right">
+                  {t("section-3-p3")}
                 </p>
               </div>
               <div className="relative h-full w-full lg:mt-0 lg:flex-1">
@@ -318,13 +317,13 @@ export default function Home() {
               content={t("contacts-heading")}
               additionalCSS={" break-all lg:break-normal "}
             />
-            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-up">
+            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
               {t("contacts-p")}
             </p>
           </div>
           <ul
             className="flex flex-col items-center gap-10 flex-wrap flex-1"
-            data-aos="fade-up"
+            data-aos="fade-left"
           >
             {/* Github button */}
             <li className="flex items-center">
