@@ -144,7 +144,7 @@ export default function Home() {
         {/* second section: what can I do */}
         <section
           id="bg-b9e9ff"
-          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:pt-24"
+          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
@@ -158,11 +158,22 @@ export default function Home() {
                 </p>
                 <p className="text-lg" data-aos="fade-right">
                   {t("section-2-line3")}
-                  <span>&nbsp;<a href="#bg-fff9ab" className=" inline-block underline hover:scale-110 transition-transform">{t('section-2-cta')}</a></span>
+                  <span>
+                    &nbsp;
+                    <a
+                      href="#bg-fff9ab"
+                      className=" inline-block underline hover:scale-110 transition-transform"
+                    >
+                      {t("section-2-cta")}
+                    </a>
+                  </span>
                 </p>
               </div>
               {/* skills */}
-              <div className="lg:flex-1 flex flex-col items-center" data-aos="fade-left">
+              <div
+                className="lg:flex-1 flex flex-col items-center"
+                data-aos="fade-left"
+              >
                 <p className="text-lg  text-center md:text-left ">
                   {t("section-2-skills")}
                 </p>
@@ -251,46 +262,58 @@ export default function Home() {
         {/* section 3: who am I */}
         <section
           id="bg-cfffd3"
-          className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
+          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24"
         >
-          <article className="my-auto max-w-4xl">
-            <Heading content={t("section-3-heading")} />
-            <p className="mt-8 text-xl max-w-4xl" data-aos="fade-up">
-              {t("section-3-p1")}
-            </p>
-            <p className="mt-2 text-xl max-w-4xl" data-aos="fade-up">
-              {t("section-3-p2")}
-            </p>
-            <p className="mt-2 text-xl max-w-4xl" data-aos="fade-up">
-              {t("section-3-p3")}{" "}
-              <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
-            </p>
+          <article className="h-full flex flex-col justify-center items-center gap-24">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
+              <div className="lg:flex-1">
+                <Heading content={t("section-3-heading")} />
+                <p className="mt-8 text-lg" data-aos="fade-up">
+                  {t("section-3-p1")}
+                </p>
+                <p className="mt-8 text-lg" data-aos="fade-up">
+                  {t("section-3-p2")}
+                </p>
+                <p className="mt-8 text-lg" data-aos="fade-up">
+                  {t("section-3-p3")}{" "}
+                  <span className="text-3xl">⛺ | 🍺 | 🎧 | 🎮 | 🎸 | 📺</span>
+                </p>
+              </div>
+              <div className="relative h-full w-full lg:mt-0 lg:flex-1">
+                <Image
+                  src={icons.avatar}
+                  alt="my photo"
+                  priority
+                  placeholder="blur"
+                  className=" photo-common top-[20px] left-[30%] -translate-x-1/2 -translate-y-1/2 -rotate-6 "
+                  /* data-aos="fade-left" */
+                />
+                <Image
+                  src={icons.avatar2}
+                  alt="my photo2"
+                  priority
+                  placeholder="blur"
+                  className=" photo-common left-[50%] -translate-x-1/2 -translate-y-1/2"
+                  /* data-aos="fade-left" */
+                />
+                <Image
+                  src={icons.avatar3}
+                  alt="my photo2"
+                  priority
+                  placeholder="blur"
+                  className=" photo-common top-[-20px] left-[70%] -translate-x-1/2 -translate-y-1/2 rotate-6 "
+                  /* data-aos="fade-left" */
+                />
+              </div>
+            </div>
           </article>
-          {/*       <div className="lg:flex-1 flex flex-col justify-center gap-10 lg:[flex-basis: 30%]">
-              <Image
-                src={icons.avatar}
-                alt="my photo"
-                priority
-                placeholder="blur"
-                className=" self-start h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                data-aos="fade-left"
-              />
-              <Image
-                src={icons.avatar2}
-                alt="my photo"
-                priority
-                placeholder="blur"
-                className=" self-end h-[14rem] w-[14rem] sm:h-[16rem] sm:w-[16rem] md:h-[20rem] md:w-[20rem] rounded-full img-border bg-clip-border bg-gradient-to-br from-slate-900 to-slate-900  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
-                data-aos="fade-left"
-              />
-            </div> */}
         </section>
         {/* section 4: contacts */}
         <section
           id="bg-fff9ab"
-          className=" min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
+          className=" min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24 flex flex-col lg:flex-row items-center gap-24"
         >
-          <div className="flex flex-col md:w-[50%] md:max-w-4xl ">
+          <div className="flex flex-col flex-1 ">
             <Heading
               content={t("contacts-heading")}
               additionalCSS={" break-all lg:break-normal "}
@@ -300,7 +323,7 @@ export default function Home() {
             </p>
           </div>
           <ul
-            className="flex flex-col items-center gap-10 flex-wrap"
+            className="flex flex-col items-center gap-10 flex-wrap flex-1"
             data-aos="fade-up"
           >
             {/* Github button */}
