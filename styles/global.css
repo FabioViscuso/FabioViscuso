@@ -20,6 +20,19 @@ body {
   transition: background-color 2s ease;
 }
 
+.bg-ffaaaa {
+  background-color: #ffaaaa;
+}
+.bg-b9e9ff {
+  background-color: #b9e9ff;
+}
+.bg-cfffd3 {
+  background-color: #cfffd3;
+}
+.bg-fff9ab {
+  background-color: #fff9ab;
+}
+
 .custom-cursor {
   position: fixed;
   width: 16px;
@@ -89,21 +102,6 @@ button {
     ),
     linear-gradient(#eee 0.1em, transparent 0.1em);
   background-size: 100% 1.2em;
-}
-.bg-common {
-  transition: all 2s ease;
-}
-.bg-ffaaaa {
-  background-color: #ffaaaa;
-}
-.bg-b9e9ff {
-  background-color: #b9e9ff;
-}
-.bg-cfffd3 {
-  background-color: #cfffd3;
-}
-.bg-fff9ab {
-  background-color: #fff9ab;
 }
 
 @layer components {

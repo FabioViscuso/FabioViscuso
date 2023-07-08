@@ -18,13 +18,13 @@ export default function Home() {
 
   const observerOptions = {
     root: null,
-    rootMargin: "-30px 0px 0px 0px",
-    threshold: 0.3, // Adjust the threshold as needed
+    rootMargin: "-10px 0px 0px 0px",
+    threshold: 0.4,
   };
   const handleIntersect = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const html = document.querySelector('html');
+        const html = document.querySelector("html");
         const sectionId = entry.target.id;
         document.body.className = `bg-common ${sectionId}`;
         const colorValue = `#${sectionId.substring(3)}`;
@@ -144,86 +144,100 @@ export default function Home() {
         {/* second section: what can I do */}
         <section
           id="bg-b9e9ff"
-          className="min-h-screen w-full px-2 pt-32 md:py-10 flex flex-col justify-between items-center"
+          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:pt-24"
         >
-          <article className="my-auto max-w-4xl">
-            <Heading content={t("section-2-heading")} />
-            <p className="mt-8 mb-8 text-xl" data-aos="fade-up">
-              {t("section-2-instructions")}
-            </p>
-            {/* Frontend skills */}
-            <p className="text-xl" data-aos="fade-up">
-              {t("section-2-skills")}
-            </p>
-            <div
-              className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10"
-              data-aos="fade-up"
-            >
-              <SkillIcon src={icons.html5} alt="html5" label="HTML5" />
-              <SkillIcon src={icons.css3} alt="css3" label="CSS3" />
-              <SkillIcon
-                src={icons.javascript}
-                alt="javascript"
-                label="JavaScript ES6+"
-              />
-              <SkillIcon src={icons.react} alt="react" label="React" />
-              <SkillIcon src={icons.next} alt="next" label="Next.js" />
-              <SkillIcon
-                src={icons.bootstrap}
-                alt="bootstrap"
-                label="Bootstrap 4/5"
-              />
-              <SkillIcon
-                src={icons.tailwind}
-                alt="tailwind"
-                label="TailwindCSS"
-              />
-              <SkillIcon src={icons.nodejs} alt="nodejs" label="NodeJS" />
-              <SkillIcon
-                src={icons.express}
-                alt="express"
-                label="Express 4.17+"
-              />
-              <SkillIcon
-                src={icons.sql}
-                alt="postgresql"
-                label="PostgreSQL"
-                additionalCSS="rounded-none"
-              />
-              <SkillIcon
-                src={icons.mongodb}
-                alt="mongoDB"
-                label="MongoDB"
-                additionalCSS="bg-green-200"
-              />
-              <SkillIcon
-                src={icons.prisma}
-                alt="prisma"
-                label="Prisma ORM"
-                additionalCSS="rounded-none"
-              />
-              <SkillIcon
-                src={icons.git}
-                alt="git"
-                label="Git (& GitHub/GitLab)"
-              />
-              <SkillIcon
-                src={icons.vscode}
-                alt="vs code"
-                label="Visual Studio Code"
-              />
-              <SkillIcon
-                src={icons.typescript}
-                alt="typescript"
-                label="TypeScript"
-              />
+          <article className="h-full flex flex-col justify-between items-center gap-24">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
+              <div className="lg:flex-1">
+                <Heading content={t("section-2-heading")} />
+                <p className="my-8 text-lg" data-aos="fade-right">
+                  {t("section-2-line1")}
+                </p>
+                <p className="mb-8 text-lg" data-aos="fade-right">
+                  {t("section-2-line2")}
+                </p>
+                <p className="text-lg" data-aos="fade-right">
+                  {t("section-2-line3")}
+                  <span>&nbsp;<a href="#bg-fff9ab" className=" inline-block underline hover:scale-110 transition-transform">{t('section-2-cta')}</a></span>
+                </p>
+              </div>
+              {/* skills */}
+              <div className="lg:flex-1 flex flex-col items-center" data-aos="fade-left">
+                <p className="text-lg  text-center md:text-left ">
+                  {t("section-2-skills")}
+                </p>
+                <div
+                  className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10"
+                  data-aos="fade-up"
+                >
+                  <SkillIcon src={icons.html5} alt="html5" label="HTML5" />
+                  <SkillIcon src={icons.css3} alt="css3" label="CSS3" />
+                  <SkillIcon
+                    src={icons.javascript}
+                    alt="javascript"
+                    label="JavaScript ES6+"
+                  />
+                  <SkillIcon src={icons.react} alt="react" label="React" />
+                  <SkillIcon src={icons.next} alt="next" label="Next.js" />
+                  <SkillIcon
+                    src={icons.bootstrap}
+                    alt="bootstrap"
+                    label="Bootstrap 4/5"
+                  />
+                  <SkillIcon
+                    src={icons.tailwind}
+                    alt="tailwind"
+                    label="TailwindCSS"
+                  />
+                  <SkillIcon src={icons.nodejs} alt="nodejs" label="NodeJS" />
+                  <SkillIcon
+                    src={icons.express}
+                    alt="express"
+                    label="Express 4.17+"
+                  />
+                  <SkillIcon
+                    src={icons.sql}
+                    alt="postgresql"
+                    label="PostgreSQL"
+                    additionalCSS="rounded-none"
+                  />
+                  <SkillIcon
+                    src={icons.mongodb}
+                    alt="mongoDB"
+                    label="MongoDB"
+                    additionalCSS="bg-green-200"
+                  />
+                  <SkillIcon
+                    src={icons.prisma}
+                    alt="prisma"
+                    label="Prisma ORM"
+                    additionalCSS="rounded-none"
+                  />
+                  <SkillIcon
+                    src={icons.git}
+                    alt="git"
+                    label="Git (& GitHub/GitLab)"
+                  />
+                  <SkillIcon
+                    src={icons.vscode}
+                    alt="vs code"
+                    label="Visual Studio Code"
+                  />
+                  <SkillIcon
+                    src={icons.typescript}
+                    alt="typescript"
+                    label="TypeScript"
+                  />
+                </div>
+              </div>
             </div>
+
             {/* the CV part */}
             <div
               className="flex gap-10 flex-col md:flex-row items-center md:items-stretch"
               data-aos="fade-up"
             >
-              <p className="mt-2 md:mt-0 text-xl flex flex-col md:flex-row items-center">
+              <p className="mt-2 md:mt-0 text-xl text-center md:text-left flex flex-col md:flex-row items-center">
                 {t("section-2-cv")}
               </p>
               <div className="flex gap-10 items-center">
@@ -277,7 +291,10 @@ export default function Home() {
           className=" min-h-screen w-full py-20 px-2 md:py-0 flex flex-col md:flex-row gap-10 justify-center items-center"
         >
           <div className="flex flex-col md:w-[50%] md:max-w-4xl ">
-            <Heading content={t("contacts-heading")} additionalCSS={' break-all lg:break-normal '} />
+            <Heading
+              content={t("contacts-heading")}
+              additionalCSS={" break-all lg:break-normal "}
+            />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-up">
               {t("contacts-p")}
             </p>
