@@ -74,7 +74,7 @@ export default function Home() {
                 <span className="hidden md:block waving-hand absolute -top-3 -left-8 sm:-top-5 sm:-left-12 text-4xl sm:text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
                   👋
                 </span>
-                <h1 className="text-7xl md:text-8xl font-semibold drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
+                <h1 className="text-7xl md:text-8xl [text-shadow:4px_3px_1px_rgba(0,0,0,0.35)]">
                   {t("greeting")}
                 </h1>
               </div>
@@ -104,7 +104,7 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-6">
                 <p
-                  className="text-2xl lg:text-6xl underline mt-3 drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                  className="text-2xl lg:text-6xl underline mt-3 "
                   data-aos="fade-right"
                   data-aos-delay="1000"
                   data-aos-duration="1000"
