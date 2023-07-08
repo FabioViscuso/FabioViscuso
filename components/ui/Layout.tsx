@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { TouchEventHandler, useEffect, useRef, useState } from "react";
 import Footer from "../navigation/Footer";
 import Navbar from "../navigation/Navbar";
 import Aos from "aos";
@@ -33,6 +33,13 @@ export default function Layout({ children }: Props) {
 
   useEffect(() => {
     Aos.refresh();
+
+    /*  
+        This resets the document color to the default, otherwise
+        it would carry the latest one from the latest homepage section
+    */
+    const html = document.querySelector('html');
+    html.style.backgroundColor = '#eeeeee';
 
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
