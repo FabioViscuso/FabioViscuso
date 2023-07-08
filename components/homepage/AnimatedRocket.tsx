@@ -14,7 +14,7 @@ export default function AnimatedRocket() {
     <div
       className="rocket-container h-min"
       data-aos="fade-up-right"
-      data-aos-delay="1000"
+      data-aos-delay="1800"
     >
       <p
         className={` ${
