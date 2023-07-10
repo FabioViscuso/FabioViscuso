@@ -265,7 +265,7 @@ export default function Home() {
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 "
         >
           <article className="h-full flex flex-col justify-center items-center gap-24">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
               <div className="lg:flex-1">
                 <Heading content={t("section-3-heading")} />
                 <p className="mt-8 text-lg" data-aos="fade-right">
