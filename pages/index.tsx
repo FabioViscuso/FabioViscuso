@@ -51,7 +51,7 @@ export default function Home() {
       <Head>
         <meta name="description" content="homepage" />
       </Head>
-      <main className="flex flex-col justify-center items-center h-full">
+      <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
         {/* section 1: photo and introduction */}
         <section
           id="bg-ffaaaa"
@@ -102,9 +102,9 @@ export default function Home() {
               >
                 {t("intro-line3")}
               </p>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-6">
                 <p
-                  className="text-2xl lg:text-6xl underline mt-3 "
+                  className="text-2xl lg:text-6xl underline mt-3 flex-1"
                   data-aos="fade-right"
                   data-aos-delay="1800"
                   data-aos-duration="1000"
