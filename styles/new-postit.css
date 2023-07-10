@@ -15,6 +15,6 @@ input[type="radio"] {
   }
   input::placeholder,
   textarea::placeholder {
-    color: #1c1c1c;
+    color: #1c1c1c !important;
     font-family: "Indie Flower", sans-serif;
   }
