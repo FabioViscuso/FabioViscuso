@@ -54,7 +54,7 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
         {/* section 1: photo and introduction */}
         <section
-          id="bg-ffaaaa"
+          id="bg-ffcfcf"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
@@ -143,7 +143,7 @@ export default function Home() {
         {/* END OF: section 1: photo and introduction */}
         {/* second section: what can I do */}
         <section
-          id="bg-b9e9ff"
+          id="bg-d0f0ff"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
