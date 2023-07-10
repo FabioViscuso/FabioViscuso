@@ -15,8 +15,9 @@ html,
 body {
   cursor: none;
   min-height: 100vh;
-  font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   background-color: #eeeeee;
   color: #191919;
   scroll-behavior: smooth;

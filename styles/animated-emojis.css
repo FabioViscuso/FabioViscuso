@@ -5,47 +5,47 @@
 }
 
 @keyframes flyAwayAnimation {
-    0% {
-        transform: translate(0, 0);
-    }
-    20% {
-        transform: translate(-50px, 50px);
-    }
-    70% {
-        transform: translate(999px, -999px);
-    }
-    71% {
-        transform: translate(999px, -999px);
-    }
-    72% {
-        transform: translate(999px, 999px);
-    }
-    73% {
-        transform: translate(-999px, 999px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-50px, 50px);
+  }
+  70% {
+    transform: translate(999px, -999px);
+  }
+  71% {
+    transform: translate(999px, -999px);
+  }
+  72% {
+    transform: translate(999px, 999px);
+  }
+  73% {
+    transform: translate(-999px, 999px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .waving-hand {
-    animation: wavingAnimation .7s ease-in-out infinite;
+  animation: wavingAnimation 0.7s ease-in-out infinite;
+}
+
+@keyframes wavingAnimation {
+  0% {
+    transform: rotate(0);
   }
-  
-  @keyframes wavingAnimation {
-    0% {
-      transform: rotate(0);
-    }
-    25% {
-      transform: rotate(-4deg);
-    }
-    50% {
-      transform: rotate(0);
-    }
-    75% {
-      transform: rotate(4deg);
-    }
-    100% {
-      transform: rotate(0);
-    }
+  25% {
+    transform: rotate(-4deg);
   }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
