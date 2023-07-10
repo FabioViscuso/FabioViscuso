@@ -3,13 +3,14 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "../components/ui/Layout";
-import LoadingSpinner from "../components/navigation/LoadingSpinner";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 import "../styles/global.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AppProps } from "next/app";
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const formattedPath = router.pathname.replace(/\//, "").replace(/-/, " ");
   const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +52,7 @@ const App = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        {isLoading && <LoadingSpinner />}
+        {isLoading ? <LoadingSpinner /> : <></>}
         <Component {...pageProps} />
       </Layout>
     </>

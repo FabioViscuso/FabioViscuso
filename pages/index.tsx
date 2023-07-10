@@ -21,10 +21,10 @@ export default function Home() {
     rootMargin: "-10px 0px 0px 0px",
     threshold: 0.4,
   };
-  const handleIntersect = (entries) => {
+  const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const html = document.querySelector("html");
+        const html = document.querySelector("html")!;
         const sectionId = entry.target.id;
         document.body.className = `bg-common ${sectionId}`;
         const colorValue = `#${sectionId.substring(3)}`;
@@ -55,7 +55,7 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-ffaaaa"
-          className="h-dynHeight transition-all duration-500 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
+          className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           {/* inner container */}
           <div className=" hidden md:block">
@@ -144,7 +144,7 @@ export default function Home() {
         {/* second section: what can I do */}
         <section
           id="bg-b9e9ff"
-          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24"
+          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
@@ -262,7 +262,7 @@ export default function Home() {
         {/* section 3: who am I */}
         <section
           id="bg-cfffd3"
-          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24"
+          className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 "
         >
           <article className="h-full flex flex-col justify-center items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
@@ -278,7 +278,7 @@ export default function Home() {
                   {t("section-3-p3")}
                 </p>
               </div>
-              <div className="relative h-full w-full lg:mt-0 lg:flex-1">
+              <div className="relative h-full w-full lg:mt-0 lg:flex-1" data-aos="fade-left">
                 <Image
                   src={icons.avatar}
                   alt="my photo"
@@ -310,7 +310,7 @@ export default function Home() {
         {/* section 4: contacts */}
         <section
           id="bg-fff9ab"
-          className=" min-h-screen w-full px-2 lg:px-24 pt-32 md:py-24 flex flex-col lg:flex-row items-center gap-24"
+          className=" min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 flex flex-col lg:flex-row items-center gap-24"
         >
           <div className="flex flex-col flex-1 ">
             <Heading
@@ -395,7 +395,10 @@ export default function Home() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+interface Props {
+  locale: string
+}
+export async function getStaticProps({ locale }: Props) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "page-home"])),

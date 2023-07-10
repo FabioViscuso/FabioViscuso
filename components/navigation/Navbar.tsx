@@ -9,7 +9,11 @@ import NavigationButton from "./NavigationButton";
 // import { useTranslation } from "next-i18next";
 import { LanguageSelector } from "./LanguageSelector";
 
-export default function Navbar({isOpen}) {
+interface Props {
+  isOpen: boolean,
+}
+
+export default function Navbar({isOpen}: Props) {
   const router = useRouter();
   // const { t } = useTranslation(); might revert or add text
   return (

@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import React, { useReducer } from "react";
+import React, { ChangeEvent, FormEvent, useReducer } from "react";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import translation function
-import { useTranslation, Trans } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import Head from "next/head";
 
 export default function NewPostitForm() {
@@ -40,7 +40,7 @@ export default function NewPostitForm() {
   };
   const [formData, dispatch] = useReducer(formReducer, initialState);
 
-  const inputChangeHandler = (event) => {
+  const inputChangeHandler = (event: any) => {
     dispatch({
       type: "CHANGE@TEXTINPUTS",
       inputField: event.target.name,
@@ -193,7 +193,7 @@ export default function NewPostitForm() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: {locale: string}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "page-new-postit"])),

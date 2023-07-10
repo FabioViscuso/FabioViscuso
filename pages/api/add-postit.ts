@@ -1,7 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { MongoClient } from "mongodb";
+import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const data = req.body;
     const client = await MongoClient.connect(
@@ -10,7 +12,7 @@ export default async function handler(req, res) {
     const db = client.db();
 
     const collection = db.collection("postits");
-    const result = await collection.insertOne(data);
+    const result = await collection.insertOne(data!);
     client.close();
 
     res.status(201).json({ message: "postit inserted", data: result });

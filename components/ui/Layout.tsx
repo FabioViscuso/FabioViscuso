@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { TouchEventHandler, useEffect, useRef, useState } from "react";
+import { TouchEvent, useEffect, useRef, useState } from "react";
 import Footer from "../navigation/Footer";
 import Navbar from "../navigation/Navbar";
 import Aos from "aos";
@@ -9,16 +9,15 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  // Variables to track touch positions
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const touchStartX = useRef(null);
+  let touchStartX: any = useRef(null);
 
-  const handleTouchStart = (event) => {
+  const handleTouchStart = (event: TouchEvent) => {
     touchStartX.current = event.touches[0].pageX;
   };
 
-  const handleTouchMove = (event) => {
-    const distX = event.touches[0].pageX - touchStartX.current;
+  const handleTouchMove = (event: TouchEvent) => {
+    let distX = event.touches[0].pageX - touchStartX.current;
 
     if (Math.abs(distX) > 60) {
       if (distX < 0 && !isSidebarOpen) {
@@ -38,7 +37,7 @@ export default function Layout({ children }: Props) {
         This resets the document color to the default, otherwise
         it would carry the latest one from the latest homepage section
     */
-    const html = document.querySelector('html');
+    const html = document.querySelector('html')!;
     html.style.backgroundColor = '#eeeeee';
 
     document.addEventListener("mousemove", (e) => {
@@ -63,6 +62,7 @@ export default function Layout({ children }: Props) {
       <Navbar isOpen={isSidebarOpen} />
       <div
         className="h-full flex flex-col justify-between"
+        ref={touchStartX }
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >

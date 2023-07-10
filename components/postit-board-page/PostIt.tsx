@@ -1,4 +1,12 @@
-export default function Postit({ creator, title, content, color = "#f9f474" }) {
+export interface PostItType {
+  id?: string,
+  creator: string,
+  title: string,
+  content: string,
+  color: string
+}
+
+export default function Postit({ creator, title, content, color = "#f9f474" }: PostItType) {
   return (
     <div
       className={`break-words flex flex-col gap-2 p-5 bg-[${color}] w-64 h-64 text-slate-800 shadow-lg`}
