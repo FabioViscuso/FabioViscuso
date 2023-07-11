@@ -65,14 +65,11 @@ export default function Home() {
             <div className="flex flex-col align-center justify-center">
               <div
                 /* emoji + h1 container */
-                className="flex flex-col md:flex-row gap-2 relative"
+                className="flex flex-col md:flex-row gap-2"
                 data-aos="fade-right"
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <span className="hidden md:block waving-hand absolute -top-3 -left-8 sm:-top-5 sm:-left-12 text-4xl sm:text-6xl self-center md:self-start drop-shadow-[0px_0px_2px_rgb(0,0,0)]">
-                  👋
-                </span>
                 <h1 className="text-7xl md:text-8xl [text-shadow:4px_3px_1px_rgba(0,0,0,0.35)]">
                   {t("greeting")}
                 </h1>

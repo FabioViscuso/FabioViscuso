@@ -1,5 +1,10 @@
 .bg-ffc4c4 {
   background-color: #ffc4c4;
+  background-image: url('../public/icons/wavingHand.png');
+  background-repeat: no-repeat;
+  background-size:auto;
+  background-position: 40vw 2vw;
+  background-blend-mode: soft-light;
 }
 .bg-d0f0ff {
   background-color: #d0f0ff;

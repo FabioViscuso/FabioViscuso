@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import icons from "../ui/IconImport";
 
 export default function AnimatedRocket() {
   const [flyAway, setFlyAway] = useState(false);
@@ -7,7 +9,7 @@ export default function AnimatedRocket() {
     setFlyAway(true);
     setTimeout(() => {
       setFlyAway(false);
-    }, 2000); // Adjust the duration of the animation (in milliseconds) here
+    }, 2000);
   };
 
   return (
@@ -19,10 +21,10 @@ export default function AnimatedRocket() {
       <p
         className={` ${
           flyAway ? "fly" : ""
-        } text-3xl lg:text-6xl drop-shadow-[0px_0px_1px_rgb(0,0,0)] hover:scale-110 transition-transform`}
+        } drop-shadow-[0px_0px_1px_rgb(0,0,0)] hover:scale-110 transition-transform`}
         onClick={handleFlyAway}
       >
-        🚀
+        <Image src={icons.rocket} alt="animated rocket" className="w-14 h-14" />
       </p>
     </div>
   );
