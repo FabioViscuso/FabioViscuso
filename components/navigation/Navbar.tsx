@@ -19,7 +19,7 @@ export default function Navbar({isOpen}: Props) {
   return (
     <nav
       className={
-        `fixed z-50 -translate-y-1/2 top-[20%] md:top-1/2 lg:right-0 rounded-l-md py-2 bg-neutral-800 bg-opacity-60 lg:bg-opacity-20 backdrop-blur-sm ${isOpen ? " right-0 sm:right-0 " : " -right-14 " } flex flex-col gap-5 justify-end  transition-all`}
+        `fixed z-50 -translate-y-1/2 top-[30dvh] md:top-1/2 lg:right-0 rounded-l-md py-2 bg-neutral-800 bg-opacity-60 lg:bg-opacity-20 backdrop-blur-sm ${isOpen ? " right-0 sm:right-0 " : " -right-14 " } flex flex-col gap-5 justify-end  transition-all`}
     >
       <span className="text-2xl leading-none text-center font-semibold text-slate-600 ">&mdash;</span>
       {router.pathname !== "/" && <NavigationButton slug="/" content="🏠" />}
