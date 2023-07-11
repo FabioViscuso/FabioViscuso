@@ -1,58 +1,49 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-// import translation function
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-// import game logic
 import init, {
   World,
-  Direction,
   GameStatus,
   InitOutput,
 } from "../../public/pkg/snake_game";
+import { touchListeners } from "../../lib/snakeGame/touchListeners";
+import { keypressListeners } from "../../lib/snakeGame/keypressListeners";
+
 
 export default function SnakeGamePage() {
-  const { t } = useTranslation("page-new-postit");
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const initializeSnakeGame = async () => {
-      try {
-        const wasm: InitOutput = await init();
-
-        // Build world
-        const CELL_SIZE = 20;
-        const WORLD_WIDTH = 8;
-        const SNAKE_SPAWN_INDEX = Math.floor(
-          Math.random() * (WORLD_WIDTH * WORLD_WIDTH)
+    const { t } = useTranslation("page-new-postit");
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [gameStatus, setGameStatus] = useState<GameStatus | undefined>(
+        undefined
         );
-        const world = World.new(WORLD_WIDTH, SNAKE_SPAWN_INDEX);
+        
 
-        // Build canvas
-        const canvas = document.getElementById(
-          "snake-game-canvas"
-        ) as HTMLCanvasElement;
-        const context = canvas.getContext("2d")!;
+  const initializeSnakeGame = async () => {
+    try {
+      const wasm: InitOutput = await init();
+
+      // Build world
+      const CELL_SIZE = 20;
+      const WORLD_WIDTH = 8;
+      const SNAKE_SPAWN_INDEX = Math.floor(
+        Math.random() * (WORLD_WIDTH * WORLD_WIDTH)
+      );
+      const snakeWorld = World.new(WORLD_WIDTH, SNAKE_SPAWN_INDEX);
+
+      // Build canvas
+      const canvas = canvasRef.current;
+      const context = canvas?.getContext("2d");
+      if (canvas && context) {
         canvas.height = WORLD_WIDTH * CELL_SIZE;
         canvas.width = WORLD_WIDTH * CELL_SIZE;
 
-        // UI -- Bindings
-        const button = document.getElementById(
-          "game-panel__control"
-        )! as HTMLButtonElement;
-        const statusTextLabel = document.getElementById(
-          "game-panel__info__status"
-        )!;
-        const pointsCounter = document.getElementById(
-          "game-panel__score__points"
-        )!;
-
         const drawPoints = () => {
-          pointsCounter.textContent = String(world.points());
+          pointsCounter.textContent = String(snakeWorld.points());
         };
 
         const drawStatus = () => {
-          statusTextLabel.textContent = world.game_status_tostring();
+          statusTextLabel.textContent = snakeWorld.game_status_tostring();
         };
 
         const drawWorld = () => {
@@ -73,8 +64,8 @@ export default function SnakeGamePage() {
         const drawSnake = () => {
           const snakeCells = new Uint32Array(
             wasm.memory.buffer,
-            world.snake_cells(),
-            world.get_snake_lenght()
+            snakeWorld.snake_cells(),
+            snakeWorld.get_snake_lenght()
           );
 
           snakeCells.forEach((cell, i) => {
@@ -95,7 +86,7 @@ export default function SnakeGamePage() {
         };
 
         const drawReward = () => {
-          const rewardCellIndex = world.reward_cell()!;
+          const rewardCellIndex = snakeWorld.reward_cell()!;
           const col = rewardCellIndex % WORLD_WIDTH;
           const row = Math.floor(rewardCellIndex / WORLD_WIDTH);
 
@@ -119,11 +110,13 @@ export default function SnakeGamePage() {
         };
 
         const gameLoop = () => {
-          const gameStatus = world.game_status();
-          if (gameStatus === GameStatus.Won) {
+          const status = snakeWorld.game_status();
+          setGameStatus(status);
+
+          if (status === GameStatus.Won) {
             button.textContent = "Another round?";
             return;
-          } else if (gameStatus === GameStatus.Lost) {
+          } else if (status === GameStatus.Lost) {
             button.textContent = "Try again!";
             return;
           }
@@ -132,112 +125,63 @@ export default function SnakeGamePage() {
 
           setTimeout(() => {
             context.clearRect(0, 0, canvas.width, canvas.height);
-            world.step();
+            snakeWorld.step();
             drawActors();
             requestAnimationFrame(gameLoop);
           }, 1000 / refreshSpeedFPS);
         };
 
-        button.addEventListener("click", (event) => {
-          event.preventDefault();
-          const gameStatus = world.game_status();
-          if (gameStatus === undefined) {
-            world.start_game();
-            drawStatus();
-            button.textContent = "Stop";
-            gameLoop();
-          } else {
-            location.reload();
-          }
-        });
+        const button = document.getElementById(
+          "game-panel__control"
+        ) as HTMLButtonElement;
+        const statusTextLabel = document.getElementById(
+          "game-panel__info__status"
+        )!;
+        const pointsCounter = document.getElementById(
+          "game-panel__score__points"
+        )!;
 
-        document.addEventListener("keydown", (e) => {
-          const key = e.code;
-          if (key === "ArrowUp" || key === "KeyW") {
-            world.change_direction(Direction.Up);
-          } else if (key === "ArrowDown" || key === "KeyS") {
-            world.change_direction(Direction.Down);
-          } else if (key === "ArrowLeft" || key === "KeyA") {
-            world.change_direction(Direction.Left);
-          } else if (key === "ArrowRight" || key === "KeyD") {
-            world.change_direction(Direction.Right);
-          } else {
-            console.log("Invalid key");
-          }
-        });
+        if (gameStatus === undefined) {
+          snakeWorld.start_game();
+          drawStatus();
+          gameLoop();
+        } else {
+          location.reload();
+        }
 
-        // Add touch events for mobile swipe
-        let initialX: number | null = null;
-        let initialY: number | null = null;
-
-        const startTouch = (e: TouchEvent) => {
-          initialX = e.touches[0].clientX;
-          initialY = e.touches[0].clientY;
-        };
-
-        const moveTouch = (e: TouchEvent) => {
-          if (initialX === null || initialY === null) {
-            return;
-          }
-
-          const currentX = e.touches[0].clientX;
-          const currentY = e.touches[0].clientY;
-
-          const diffX = initialX - currentX;
-          const diffY = initialY - currentY;
-
-          if (Math.abs(diffX) > Math.abs(diffY)) {
-            if (diffX > 0) {
-              // swiped left
-              world.change_direction(Direction.Left);
-            } else {
-              // swiped right
-              world.change_direction(Direction.Right);
-            }
-          } else {
-            if (diffY > 0) {
-              // swiped up
-              world.change_direction(Direction.Up);
-            } else {
-              // swiped down
-              world.change_direction(Direction.Down);
-            }
-          }
-
-          initialX = null;
-          initialY = null;
-
-          e.preventDefault();
-        };
-
-        document.addEventListener("touchstart", startTouch, false);
-        document.addEventListener("touchmove", moveTouch, false);
+        keypressListeners(snakeWorld);
+        touchListeners(snakeWorld);
 
         drawActors();
-      } catch (error) {
-        console.error("Error loading WebAssembly module:", error);
       }
-    };
-
-    initializeSnakeGame();
-  }, []);
+    } catch (error) {
+      console.error("Error loading WebAssembly module:", error);
+    }
+  };
 
   return (
     <>
       <Head>
         <meta name="description" content="snake game built in rust" />
       </Head>
-      <div className="min-h-screen flex flex-col justify-center items-center">
-        <div id="game-panel">
-          <div id="game-panel__info">
+      <div className="h-screen flex flex-col justify-center items-center">
+        <div id="game-panel" className="flex flex-col items-start">
+          <div id="game-panel__info" className="flex">
             <p id="game-panel__info__label">Status:</p>
             <p id="game-panel__info__status"></p>
           </div>
-          <div id="game-panel__score">
+          <div id="game-panel__score" className="flex">
             <p id="game-panel__score__label">Score:</p>
             <p id="game-panel__score__points"></p>
           </div>
-          <button id="game-panel__control" type="button">Play</button>
+          <button
+            onClick={initializeSnakeGame}
+            id="game-panel__control"
+            type="button"
+            className="p-4 bg-green-300 rounded-xl border border-slate-500 self-center"
+          >
+            {gameStatus === undefined ? "Play" : "Stop"}
+          </button>
         </div>
         <canvas ref={canvasRef} id="snake-game-canvas"></canvas>
       </div>
