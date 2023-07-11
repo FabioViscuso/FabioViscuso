@@ -1,7 +1,7 @@
 {
     "header-postit-board": "Go to Post-it board",
     "header-add-postit": "Add Post-it",
-    "footer-main": "Made with 💚 by Fabio Viscuso using Next.js. See the project code",
+    "footer-main": "Made with 💚 by Fabio Viscuso with Next.js. Take a look at the project's code",
     "footer-link": "in this repo",
     "footer-notice": "This is a WIP project, stay tuned!"
 }

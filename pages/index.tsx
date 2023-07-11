@@ -315,7 +315,10 @@ export default function Home() {
               additionalCSS={" break-all lg:break-normal "}
             />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
-              {t("contacts-p")}
+              {t("contacts-line1")}
+            </p>
+            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
+              {t("contacts-line2")}
             </p>
           </div>
           <ul
