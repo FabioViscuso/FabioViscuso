@@ -73,7 +73,7 @@ button {
   width: 8px;
 }
 *::-webkit-scrollbar-track {
-  background: #19191950;
+  background: #1919192b;
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
