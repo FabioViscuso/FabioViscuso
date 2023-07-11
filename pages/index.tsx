@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { SkillIcon } from "../components/homepage/SkillIcon";
+import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
+import AnimatedRocket from "../components/homepage/AnimatedRocket";
+import Heading from "../components/homepage/Heading";
 import icons from "../components/ui/IconImport";
 // the function that copies text and triggers the copy pop-up
 import onCopyHandler from "../lib/useCopyHandler";
@@ -9,9 +12,6 @@ import onCopyHandler from "../lib/useCopyHandler";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import translation function
 import { useTranslation } from "next-i18next";
-import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
-import AnimatedRocket from "../components/homepage/AnimatedRocket";
-import Heading from "../components/homepage/Heading";
 
 export default function Home() {
   const { t } = useTranslation("page-home");
@@ -54,10 +54,9 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
         {/* section 1: photo and introduction */}
         <section
-          id="bg-ffcfcf"
+          id="bg-ffc4c4"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
-          {/* inner container */}
           <div className=" hidden md:block">
             {/* I know it's bad to have this empty div. Don't judge me yet. */}
           </div>
@@ -87,7 +86,7 @@ export default function Home() {
                 {t("intro-line1")}
               </p>
               <p
-                className="text-xl lg:text-4xl mt-3"
+                className="text-xl lg:text-4xl mt-0 md:mt-3"
                 data-aos="fade-right"
                 data-aos-delay="1000"
                 data-aos-duration="1000"
@@ -95,7 +94,7 @@ export default function Home() {
                 {t("intro-line2")}
               </p>
               <p
-                className="text-xl lg:text-4xl mt-3"
+                className="text-xl lg:text-4xl mt-0 md:mt-3"
                 data-aos="fade-right"
                 data-aos-delay="1400"
                 data-aos-duration="1000"
@@ -104,7 +103,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-6">
                 <p
-                  className="text-2xl lg:text-6xl underline mt-3 flex-1"
+                  className="text-2xl lg:text-6xl underline mt-0 md:mt-3"
                   data-aos="fade-right"
                   data-aos-delay="1800"
                   data-aos-duration="1000"
@@ -140,8 +139,8 @@ export default function Home() {
             </a>
           </div>
         </section>
-        {/* END OF: section 1: photo and introduction */}
-        {/* second section: what can I do */}
+
+        {/* section 2: what can I do */}
         <section
           id="bg-d0f0ff"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
@@ -179,7 +178,7 @@ export default function Home() {
                 </p>
                 <div
                   className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10"
-                  data-aos="fade-up"
+                  data-aos="fade-left"
                 >
                   <SkillIcon src={icons.html5} alt="html5" label="HTML5" />
                   <SkillIcon src={icons.css3} alt="css3" label="CSS3" />
@@ -258,7 +257,7 @@ export default function Home() {
             </div>
           </article>
         </section>
-        {/* END OF section 2: what can I do */}
+
         {/* section 3: who am I */}
         <section
           id="bg-cfffd3"
@@ -307,6 +306,7 @@ export default function Home() {
             </div>
           </article>
         </section>
+
         {/* section 4: contacts */}
         <section
           id="bg-fff9ab"
@@ -389,7 +389,6 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        {/* END OF section 4: contacts */}
       </main>
     </>
   );
