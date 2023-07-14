@@ -1,7 +1,4 @@
-import {
-  World,
-  Direction,
-} from "../../public/pkg/snake_game";
+import { World, Direction } from "../../public/pkg/snake_game";
 
 export function touchListeners(snakeWorld: World) {
   // Add touch events for mobile swipe
@@ -9,11 +6,15 @@ export function touchListeners(snakeWorld: World) {
   let initialY: number | null = null;
 
   const startTouch = (e: TouchEvent) => {
+    e.preventDefault();
+    
     initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   };
 
   const moveTouch = (e: TouchEvent) => {
+    e.preventDefault();
+
     if (initialX === null || initialY === null) {
       return;
     }
@@ -44,10 +45,13 @@ export function touchListeners(snakeWorld: World) {
 
     initialX = null;
     initialY = null;
+  };
 
+  const endTouch = (e: TouchEvent) => {
     e.preventDefault();
   };
 
   document.addEventListener("touchstart", startTouch, false);
   document.addEventListener("touchmove", moveTouch, false);
+  document.addEventListener("touchend", endTouch, false);
 }

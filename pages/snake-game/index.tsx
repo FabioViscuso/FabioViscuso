@@ -10,14 +10,12 @@ import init, {
 import { touchListeners } from "../../lib/snakeGame/touchListeners";
 import { keypressListeners } from "../../lib/snakeGame/keypressListeners";
 
-
 export default function SnakeGamePage() {
-    const { t } = useTranslation("page-new-postit");
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [gameStatus, setGameStatus] = useState<GameStatus | undefined>(
-        undefined
-        );
-        
+  const { t } = useTranslation("page-new-postit");
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [gameStatus, setGameStatus] = useState<GameStatus | undefined>(
+    undefined
+  );
 
   const initializeSnakeGame = async () => {
     try {

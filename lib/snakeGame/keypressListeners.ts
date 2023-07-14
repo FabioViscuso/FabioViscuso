@@ -5,6 +5,7 @@ import {
 
 export function keypressListeners(snakeWorld: World) {
     document.addEventListener("keydown", (e) => {
+        e.preventDefault();
         const key = e.code;
         if (key === "ArrowUp" || key === "KeyW") {
           snakeWorld.change_direction(Direction.Up);
