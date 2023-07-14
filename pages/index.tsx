@@ -145,7 +145,10 @@ export default function Home() {
           <article className="h-full flex flex-col justify-between items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
               <div className="lg:flex-1">
-                <Heading content={t("section-2-heading")} additionalCSS="[text-shadow:2px_2px_1px_#b8e3ff,7px_6px_1px_#273BE2]" />
+                <Heading
+                  content={t("section-2-heading")}
+                  additionalCSS="[text-shadow:2px_2px_1px_#b8e3ff,7px_6px_1px_#273BE2]"
+                />
                 <p className="my-8 text-lg" data-aos="fade-right">
                   {t("section-2-line1")}
                 </p>
@@ -260,46 +263,50 @@ export default function Home() {
           id="bg-c7ffcc"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 "
         >
-          <article className="h-full flex flex-col justify-center items-center gap-24">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
-              <div className="lg:flex-1">
-                <Heading content={t("section-3-heading")} additionalCSS="[text-shadow:2px_2px_1px_#c7ffcc,7px_6px_1px_#03C03C]" />
-                <p className="mt-8 text-lg" data-aos="fade-right">
-                  {t("section-3-p1")}
-                </p>
-                <p className="mt-8 text-lg" data-aos="fade-right">
-                  {t("section-3-p2")}
-                </p>
-                <p className="mt-8 text-lg" data-aos="fade-right">
-                  {t("section-3-p3")}
-                </p>
-              </div>
-              <div className="relative h-full w-full lg:mt-0 lg:flex-1" data-aos="fade-left">
-                <Image
-                  src={icons.avatar}
-                  alt="my photo"
-                  priority
-                  placeholder="blur"
-                  className=" photo-common top-[20px] left-[30%] -translate-x-1/2 -translate-y-1/2 -rotate-6 "
-                  /* data-aos="fade-left" */
-                />
-                <Image
-                  src={icons.avatar2}
-                  alt="my photo2"
-                  priority
-                  placeholder="blur"
-                  className=" photo-common left-[50%] -translate-x-1/2 -translate-y-1/2"
-                  /* data-aos="fade-left" */
-                />
-                <Image
-                  src={icons.avatar3}
-                  alt="my photo2"
-                  priority
-                  placeholder="blur"
-                  className=" photo-common top-[-20px] left-[70%] -translate-x-1/2 -translate-y-1/2 rotate-6 "
-                  /* data-aos="fade-left" */
-                />
-              </div>
+          <article className="h-full flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
+            <div className="lg:flex-1">
+              <Heading
+                content={t("section-3-heading")}
+                additionalCSS="[text-shadow:2px_2px_1px_#c7ffcc,7px_6px_1px_#03C03C]"
+              />
+              <p className="mt-8 text-lg" data-aos="fade-right">
+                {t("section-3-p1")}
+              </p>
+              <p className="mt-8 text-lg" data-aos="fade-right">
+                {t("section-3-p2")}
+              </p>
+              <p className="mt-8 text-lg" data-aos="fade-right">
+                {t("section-3-p3")}
+              </p>
+            </div>
+            <div
+              className="relative h-full w-full lg:mt-0 lg:flex-1"
+              data-aos="fade-left"
+            >
+              <Image
+                src={icons.avatar}
+                alt="my photo"
+                priority
+                placeholder="blur"
+                className=" photo-common top-[20px] left-[30%] -translate-x-1/2 -translate-y-1/2 -rotate-6 "
+                /* data-aos="fade-left" */
+              />
+              <Image
+                src={icons.avatar2}
+                alt="my photo2"
+                priority
+                placeholder="blur"
+                className=" photo-common left-[50%] -translate-x-1/2 -translate-y-1/2"
+                /* data-aos="fade-left" */
+              />
+              <Image
+                src={icons.avatar3}
+                alt="my photo2"
+                priority
+                placeholder="blur"
+                className=" photo-common top-[-20px] left-[70%] -translate-x-1/2 -translate-y-1/2 rotate-6 "
+                /* data-aos="fade-left" */
+              />
             </div>
           </article>
         </section>
@@ -312,7 +319,9 @@ export default function Home() {
           <div className="flex flex-col flex-1 ">
             <Heading
               content={t("contacts-heading")}
-              additionalCSS={"[text-shadow:2px_2px_1px_#fffbab,7px_6px_1px_#FF8000] break-all lg:break-normal "}
+              additionalCSS={
+                "[text-shadow:2px_2px_1px_#fffbab,7px_6px_1px_#FF8000] break-all lg:break-normal "
+              }
             />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
               {t("contacts-line1")}
@@ -395,7 +404,7 @@ export default function Home() {
 }
 
 interface Props {
-  locale: string
+  locale: string;
 }
 export async function getStaticProps({ locale }: Props) {
   return {
