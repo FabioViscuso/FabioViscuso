@@ -19,7 +19,7 @@ export default function Home() {
   const observerOptions = {
     root: null,
     rootMargin: "0px 0px 0px 0px",
-    threshold: 0.45,
+    threshold: 0.3,
   };
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
