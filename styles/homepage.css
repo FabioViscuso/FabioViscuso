@@ -61,7 +61,8 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgb(235, 235, 235);
+  background: transparent;
+  border: 4px solid rgba(28, 28, 28, 0.6);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
@@ -144,13 +145,13 @@
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
-    opacity: .5;
+    opacity: .4;
     border-radius: 30%;
   }
 
   100% {
     transform: translateY(-1000px) rotate(720deg);
-    opacity: .1;
+    opacity: .05;
     border-radius: 50%;
   }
 }
