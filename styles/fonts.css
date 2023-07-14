@@ -8,6 +8,25 @@
 }
 
 @font-face {
+  font-family: "Shrikhand";
+  src: url("../public/fonts/shrikhand/Shrikhand-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Overlock";
+  src: url("../public/fonts/overlock/Overlock-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
   font-family: "Spline Sans Mono";
   src: url("../public/fonts/splinesans/SplineSansMono-Light.ttf")
     format("truetype");
