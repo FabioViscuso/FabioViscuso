@@ -51,7 +51,20 @@ export default function Home() {
       <Head>
         <meta name="description" content="homepage" />
       </Head>
-      <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
+      <main className="relative flex flex-col justify-center items-center h-full text-center lg:text-left">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
         {/* section 1: photo and introduction */}
         <section
           id="bg-ffd7d7"
