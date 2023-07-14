@@ -1,19 +1,20 @@
-.bg-ffc4c4 {
-  background-color: #ffc4c4;
-  background-image: url('../public/icons/wavingHand.png');
-  background-repeat: no-repeat;
-  background-size:auto;
-  background-position: 40vw 2vw;
-  background-blend-mode: soft-light;
+.bg-fad7ff {
+  position: relative;
+  z-index: 20;
+  background-color: #fad7ff;
+  scroll-snap-align: start;
 }
-.bg-d0f0ff {
-  background-color: #d0f0ff;
+.bg-b8e3ff {
+  background-color: #b8e3ff;
+  scroll-snap-align: start;
 }
-.bg-cfffd3 {
-  background-color: #cfffd3;
+.bg-c7ffcc {
+  background-color: #c7ffcc;
+  scroll-snap-align: start;
 }
-.bg-fff9ab {
-  background-color: #fff9ab;
+.bg-fffbab {
+  background-color: #fffbab;
+  scroll-snap-align: start;
 }
 
 .skills-icon-popup {
@@ -43,4 +44,8 @@
   transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
   opacity: 1;
   z-index: 10;
+}
+
+.header-common {
+  font-size: clamp(3rem, 5vmax, 6rem);
 }

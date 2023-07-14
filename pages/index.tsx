@@ -18,15 +18,15 @@ export default function Home() {
 
   const observerOptions = {
     root: null,
-    rootMargin: "-10px 0px 0px 0px",
-    threshold: 0.4,
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0.45,
   };
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const html = document.querySelector("html")!;
         const sectionId = entry.target.id;
-        document.body.className = `bg-common ${sectionId}`;
+        document.body.className = `${sectionId}`;
         const colorValue = `#${sectionId.substring(3)}`;
         html.style.backgroundColor = colorValue;
       }
@@ -54,7 +54,7 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
         {/* section 1: photo and introduction */}
         <section
-          id="bg-ffc4c4"
+          id="bg-fad7ff"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           <div className=" hidden md:block">
@@ -70,7 +70,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <h1 className="text-7xl md:text-8xl [text-shadow:4px_3px_1px_rgba(0,0,0,0.35)]">
+                <h1 className="text-7xl md:text-8xl [text-shadow:2px_2px_1px_#fde6e6,7px_6px_1px_#8F00FF]">
                   {t("greeting")}
                 </h1>
               </div>
@@ -127,7 +127,7 @@ export default function Home() {
             data-aos-offset="-500"
           >
             <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
-            <a href="#bg-2" title="sroll to section 2">
+            <a href="#bg-c7ffcc" title="sroll to section 2">
               <div className="scroll-downs">
                 <div className="mousey">
                   <div className="scroller"></div>
@@ -139,13 +139,13 @@ export default function Home() {
 
         {/* section 2: what can I do */}
         <section
-          id="bg-d0f0ff"
+          id="bg-b8e3ff"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
               <div className="lg:flex-1">
-                <Heading content={t("section-2-heading")} />
+                <Heading content={t("section-2-heading")} additionalCSS="[text-shadow:2px_2px_1px_#b8e3ff,7px_6px_1px_#273BE2]" />
                 <p className="my-8 text-lg" data-aos="fade-right">
                   {t("section-2-line1")}
                 </p>
@@ -257,13 +257,13 @@ export default function Home() {
 
         {/* section 3: who am I */}
         <section
-          id="bg-cfffd3"
+          id="bg-c7ffcc"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 "
         >
           <article className="h-full flex flex-col justify-center items-center gap-24">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
               <div className="lg:flex-1">
-                <Heading content={t("section-3-heading")} />
+                <Heading content={t("section-3-heading")} additionalCSS="[text-shadow:2px_2px_1px_#c7ffcc,7px_6px_1px_#03C03C]" />
                 <p className="mt-8 text-lg" data-aos="fade-right">
                   {t("section-3-p1")}
                 </p>
@@ -306,13 +306,13 @@ export default function Home() {
 
         {/* section 4: contacts */}
         <section
-          id="bg-fff9ab"
+          id="bg-fffbab"
           className=" min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 flex flex-col lg:flex-row items-center gap-24"
         >
           <div className="flex flex-col flex-1 ">
             <Heading
               content={t("contacts-heading")}
-              additionalCSS={" break-all lg:break-normal "}
+              additionalCSS={"[text-shadow:2px_2px_1px_#fffbab,7px_6px_1px_#FF8000] break-all lg:break-normal "}
             />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
               {t("contacts-line1")}

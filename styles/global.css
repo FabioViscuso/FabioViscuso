@@ -21,7 +21,7 @@ body {
   background-color: #eeeeee;
   color: #191919;
   scroll-behavior: smooth;
-  transition: background-color 2s ease;
+  transition: background-color 1s linear;
 }
 
 .custom-cursor {
@@ -42,13 +42,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "TT Travels";
+  font-family: "Shrikhand";
   letter-spacing: 4px;
 }
 
 p,
 span {
-  font-family: "Spline Sans Mono";
+  font-family: "Overlock";
 }
 
 ::selection {
@@ -77,7 +77,7 @@ button {
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #e2e2e2;
+  background-color: #f8f8f8;
   border-radius: 20px;
-  border: 2px solid #191919;
+  border: 1px solid #191919;
 }
