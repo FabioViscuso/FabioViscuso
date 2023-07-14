@@ -54,7 +54,7 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center h-full text-center lg:text-left">
         {/* section 1: photo and introduction */}
         <section
-          id="bg-fad7ff"
+          id="bg-ffd7d7"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           <div className=" hidden md:block">
@@ -70,7 +70,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <h1 className="text-7xl md:text-8xl [text-shadow:2px_2px_1px_#fde6e6,7px_6px_1px_#8F00FF]">
+                <h1 className="text-7xl md:text-8xl [text-shadow:2px_2px_1px_#ffd7d7,7px_6px_1px_#FF2400]">
                   {t("greeting")}
                 </h1>
               </div>

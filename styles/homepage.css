@@ -1,7 +1,7 @@
-.bg-fad7ff {
+.bg-ffd7d7 {
   position: relative;
   z-index: 20;
-  background-color: #fad7ff;
+  background-color: #ffd7d7;
   scroll-snap-align: start;
 }
 .bg-b8e3ff {
