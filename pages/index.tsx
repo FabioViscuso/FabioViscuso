@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* section 2: what can I do */}
         <section
-          id="bg-d5eeff"
+          id="bg-05141e"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
@@ -273,7 +273,7 @@ export default function Home() {
 
         {/* section 3: who am I */}
         <section
-          id="bg-c7ffcc"
+          id="bg-051d07"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 "
         >
           <article className="h-full flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
@@ -326,7 +326,7 @@ export default function Home() {
 
         {/* section 4: contacts */}
         <section
-          id="bg-fffbab"
+          id="bg-28270a"
           className=" min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32 flex flex-col lg:flex-row items-center gap-24"
         >
           <div className="flex flex-col flex-1 ">
