@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        indieFlower: ['Indie Flower', 'sans-serif']
+        indieFlower: ['Indie Flower', 'sans-serif'],
+        sacramento: ['Sacramento', 'sans-serif'],
+        poiret: ['Poiret One', 'sans-serif']
       },
       height: {
         dynHeight: '100dvh' 
