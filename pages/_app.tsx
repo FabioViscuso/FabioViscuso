@@ -10,22 +10,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { AppProps } from "next/app";
 
-import type { ReactElement, ReactNode } from 'react'
-import type { NextPage } from 'next' 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
- 
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
-
-const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const formattedPath = router.pathname.replace(/\//, "").replace(/-/, " ");
   const [isLoading, setIsLoading] = useState(false);
-
-  const getLayout = Component.getLayout || ((page) => page)
 
   useEffect(() => {
     const handleStart = () => setIsLoading(true);
@@ -53,7 +41,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     };
   }, [router.events]);
 
-  return getLayout(
+  return (
     <>
       <Head>
         <title>
