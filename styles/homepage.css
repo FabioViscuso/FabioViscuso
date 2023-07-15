@@ -68,6 +68,7 @@
   background-size: 80%;
   background-position: center center;
   filter: invert(30%);
+  will-change: transform;
 }
 
 .circles li:nth-child(1) {
@@ -92,7 +93,7 @@
   width: 35px;
   height: 35px;
   animation-delay: 4s;
-  background-image: url("../public/icons/pencil.png");
+  background-image: url("../public/icons/command-line.png");
 }
 
 .circles li:nth-child(4) {
@@ -109,7 +110,7 @@
   width: 40px;
   height: 40px;
   animation-delay: 0s;
-  background-image: url("../public/icons/gamepad.png");
+  background-image: url("../public/icons/shapes.png");
 }
 
 .circles li:nth-child(6) {
@@ -134,7 +135,7 @@
   height: 35px;
   animation-delay: 15s;
   animation-duration: 45s;
-  background-image: url("../public/icons/gamepad.png");
+  background-image: url("../public/icons/saturn.png");
 }
 
 .circles li:nth-child(9) {
@@ -143,7 +144,7 @@
   height: 30px;
   animation-delay: 2s;
   animation-duration: 35s;
-  background-image: url("../public/icons/saturn.png");
+  background-image: url("../public/icons/shapes.png");
 }
 
 .circles li:nth-child(10) {
@@ -152,7 +153,7 @@
   height: 100px;
   animation-delay: 0s;
   animation-duration: 11s;
-  background-image: url("../public/icons/rocket.png");
+  background-image: url("../public/icons/command-line.png");
 }
 
 @keyframes animate {
