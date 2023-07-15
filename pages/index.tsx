@@ -83,7 +83,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <h1 className="text-7xl md:text-9xl [text-shadow:2px_1px_1px_#ffdede,7px_4px_1px_#FF2400]">
+                <h1 className="text-7xl md:text-9xl text-white [text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FF0800,0px_0px_82px_#FF0800,0px_0px_92px_#FF0800,0px_0px_102px_#FF0800,0px_0px_151px_#FF0800]">
                   {t("greeting")}
                 </h1>
               </div>
@@ -160,7 +160,7 @@ export default function Home() {
               <div className="lg:flex-1">
                 <Heading
                   content={t("section-2-heading")}
-                  additionalCSS="[text-shadow:2px_1px_1px_#d5eeff,6px_3px_1px_#273BE2]"
+                  additionalCSS="[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#15F4EE,0px_0px_82px_#15F4EE,0px_0px_92px_#15F4EE,0px_0px_102px_#15F4EE,0px_0px_151px_#15F4EE]"
                 />
                 <p className="my-8 text-lg" data-aos="fade-right">
                   {t("section-2-line1")}
@@ -280,7 +280,7 @@ export default function Home() {
             <div className="lg:flex-1">
               <Heading
                 content={t("section-3-heading")}
-                additionalCSS="[text-shadow:2px_1px_1px_#c7ffcc,6px_3px_1px_#03C03C]"
+                additionalCSS="[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#00FF40,0px_0px_82px_#00FF40,0px_0px_92px_#00FF40,0px_0px_102px_#00FF40,0px_0px_151px_#00FF40]"
               />
               <p className="mt-8 text-lg" data-aos="fade-right">
                 {t("section-3-p1")}
@@ -333,9 +333,8 @@ export default function Home() {
             <Heading
               content={t("contacts-heading")}
               additionalCSS={
-                "[text-shadow:2px_1px_1px_#fffbab,6px_3px_1px_#FF8000] break-all lg:break-normal "
-              }
-            />
+                "[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FFFF00,0px_0px_82px_#FFFF00,0px_0px_92px_#15F4EE,0px_0px_102px_#FFFF00,0px_0px_151px_#FFFF00] break-all lg:break-normal"
+              }            />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
               {t("contacts-line1")}
             </p>
@@ -351,7 +350,7 @@ export default function Home() {
             <li className="flex items-center">
               <a
                 href="https://github.com/FabioViscuso"
-                className="  inline-block hover:scale-110 transition-transform"
+                className="inline-block hover:scale-110 transition-transform"
                 target="_blank"
               >
                 <Image
@@ -359,6 +358,7 @@ export default function Home() {
                   width={60}
                   height={60}
                   alt={"github link"}
+                  className="[filter:brightness(100)]"
                 ></Image>
               </a>
             </li>
@@ -366,7 +366,7 @@ export default function Home() {
             <li className="flex items-center">
               <a
                 href="https://www.linkedin.com/in/fabiocarmelomariaviscuso/"
-                className="  inline-block [filter:brightness(0.15)] hover:scale-110 transition-transform"
+                className="  inline-block hover:scale-110 transition-transform"
                 target="_blank"
               >
                 <Image
@@ -388,7 +388,7 @@ export default function Home() {
               <span
                 onClick={onCopyHandler}
                 id={"emailAddress"}
-                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none  drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_2px_#fff]"
               >
                 viscuso.fabio@outlook.it
               </span>
@@ -404,7 +404,7 @@ export default function Home() {
               <span
                 onClick={onCopyHandler}
                 id="phoneNumber"
-                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_1px_rgb(0,0,0)]"
+                className=" text-xl md:text-3xl hover:scale-110 transition-transform leading-none drop-shadow-[0px_0px_2px_#fff]"
               >
                 +39 351 996 6861
               </span>

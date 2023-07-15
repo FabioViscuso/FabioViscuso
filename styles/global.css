@@ -42,13 +42,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Limelight";
+  font-family: "Sacramento";
   letter-spacing: 6px;
 }
 
 p,
 span {
   font-family: "Poiret One";
+  color: white;
 }
 
 ::selection {
