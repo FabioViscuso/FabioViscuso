@@ -67,10 +67,10 @@ export default function Home() {
 
         {/* section 1: photo and introduction */}
         <section
-          id="bg-ffdede"
+          id="bg-270825"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
-          <div className=" hidden md:block">
+          <div className="">
             {/* I know it's bad to have this empty div. Don't judge me yet. */}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-20">
@@ -83,7 +83,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <h1 className="text-7xl md:text-9xl text-white [text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FF0800,0px_0px_82px_#FF0800,0px_0px_92px_#FF0800,0px_0px_102px_#FF0800,0px_0px_151px_#FF0800]">
+                <h1 className="text-7xl md:text-9xl text-white [text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FF1493,0px_0px_82px_#FF1493,0px_0px_92px_#FF1493,0px_0px_102px_#FF1493,0px_0px_151px_#FF1493]">
                   {t("greeting")}
                 </h1>
               </div>
