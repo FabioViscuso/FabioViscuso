@@ -42,3 +42,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Limelight";
+  src: url("../public/fonts/limelight/Limelight-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
