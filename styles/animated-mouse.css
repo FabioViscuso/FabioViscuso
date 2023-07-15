@@ -6,7 +6,8 @@
   width: 3px;
   padding: 8px 14px;
   height: 30px;
-  border: 2px solid #191919;
+  border: 2px solid #e2e2e2;
+  box-shadow: 0px 0px 4px #fff;
   border-radius: 25px;
   opacity: 0.75;
   box-sizing: content-box;
@@ -15,7 +16,7 @@
   width: 3px;
   height: 10px;
   border-radius: 25%;
-  background-color: #191919;
+  background-color: #e2e2e2;
   animation-name: scroll;
   animation-duration: 1.4s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);

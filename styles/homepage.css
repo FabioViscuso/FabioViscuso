@@ -1,16 +1,16 @@
-.bg-ffdede {
+.bg-270825 {
   position: relative;
   z-index: 20;
-  background-color: #ffdede;
+  background-color: #270825;
 }
-.bg-d5eeff {
-  background-color: #d5eeff;
+.bg-05141e {
+  background-color: #05141e;
 }
-.bg-c7ffcc {
-  background-color: #c7ffcc;
+.bg-051d07 {
+  background-color: #051d07;
 }
-.bg-fffbab {
-  background-color: #fffbab;
+.bg-28270a {
+  background-color: #28270a;
 }
 
 .skills-icon-popup {
@@ -67,6 +67,7 @@
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center center;
+  filter: invert(30%);
 }
 
 .circles li:nth-child(1) {

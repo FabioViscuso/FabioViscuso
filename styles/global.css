@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Limelight";
+  font-family: "Sacramento";
   letter-spacing: 6px;
 }
 
@@ -71,9 +71,10 @@ button {
 /** CUSTOM SCROLLBAR **/
 *::-webkit-scrollbar {
   width: 8px;
+  backdrop-filter: invert(20%);
 }
 *::-webkit-scrollbar-track {
-  background: #1919192b;
+  background: rgba(38, 38, 38, 0.3);
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {

@@ -1,22 +1,4 @@
 @font-face {
-  font-family: "Shrikhand";
-  src: url("../public/fonts/shrikhand/Shrikhand-Regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Overlock";
-  src: url("../public/fonts/overlock/Overlock-Regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Indie Flower";
   src: url("../public/fonts/indieflower/IndieFlower-Regular.ttf")
     format("truetype");
@@ -46,6 +28,15 @@
 @font-face {
   font-family: "Limelight";
   src: url("../public/fonts/limelight/Limelight-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("../public/fonts/sacramento/Sacramento-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
