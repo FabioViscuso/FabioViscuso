@@ -18,7 +18,7 @@ export default function Home() {
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px 0px 0px 0px",
+    rootMargin: "0px 0px 0px -500px",
     threshold: 0.3,
   };
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
@@ -67,7 +67,7 @@ export default function Home() {
 
         {/* section 1: photo and introduction */}
         <section
-          id="bg-ffd7d7"
+          id="bg-ffdede"
           className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           <div className=" hidden md:block">
@@ -83,7 +83,7 @@ export default function Home() {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <h1 className="text-7xl md:text-8xl [text-shadow:2px_2px_1px_#ffd7d7,7px_6px_1px_#FF2400]">
+                <h1 className="text-7xl md:text-9xl [text-shadow:2px_1px_1px_#ffdede,7px_4px_1px_#FF2400]">
                   {t("greeting")}
                 </h1>
               </div>
@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* section 2: what can I do */}
         <section
-          id="bg-b8e3ff"
+          id="bg-d5eeff"
           className="min-h-screen w-full px-2 lg:px-24 pt-32 md:py-32"
         >
           <article className="h-full flex flex-col justify-between items-center gap-24">
@@ -160,7 +160,7 @@ export default function Home() {
               <div className="lg:flex-1">
                 <Heading
                   content={t("section-2-heading")}
-                  additionalCSS="[text-shadow:2px_2px_1px_#b8e3ff,7px_6px_1px_#273BE2]"
+                  additionalCSS="[text-shadow:2px_1px_1px_#d5eeff,6px_3px_1px_#273BE2]"
                 />
                 <p className="my-8 text-lg" data-aos="fade-right">
                   {t("section-2-line1")}
@@ -280,7 +280,7 @@ export default function Home() {
             <div className="lg:flex-1">
               <Heading
                 content={t("section-3-heading")}
-                additionalCSS="[text-shadow:2px_2px_1px_#c7ffcc,7px_6px_1px_#03C03C]"
+                additionalCSS="[text-shadow:2px_1px_1px_#c7ffcc,6px_3px_1px_#03C03C]"
               />
               <p className="mt-8 text-lg" data-aos="fade-right">
                 {t("section-3-p1")}
@@ -333,7 +333,7 @@ export default function Home() {
             <Heading
               content={t("contacts-heading")}
               additionalCSS={
-                "[text-shadow:2px_2px_1px_#fffbab,7px_6px_1px_#FF8000] break-all lg:break-normal "
+                "[text-shadow:2px_1px_1px_#fffbab,6px_3px_1px_#FF8000] break-all lg:break-normal "
               }
             />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">

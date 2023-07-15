@@ -42,13 +42,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Shrikhand";
-  letter-spacing: 4px;
+  font-family: "Righteous";
+  letter-spacing: 6px;
 }
 
 p,
 span {
-  font-family: "Overlock";
+  font-family: "Poiret One";
 }
 
 ::selection {
