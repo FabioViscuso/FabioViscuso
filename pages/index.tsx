@@ -140,7 +140,7 @@ export default function Home() {
             data-aos-offset="-500"
           >
             <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
-            <a href="#bg-c7ffcc" title="sroll to section 2">
+            <a href="#bg-05141e" title="sroll to section 2">
               <div className="scroll-downs">
                 <div className="mousey">
                   <div className="scroller"></div>
@@ -173,7 +173,7 @@ export default function Home() {
                   <span>
                     &nbsp;
                     <a
-                      href="#bg-fff9ab"
+                      href="#bg-28270a"
                       className=" inline-block underline hover:scale-110 transition-transform"
                     >
                       {t("section-2-cta")}
