@@ -44,7 +44,7 @@ export default function Layout({ children }: Props) {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
       cursor.style.transform = `translate(${e.clientX - 8}px, ${e.clientY - 8}px)`;
     });
-  });
+  }, []);
 
   return (
     <>

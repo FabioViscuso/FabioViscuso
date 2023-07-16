@@ -44,7 +44,7 @@ export default function Home() {
     return () => {
       observer.disconnect();
     };
-  });
+  }, []);
 
   return (
     <>
