@@ -1,13 +1,18 @@
+'use client'
+
 import { useRouter } from "next/router";
-import React, { ChangeEvent, FormEvent, useReducer } from "react";
+import React, { useReducer } from "react";
 
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import translation function
-import { useTranslation } from "next-i18next";
-import Head from "next/head";
+import { useTranslation } from "../../i18n/client";
 
-export default function NewPostitForm() {
-  const { t } = useTranslation("page-new-postit");
+
+interface Props {
+  lng: string
+}
+
+export default function NewPostitForm({lng}: Props) {
+  const { t } = useTranslation(lng, "page-new-postit", {});
   const router = useRouter();
 
   interface Action {
@@ -74,9 +79,6 @@ export default function NewPostitForm() {
 
   return (
     <>
-      <Head>
-        <meta name="description" content="page for adding a new post-it" />
-      </Head>
       <div className="bg-notebook min-h-screen flex flex-col gap-5 justify-center items-center pt-24">
         <h1 className="font-indieFlower text-6xl text-center drop-shadow-[0px_0px_1px_rgb(0,0,0)]">
           {t("form-head")}
@@ -191,12 +193,4 @@ export default function NewPostitForm() {
       </div>
     </>
   );
-}
-
-export async function getStaticProps({ locale }: {locale: string}) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "page-new-postit"])),
-    },
-  };
 }

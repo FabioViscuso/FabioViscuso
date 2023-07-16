@@ -1,14 +1,24 @@
-import Head from "next/head";
+"use client";
+
 import { TouchEvent, useEffect, useRef, useState } from "react";
-import Footer from "../navigation/Footer";
-import Navbar from "../navigation/Navbar";
+import { dir } from "i18next";
+import { languages } from "../i18n/settings";
+
+import "../../styles/global.css";
 import Aos from "aos";
+import Navbar from "../../components/navigation/Navbar";
+import Footer from "../../components/navigation/Footer";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
+  params: { lang: string };
 }
 
-export default function Layout({ children }: Props) {
+export async function generateStaticParams() {
+  return languages.map((lang) => ({ lang }));
+}
+
+export default function RootLayout({ children, params: { lang } }: Props) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   let touchStartX: any = useRef(null);
 
@@ -31,25 +41,35 @@ export default function Layout({ children }: Props) {
   };
 
   useEffect(() => {
+    console.log(lang)
+    Aos.init({
+      startEvent: "DOMContentLoaded",
+      duration: 800,
+      delay: 200,
+      offset: 100,
+      easing: "ease",
+      once: true,
+    });
     Aos.refresh();
 
     /*  
         This resets the document color to the default, otherwise
         it would carry the latest one from the latest homepage section
     */
-    const html = document.querySelector('html')!;
-    html.style.backgroundColor = '#eeeeee';
+    const html = document.querySelector("html")!;
+    html.style.backgroundColor = "#eeeeee";
 
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      cursor.style.transform = `translate(${e.clientX - 8}px, ${e.clientY - 8}px)`;
+      cursor.style.transform = `translate(${e.clientX - 8}px, ${
+        e.clientY - 8
+      }px)`;
     });
   });
 
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
+    <html lang={lang} dir={dir(lang)}>
+      <head>
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -58,18 +78,17 @@ export default function Layout({ children }: Props) {
         />
         <meta name="og:title" content="Hello! That's me!" />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <Navbar isOpen={isSidebarOpen} />
-      <div
-        className="h-full flex flex-col justify-between"
-        ref={touchStartX }
+      </head>
+      <body
+        ref={touchStartX}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
         <div className="custom-cursor invisible md:visible"></div>
+        <Navbar currLang={lang} isOpen={isSidebarOpen} />
         {children}
-        <Footer />
-      </div>
-    </>
+        {/* <Footer /> */}
+      </body>
+    </html>
   );
 }

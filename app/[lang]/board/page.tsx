@@ -1,15 +1,15 @@
+'use client'
+
 import { MongoClient } from "mongodb";
 import { GetServerSideProps } from "next";
-import Postit, { PostItType } from "../../components/postit-board-page/PostIt";
+import Postit, { PostItType } from "../../../components/postit-board-page/PostIt";
 
-// needed for i18next functionality with SSG / SSR
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import translation function
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../i18n/client";
 import Head from "next/head";
 
-export default function Board({ postits, ...props }: {postits: PostItType[]}) {
-  const { t } = useTranslation("page-board");
+export default function Board({ postits, lng }: {postits: PostItType[], lng: string}) {
+  const { t } = useTranslation(lng, "page-board", {});
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function Board({ postits, ...props }: {postits: PostItType[]}) {
           {t("board-subhead")}
         </p>
         <div className="postit-grid justify-items-center gap-8 ">
-          {postits.map((postits) => (
+          {/* {postits.map((postits) => (
             <Postit
               key={postits.id}
               creator={postits.creator}
@@ -31,14 +31,14 @@ export default function Board({ postits, ...props }: {postits: PostItType[]}) {
               content={postits.content}
               color={postits.color}
             />
-          ))}
+          ))} */}
         </div>
       </main>
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+/* export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const client = await MongoClient.connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
   );
@@ -57,7 +57,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         color: postit.color,
         id: postit._id.toString(),
       })),
-      ...(await serverSideTranslations(locale!, ["common", "page-board"])),
     },
   };
-};
+}; */

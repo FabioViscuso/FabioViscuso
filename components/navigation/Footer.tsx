@@ -1,11 +1,11 @@
 // import translation function
-import { useTranslation, Trans } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
-import { useRouter } from "next/router";
+import usePathname from "next/router";
 
 export default function Footer() {
   const { t } = useTranslation();
-  const router = useRouter();
+  const router = usePathname;
 
   return (
     <div className={`${(router.pathname === "/board" || router.pathname === "/new-postit") ? "bg-notebook " : " text-gray-100 "} flex flex-col items-center pb-10 pt-28 px-4 bg-dark text-center`}>

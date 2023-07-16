@@ -1,20 +1,23 @@
+"use client"
+
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { SkillIcon } from "../components/homepage/SkillIcon";
-import { CVDownloadButton } from "../components/homepage/CVDowloadButton";
-import AnimatedRocket from "../components/homepage/AnimatedRocket";
-import Heading from "../components/homepage/Heading";
-import icons from "../components/ui/IconImport";
+import { SkillIcon } from "../../components/homepage/SkillIcon";
+import { CVDownloadButton } from "../../components/homepage/CVDowloadButton";
+import AnimatedRocket from "../../components/homepage/AnimatedRocket";
+import Heading from "../../components/homepage/Heading";
+import icons from "../../components/ui/IconImport";
 // the function that copies text and triggers the copy pop-up
-import onCopyHandler from "../lib/useCopyHandler";
-// needed for i18next functionality with SSG / SSR
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-// import translation function
-import { useTranslation } from "next-i18next";
+import onCopyHandler from "../../lib/useCopyHandler";
+import { useTranslation } from "../i18n/client";
 
-export default function Home() {
-  const { t } = useTranslation("page-home");
+interface Props {
+  lng: string
+}
+
+export default function Home({ lng } : Props) {
+  const { t } = useTranslation(lng, "page-home", {});
 
   const observerOptions = {
     root: null,
@@ -414,15 +417,4 @@ export default function Home() {
       </main>
     </>
   );
-}
-
-interface Props {
-  locale: string;
-}
-export async function getStaticProps({ locale }: Props) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "page-home"])),
-    },
-  };
 }
