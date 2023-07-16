@@ -51,8 +51,9 @@ span {
 
 /* Avoid rendering the default cursor on selectable elements */
 a,
-button {
-  cursor: none;
+button,
+button[role="button"] {
+  cursor: none !important;
 }
 
 /** CUSTOM SCROLLBAR **/
