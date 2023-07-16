@@ -18,7 +18,6 @@ interface Props {
 
 export default function Navbar({currLang, isOpen }: Props) {
   const pathname = usePathname();
-  console.log(pathname);
   // const { t } = useTranslation(); might revert or add text
   return (
     <nav

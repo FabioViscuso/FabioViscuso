@@ -41,7 +41,6 @@ export default function RootLayout({ children, params: { lang } }: Props) {
   };
 
   useEffect(() => {
-    console.log(lang)
     Aos.init({
       startEvent: "DOMContentLoaded",
       duration: 800,
