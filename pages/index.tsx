@@ -68,7 +68,7 @@ export default function Home() {
         {/* section 1: photo and introduction */}
         <section
           id="bg-270825"
-          className=" h-dynHeight transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
+          className=" h-[100svh] transition-all duration-300 w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between"
         >
           <div className="">
             {/* I know it's bad to have this empty div. Don't judge me yet. */}
