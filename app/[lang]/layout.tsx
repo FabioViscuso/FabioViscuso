@@ -1,11 +1,11 @@
 "use client";
 
 import { TouchEvent, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 
 import "../../styles/global.css";
-import Aos from "aos";
 import Navbar from "../../components/navigation/Navbar";
 import Footer from "../../components/navigation/Footer";
 
@@ -41,16 +41,6 @@ export default function RootLayout({ children, params: { lang } }: Props) {
   };
 
   useEffect(() => {
-    Aos.init({
-      startEvent: "DOMContentLoaded",
-      duration: 800,
-      delay: 200,
-      offset: 100,
-      easing: "ease",
-      once: true,
-    });
-    Aos.refresh();
-
     /*  
         This resets the document color to the default, otherwise
         it would carry the latest one from the latest homepage section

@@ -78,9 +78,6 @@ export default function Home({ params: { lng } }: Props) {
               <div
                 /* emoji + h1 container */
                 className="flex flex-col md:flex-row gap-2"
-                data-aos="fade-right"
-                data-aos-delay="200"
-                data-aos-duration="1000"
               >
                 <h1 className="text-7xl md:text-9xl text-white [text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FF1493,0px_0px_82px_#FF1493,0px_0px_92px_#FF1493,0px_0px_102px_#FF1493,0px_0px_151px_#FF1493]">
                   {t("greeting")}
@@ -88,56 +85,31 @@ export default function Home({ params: { lng } }: Props) {
               </div>
               <p
                 className="mt-12 text-xl lg:text-4xl"
-                data-aos="fade-right"
-                data-aos-delay="600"
-                data-aos-duration="1000"
               >
                 {t("intro-line1")}
               </p>
               <p
                 className="text-xl lg:text-4xl mt-0 md:mt-3"
-                data-aos="fade-right"
-                data-aos-delay="1000"
-                data-aos-duration="1000"
+
               >
                 {t("intro-line2")}
               </p>
               <p
                 className="text-xl lg:text-4xl mt-0 md:mt-3"
-                data-aos="fade-right"
-                data-aos-delay="1400"
-                data-aos-duration="1000"
+
               >
                 {t("intro-line3")}
               </p>
               <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-6">
-                <p
-                  className="text-2xl lg:text-6xl underline mt-0 md:mt-3"
-                  data-aos="fade-right"
-                  data-aos-delay="1800"
-                  data-aos-duration="1000"
-                >
+                <p className="text-2xl lg:text-6xl underline mt-0 md:mt-3">
                   {t("intro-line4")}
                 </p>
                 <AnimatedRocket />
               </div>
-              <p
-                className="text-sm mt-10"
-                data-aos="fade"
-                data-aos-delay="3000"
-                data-aos-duration="1000"
-              >
-                {t("intro-line5")}
-              </p>
+              <p className="text-sm mt-10">{t("intro-line5")}</p>
             </div>
           </div>
-          <div
-            className="flex items-center gap-10"
-            data-aos="fade-up"
-            data-aos-delay="3000"
-            data-aos-duration="1000"
-            data-aos-offset="-500"
-          >
+          <div className="flex items-center gap-10">
             <p className="text-sm sm:text-lg">{t("intro-cta")}</p>
             <a href="#bg-05141e" title="sroll to section 2">
               <div className="scroll-downs">
@@ -161,13 +133,13 @@ export default function Home({ params: { lng } }: Props) {
                   content={t("section-2-heading")}
                   additionalCSS="[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#15F4EE,0px_0px_82px_#15F4EE,0px_0px_92px_#15F4EE,0px_0px_102px_#15F4EE,0px_0px_151px_#15F4EE]"
                 />
-                <p className="my-8 text-lg" data-aos="fade-right">
+                <p className="my-8 text-lg">
                   {t("section-2-line1")}
                 </p>
-                <p className="mb-8 text-lg" data-aos="fade-right">
+                <p className="mb-8 text-lg">
                   {t("section-2-line2")}
                 </p>
-                <p className="text-lg" data-aos="fade-right">
+                <p className="text-lg">
                   {t("section-2-line3")}
                   <span>
                     &nbsp;
@@ -181,17 +153,11 @@ export default function Home({ params: { lng } }: Props) {
                 </p>
               </div>
               {/* skills */}
-              <div
-                className="lg:flex-1 flex flex-col items-center"
-                data-aos="fade-left"
-              >
+              <div className="lg:flex-1 flex flex-col items-center">
                 <p className="text-lg  text-center md:text-left ">
                   {t("section-2-skills")}
                 </p>
-                <div
-                  className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10"
-                  data-aos="fade-left"
-                >
+                <div className="flex gap-10 flex-wrap items-center justify-center md:justify-start mt-6 mb-10">
                   <SkillIcon src={icons.html5} alt="html5" label="HTML5" />
                   <SkillIcon src={icons.css3} alt="css3" label="CSS3" />
                   <SkillIcon
@@ -255,10 +221,7 @@ export default function Home({ params: { lng } }: Props) {
             </div>
 
             {/* the CV part */}
-            <div
-              className="flex gap-10 flex-col md:flex-row items-center md:items-stretch"
-              data-aos="fade-up"
-            >
+            <div className="flex gap-10 flex-col md:flex-row items-center md:items-stretch">
               <p className="mt-2 md:mt-0 text-xl text-center md:text-left flex flex-col md:flex-row items-center">
                 {t("section-2-cv")}
               </p>
@@ -281,19 +244,18 @@ export default function Home({ params: { lng } }: Props) {
                 content={t("section-3-heading")}
                 additionalCSS="[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#00FF40,0px_0px_82px_#00FF40,0px_0px_92px_#00FF40,0px_0px_102px_#00FF40,0px_0px_151px_#00FF40]"
               />
-              <p className="mt-8 text-lg" data-aos="fade-right">
+              <p className="mt-8 text-lg">
                 {t("section-3-p1")}
               </p>
-              <p className="mt-8 text-lg" data-aos="fade-right">
+              <p className="mt-8 text-lg">
                 {t("section-3-p2")}
               </p>
-              <p className="mt-8 text-lg" data-aos="fade-right">
+              <p className="mt-8 text-lg">
                 {t("section-3-p3")}
               </p>
             </div>
             <div
               className="relative h-full w-full lg:mt-0 lg:flex-1"
-              data-aos="fade-left"
             >
               <Image
                 src={icons.avatar}
@@ -301,7 +263,6 @@ export default function Home({ params: { lng } }: Props) {
                 priority
                 placeholder="blur"
                 className=" photo-common top-[20px] left-[30%] -translate-x-1/2 -translate-y-1/2 -rotate-6 "
-                /* data-aos="fade-left" */
               />
               <Image
                 src={icons.avatar2}
@@ -309,7 +270,6 @@ export default function Home({ params: { lng } }: Props) {
                 priority
                 placeholder="blur"
                 className=" photo-common left-[50%] -translate-x-1/2 -translate-y-1/2"
-                /* data-aos="fade-left" */
               />
               <Image
                 src={icons.avatar3}
@@ -317,7 +277,6 @@ export default function Home({ params: { lng } }: Props) {
                 priority
                 placeholder="blur"
                 className=" photo-common top-[-20px] left-[70%] -translate-x-1/2 -translate-y-1/2 rotate-6 "
-                /* data-aos="fade-left" */
               />
             </div>
           </article>
@@ -335,17 +294,14 @@ export default function Home({ params: { lng } }: Props) {
                 "[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FFFF00,0px_0px_82px_#FFFF00,0px_0px_92px_#15F4EE,0px_0px_102px_#FFFF00,0px_0px_151px_#FFFF00] break-all lg:break-normal"
               }
             />
-            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
+            <p className="mt-8 mb-8 md:mb-0 text-2xl">
               {t("contacts-line1")}
             </p>
-            <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
+            <p className="mt-8 mb-8 md:mb-0 text-2xl">
               {t("contacts-line2")}
             </p>
           </div>
-          <ul
-            className="flex flex-col items-center gap-10 flex-wrap flex-1"
-            data-aos="fade-left"
-          >
+          <ul className="flex flex-col items-center gap-10 flex-wrap flex-1">
             {/* Github button */}
             <li className="flex items-center">
               <a
