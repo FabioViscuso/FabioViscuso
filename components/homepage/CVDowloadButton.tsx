@@ -10,7 +10,7 @@ export function CVDownloadButton({ src, lang }: Props) {
     <a
       href={`./CV_Fabio_Viscuso_${lang}.pdf`}
       download={`CV_Fabio_Viscuso_${lang}.pdf`}
-      className="cursor-none inline-block rounded-full drop-shadow-[0px_0px_1px_rgb(0,0,0)] hover:scale-110 transition-all"
+      className="inline-block rounded-full drop-shadow-[0px_0px_1px_rgb(0,0,0)] hover:scale-110 transition-all"
     >
       <Image
         src={src}

@@ -16,7 +16,7 @@ export function LanguageSelector() {
     <button
       onClick={() => onToggleLanguageClick(changeTo)}
       title="language-switch"
-      className="cursor-none flex justify-center items-center w-16 h-16 p-2 hover:bg-slate-500 hover:bg-opacity-40 text-gray-800 transition-all"
+      className="flex justify-center items-center w-16 h-16 p-2 hover:bg-slate-500 hover:bg-opacity-40 text-gray-800 transition-all"
     >
       {router.locale === "en" && (
         <Image src={icons.flagit} width={40} height={40} alt={""} />
