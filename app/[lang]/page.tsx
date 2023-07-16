@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import { SkillIcon } from "../../components/homepage/SkillIcon";
 import { CVDownloadButton } from "../../components/homepage/CVDowloadButton";
@@ -13,10 +12,10 @@ import onCopyHandler from "../../lib/useCopyHandler";
 import { useTranslation } from "../i18n/client";
 
 interface Props {
-  lng: string
+  params: { lng: string };
 }
 
-export default function Home({ lng } : Props) {
+export default function Home({ params: { lng } }: Props) {
   const { t } = useTranslation(lng, "page-home", {});
 
   const observerOptions = {
@@ -51,9 +50,6 @@ export default function Home({ lng } : Props) {
 
   return (
     <>
-      <Head>
-        <meta name="description" content="homepage" />
-      </Head>
       <main className="relative text-gray-100 flex flex-col justify-center items-center h-full text-center lg:text-left">
         <ul className="circles">
           <li></li>
@@ -337,7 +333,8 @@ export default function Home({ lng } : Props) {
               content={t("contacts-heading")}
               additionalCSS={
                 "[text-shadow:0px_0px_7px_#fff,0px_0px_10px_#fff,0px_0px_21px_#fff,0px_0px_42px_#FFFF00,0px_0px_82px_#FFFF00,0px_0px_92px_#15F4EE,0px_0px_102px_#FFFF00,0px_0px_151px_#FFFF00] break-all lg:break-normal"
-              }            />
+              }
+            />
             <p className="mt-8 mb-8 md:mb-0 text-2xl" data-aos="fade-right">
               {t("contacts-line1")}
             </p>

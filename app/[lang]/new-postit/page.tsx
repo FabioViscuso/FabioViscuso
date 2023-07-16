@@ -1,17 +1,18 @@
-'use client'
+"use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useReducer } from "react";
 
 // import translation function
 import { useTranslation } from "../../i18n/client";
 
-
 interface Props {
-  lng: string
+  params: {
+    lng: string;
+  };
 }
 
-export default function NewPostitForm({lng}: Props) {
+export default function Page({ params: { lng } }: Props) {
   const { t } = useTranslation(lng, "page-new-postit", {});
   const router = useRouter();
 
@@ -186,7 +187,9 @@ export default function NewPostitForm({lng}: Props) {
               ></label>
             </div>
           </fieldset>
-          <button className={`  font-indieFlower text-lg bg-[${formData.colorSelect}] px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold border border-slate-400 hover:scale-110 transition-all`}>
+          <button
+            className={`  font-indieFlower text-lg bg-[${formData.colorSelect}] px-4 py-2 mt-10 rounded-lg text-slate-800 font-semibold border border-slate-400 hover:scale-110 transition-all`}
+          >
             {t("form-submit")}
           </button>
         </form>

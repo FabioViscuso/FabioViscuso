@@ -1,14 +1,23 @@
+"use client";
+
 // import translation function
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../app/i18n/client";
 
-import usePathname from "next/router";
+import { usePathname } from "next/navigation";
 
-export default function Footer() {
-  const { t } = useTranslation();
-  const router = usePathname;
+export default function Footer({ currLang }: { currLang: string }) {
+  const { t } = useTranslation(currLang, "common", {});
+  const pathname = usePathname();
 
   return (
-    <div className={`${(router.pathname === "/board" || router.pathname === "/new-postit") ? "bg-notebook " : " text-gray-100 "} flex flex-col items-center pb-10 pt-28 px-4 bg-dark text-center`}>
+    <div
+      className={`${
+        pathname === `/${currLang}/board` ||
+        pathname === `/${currLang}/new-postit`
+          ? "bg-notebook "
+          : " text-gray-100 "
+      } flex flex-col items-center pb-10 pt-28 px-4 bg-dark text-center`}
+    >
       <p>
         {t("footer-main")}
         &nbsp;

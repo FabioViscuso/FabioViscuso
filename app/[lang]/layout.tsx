@@ -87,7 +87,7 @@ export default function RootLayout({ children, params: { lang } }: Props) {
         <div className="custom-cursor invisible md:visible"></div>
         <Navbar currLang={lang} isOpen={isSidebarOpen} />
         {children}
-        {/* <Footer /> */}
+        <Footer currLang={lang} />
       </body>
     </html>
   );
