@@ -54,7 +54,7 @@ export default function Page({ params: { lng } }: Props) {
     });
   };
 
-  async function submitHandler(event: React.FormEvent) {
+  const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
 
     const postitData = {
@@ -63,7 +63,7 @@ export default function Page({ params: { lng } }: Props) {
       content: formData.description,
       color: formData.colorSelect,
     };
-    const response = await fetch("/api/add-postit", {
+    const response = await fetch("/api/send-postit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ export default function Page({ params: { lng } }: Props) {
     } else {
       window.alert("Something went wrong, try again");
     }
-  }
+  };
 
   return (
     <>
