@@ -1,0 +1,65 @@
+/** GENERAL **/
+html,
+body {
+  cursor: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  color: #191919;
+  scroll-behavior: smooth;
+  transition: background-color 1s linear;
+}
+
+html{
+  background-color: #f8f8f8;
+
+}
+
+body {
+  background-color: #ffffff00;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none; /* Ensure the cursor doesn't interfere with mouse events */
+  z-index: 9999;
+  backdrop-filter: invert(100%);
+  background-size: contain;
+  will-change: transform;
+}
+
+::selection {
+  background-color: #e2e2e2;
+  color: #191919;
+}
+
+#__next {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Avoid rendering the default cursor on selectable elements */
+a,
+button,
+button[role="button"] {
+  cursor: none !important;
+}
+
+/** CUSTOM SCROLLBAR **/
+*::-webkit-scrollbar {
+  width: 8px;
+  backdrop-filter: invert(20%);
+}
+*::-webkit-scrollbar-track {
+  background: #26262600;
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  border: 2px solid #fdfdfd;
+}
