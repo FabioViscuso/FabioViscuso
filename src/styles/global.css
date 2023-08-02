@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(general.css);
+@import url(spinner.css);
+@import url(animated-emojis.css);
+@import url(animated-mouse.css);
+@import url(homepage.css);
+@import url(new-postit.css);
+@import url(board-page.css);
