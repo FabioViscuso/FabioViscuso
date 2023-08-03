@@ -6,17 +6,10 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   color: #191919;
-  scroll-behavior: smooth;
-  transition: background-color 1s linear;
 }
 
 html{
   background-color: #f8f8f8;
-
-}
-
-body {
-  background-color: #ffffff00;
 }
 
 .custom-cursor {
@@ -32,20 +25,16 @@ body {
 }
 
 ::selection {
-  background-color: #e2e2e2;
-  color: #191919;
-}
-
-#__next {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+  background-color: #1c1c1c;
+  color: #f8f8f8;
 }
 
 /* Avoid rendering the default cursor on selectable elements */
 a,
 button,
-button[role="button"] {
+input,
+label,
+textarea {
   cursor: none !important;
 }
 
@@ -55,11 +44,11 @@ button[role="button"] {
   backdrop-filter: invert(20%);
 }
 *::-webkit-scrollbar-track {
-  background: #26262600;
+  background: #1c1c1c00;
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
   background-color: #1c1c1c;
   border-radius: 20px;
-  border: 2px solid #fdfdfd;
+  border: 2px solid #f8f8f8;
 }

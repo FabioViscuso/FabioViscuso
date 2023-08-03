@@ -8,11 +8,13 @@
   transition: all 0.3s ease;
   text-align: center;
 }
+
 .skills-icon:hover > .skills-icon-popup {
   visibility: visible;
   opacity: 1;
   transition: all 0.3s ease;
 }
+
 .photo-common {
   position: absolute;
   width: clamp(2rem, 20vmax, 30rem);
@@ -21,17 +23,14 @@
   transition: all 0.2s linear;
   opacity: 0.8;
 }
+
 .photo-common:hover {
   transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
   opacity: 1;
   z-index: 10;
 }
 
-.header-common {
-  font-size: clamp(3rem, 5vmax, 6rem);
-}
-
-.circles {
+.bg-icons {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,7 +40,7 @@
   z-index: 0;
 }
 
-.circles li {
+.bg-icons li {
   position: fixed;
   display: block;
   list-style: none;
@@ -57,7 +56,7 @@
   will-change: transform;
 }
 
-.circles li:nth-child(1) {
+.bg-icons li:nth-child(1) {
   left: 25%;
   width: 70px;
   height: 70px;
@@ -65,7 +64,7 @@
   background-image: url("../../public/icons/gamepad.png");
 }
 
-.circles li:nth-child(2) {
+.bg-icons li:nth-child(2) {
   left: 10%;
   width: 20px;
   height: 20px;
@@ -74,7 +73,7 @@
   background-image: url("../../public/icons/saturn.png");
 }
 
-.circles li:nth-child(3) {
+.bg-icons li:nth-child(3) {
   left: 70%;
   width: 35px;
   height: 35px;
@@ -82,7 +81,7 @@
   background-image: url("../../public/icons/command-line.png");
 }
 
-.circles li:nth-child(4) {
+.bg-icons li:nth-child(4) {
   left: 40%;
   width: 60px;
   height: 60px;
@@ -91,7 +90,7 @@
   background-image: url("../../public/icons/rocket.png");
 }
 
-.circles li:nth-child(5) {
+.bg-icons li:nth-child(5) {
   left: 65%;
   width: 40px;
   height: 40px;
@@ -99,16 +98,16 @@
   background-image: url("../../public/icons/shapes.png");
 }
 
-.circles li:nth-child(6) {
+.bg-icons li:nth-child(6) {
   left: 75%;
   width: 100px;
   height: 100px;
   animation-delay: 3s;
-  filter: blur(4px);
+  filter: invert(50%) blur(4px);
   background-image: url("../../public/icons/saturn.png");
 }
 
-.circles li:nth-child(7) {
+.bg-icons li:nth-child(7) {
   left: 35%;
   width: 85px;
   height: 85px;
@@ -116,7 +115,7 @@
   background-image: url("../../public/icons/pencil.png");
 }
 
-.circles li:nth-child(8) {
+.bg-icons li:nth-child(8) {
   left: 50%;
   width: 35px;
   height: 35px;
@@ -125,7 +124,7 @@
   background-image: url("../../public/icons/saturn.png");
 }
 
-.circles li:nth-child(9) {
+.bg-icons li:nth-child(9) {
   left: 20%;
   width: 30px;
   height: 30px;
@@ -134,13 +133,13 @@
   background-image: url("../../public/icons/shapes.png");
 }
 
-.circles li:nth-child(10) {
+.bg-icons li:nth-child(10) {
   left: 85%;
   width: 100px;
   height: 100px;
   animation-delay: 0s;
   animation-duration: 11s;
-  filter: blur(4px);
+  filter: invert(50%) blur(4px);
   background-image: url("../../public/icons/command-line.png");
 }
 
@@ -148,12 +147,10 @@
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: .4;
-    border-radius: 30%;
   }
 
   100% {
     transform: translateY(-1000px) rotate(720deg);
     opacity: .05;
-    border-radius: 50%;
   }
 }
