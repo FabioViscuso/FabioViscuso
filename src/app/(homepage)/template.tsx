@@ -37,8 +37,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const light = document.querySelector("#light-point")! as HTMLElement;
-        const sectionId = entry.target.id;
-        const colorValue = `#${sectionId.substring(3)}`;
+        const sectionId = entry.target.getAttribute('data-auracolor');
+        const colorValue = `#${sectionId}`;
         light.style.boxShadow = `0px 0px 200px 130px ${colorValue}`;
       }
     });

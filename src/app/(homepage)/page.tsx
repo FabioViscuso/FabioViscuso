@@ -15,7 +15,7 @@ export default function Home() {
     <>
       {/* section 1: photo and introduction */}
       <section
-        id="bg-FFDEDE"
+        data-auracolor="FFDEDE"
         className={` min-h-screen lg:flex-none lg:snap-start w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between`}
       >
         <div className="">
@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* section 2: what can I do */}
       <section
-        id="bg-C2EFFF"
+        data-auracolor="C2EFFF"
         className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 lg:py-16"
       >
         <article className="h-full flex flex-col justify-between items-center gap-24">
@@ -181,7 +181,7 @@ export default function Home() {
 
       {/* section 3: who am I */}
       <section
-        id="bg-C8FFC2"
+        data-auracolor="C8FFC2"
         className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 "
       >
         <article className="h-full flex flex-col lg:flex-row justify-center items-center gap-32 lg:gap-24">
@@ -228,7 +228,7 @@ export default function Home() {
 
       {/* section 4: contacts */}
       <section
-        id="bg-FFF9C2"
+        data-auracolor="FFF9C2"
         className=" min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 flex flex-col lg:flex-row items-center gap-24 "
       >
         <div className="flex flex-col flex-1 ">
