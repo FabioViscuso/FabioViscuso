@@ -15,7 +15,7 @@ export function SkillIcon({ src, alt, label, additionalCSS }: Props) {
         alt={alt}
         className={`rounded-full h-14 w-14 drop-shadow-[0px_0px_3px_#aaa] hover:scale-110 transition-transform ${additionalCSS || ""}`}
       />
-      <p className="skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999]  backdrop-blur-sm text-[#1c1c1c] text-lg rounded-md p-2">
+      <p className="skills-icon-popup bg-gradient-to-bl from-[#2dd4bf99] to-[#34d39999] backdrop-blur-md text-[#1c1c1c] text-lg rounded-md p-2">
         {label}
       </p>
     </div>

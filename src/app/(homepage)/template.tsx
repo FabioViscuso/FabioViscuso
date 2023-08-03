@@ -76,7 +76,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         id="light-point"
         className=" rounded-full fixed z-0 [box-shadow:0px_0px_300px_50px_#fff] will-change-transform transition-shadow duration-1000 "
       ></div>
-      <ul className="circles">
+      <ul className="bg-icons">
         <li></li>
         <li></li>
         <li></li>
