@@ -13,7 +13,7 @@ export default function Postit({ creator, title, content, color = "#f9f474" }: P
     >
       <span className="font-indieFlower text-2xl">{title}</span>
       <span className="font-indieFlower text-xl">from: {creator}</span>
-      <span className="font-indieFlower text-sm leading-3">----</span>
+      <span className="font-indieFlower text-sm leading-3">&#9866;&#9866;&#9866;&#9866;</span>
       <span className="font-indieFlower text-2xl m-0 h-full max-h-22 overflow-y-auto">
         {content}
       </span>
