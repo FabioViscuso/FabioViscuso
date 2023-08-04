@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import icons from "../ui/IconImport";
+import icons from "@/components/ui/IconImport";
 
 export default function AnimatedRocket() {
   const [flyAway, setFlyAway] = useState(false);
@@ -15,11 +16,12 @@ export default function AnimatedRocket() {
   };
 
   return (
-    <div
-      className="rocket-container h-min"
-      data-aos="fade-up-right"
-      data-aos-delay="1800"
-    >
+    <motion.div 
+      initial={{y: 400, x: -400}}
+      animate={{y: 0, x: 0}}
+      viewport={{once: true}}
+      transition={{duration: 1, delay: 2}}
+      className="rocket-container h-min">
       <p
         className={` ${
           flyAway ? "fly" : ""
@@ -28,6 +30,6 @@ export default function AnimatedRocket() {
       >
         <Image src={icons.rocket} alt="animated rocket" className="w-14 h-14" />
       </p>
-    </div>
+    </motion.div>
   );
 }
