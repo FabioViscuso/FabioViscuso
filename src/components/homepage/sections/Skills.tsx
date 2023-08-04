@@ -31,27 +31,36 @@ export default function Skills() {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
           <div className="lg:flex-1">
             <Heading content={"What can I do for you?"} />
-            <p className="my-8 text-xl">
-              My curiosity and passion ranges across a variety of topics and
-              project types. Be it a modern e-commerce, the next trendy webapp
-              or a catchy landing page, I&apos;d love to do my part in creating
-              products that give value to end users and clients alike.
+            <p className="mt-8 text-xl">
+              From modern e-commerce websites to trendy web applications and
+              captivating landing pages, my curiosity and passion span a broad
+              spectrum of projects. My mission is to leave a mark in creating
+              products that deliver true value to both end users and clients.
             </p>
-            <p className="mb-8 text-xl">
-              My preferred frontend technology? React. It&apos;s versatile,
-              scalable, and very fast. It&apos;s also an industry standard and
-              has a huge ecosystem of libraries and tools.
+            <p className="mt-8 text-xl">
+              Striving for perfection is in my DNA. I relentlessly pursue growth
+              and excellence to ensure your customers have the best possible
+              experience with your web applications.
             </p>
-            <p className="text-xl">
-              Of course I love to learn new stuff. Want to chat about
-              that?&nbsp;
+            <p className="mt-8 text-xl">
+              Need a hand? Just want to tell me something cool?&nbsp;
               <span
                 onClick={handleScrollToContacts}
                 className=" inline-block underline px-1 hover:bg-slate-800 hover:text-white transition-all rounded-sm duration-500 "
               >
-                Contact me
+                Let's chat!
               </span>
             </p>
+            {/* the CV part */}
+            <div className="mt-8 flex gap-8 flex-col md:flex-row items-center md:items-stretch">
+              <p className="text-xl text-center md:text-left flex flex-col md:flex-row items-center">
+                Download my resume:
+              </p>
+              <div className="flex gap-8 items-center">
+                <CVDownloadButton src={icons.flagit} lang={"italian"} />
+                <CVDownloadButton src={icons.flaguk} lang={"english"} />
+              </div>
+            </div>
           </div>
           {/* skills */}
           <div className="lg:flex-1 flex flex-col items-center">
@@ -118,17 +127,6 @@ export default function Skills() {
                 label="TypeScript"
               />
             </div>
-          </div>
-        </div>
-
-        {/* the CV part */}
-        <div className="flex gap-10 flex-col md:flex-row items-center md:items-stretch">
-          <p className="mt-2 md:mt-0 text-xl text-center md:text-left flex flex-col md:flex-row items-center">
-            Download my resume, pick a language:
-          </p>
-          <div className="flex gap-10 items-center">
-            <CVDownloadButton src={icons.flagit} lang={"italian"} />
-            <CVDownloadButton src={icons.flaguk} lang={"english"} />
           </div>
         </div>
       </motion.article>
