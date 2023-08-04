@@ -8,6 +8,7 @@ import icons from "@/components/ui/IconImport";
 export default function About() {
   return (
     <section
+      id="about"
       data-auracolor="C8FFC2"
       className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 "
     >

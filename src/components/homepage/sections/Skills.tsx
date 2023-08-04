@@ -7,8 +7,15 @@ import { SkillIcon } from "@/components/homepage/SkillIcon";
 import Heading from "@/components/homepage/Heading";
 
 export default function Skills() {
+  const handleScrollToContacts = (
+    event: React.MouseEvent<HTMLParagraphElement>
+  ) => {
+    const contacts = document.querySelector("#contacts");
+    contacts?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section
+      id="skills"
       data-auracolor="C2EFFF"
       className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 lg:py-16"
     >
@@ -36,15 +43,13 @@ export default function Skills() {
               has a huge ecosystem of libraries and tools.
             </p>
             <p className="text-xl">
-              Of course I love to learn new stuff. Want to chat about that?
-              <span>
-                &nbsp;
-                <a
-                  href="#bg-28270a"
-                  className=" inline-block underline px-1 hover:bg-slate-800 hover:text-white transition-all rounded-sm duration-500 "
-                >
-                  Contact me
-                </a>
+              Of course I love to learn new stuff. Want to chat about
+              that?&nbsp;
+              <span
+                onClick={handleScrollToContacts}
+                className=" inline-block underline px-1 hover:bg-slate-800 hover:text-white transition-all rounded-sm duration-500 "
+              >
+                Contact me
               </span>
             </p>
           </div>

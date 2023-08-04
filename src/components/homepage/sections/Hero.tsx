@@ -25,6 +25,7 @@ export default function Hero() {
   };
   return (
     <section
+      id="hero"
       data-auracolor="FFDEDE"
       className={` min-h-screen lg:flex-none lg:snap-start w-full px-2 py-2 md:py-10 flex flex-col items-center justify-between`}
     >

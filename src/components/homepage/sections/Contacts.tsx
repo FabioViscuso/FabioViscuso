@@ -7,6 +7,7 @@ import ContactsContainer from "@/components/homepage/ContactsContainer";
 export default function Contacts() {
   return (
     <section
+      id="contacts"
       data-auracolor="FFF9C2"
       className=" min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 "
     >
@@ -26,7 +27,7 @@ export default function Contacts() {
             contacts to copy them automatically. Woah, magic!
           </p>
           <p className="mt-8 mb-8 md:mb-0 text-2xl">
-            {"( Protip: you can hit me up on Whatsapp or Telegram ;) )"}
+            {"( Protip: you can hit me up on Whatsapp or Telegram 😉 )"}
           </p>
         </div>
         <ContactsContainer />
