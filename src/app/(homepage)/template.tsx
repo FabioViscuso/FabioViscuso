@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Raleway } from "next/font/google";
 import Navbar from "@/components/navigation/Navbar";
+import { Raleway } from "next/font/google";
 const paragraph = Raleway({ weight: "200", subsets: ["latin"] });
 
 export default function Template({ children }: { children: React.ReactNode }) {
