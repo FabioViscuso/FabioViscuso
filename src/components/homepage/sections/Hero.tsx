@@ -12,16 +12,16 @@ export default function Hero() {
     show: {
       opacity: 1,
       transition: {
-        duration: 1.5,
-        staggerChildren: 0.4,
+        duration: 2,
+        staggerChildren: 0.6,
         ease: "easeInOut"
       },
     },
   };
 
   const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
+    hidden: { opacity: 0, x: 100 },
+    show: { opacity: 1, x: 0 },
   };
   return (
     <section

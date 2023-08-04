@@ -20,7 +20,7 @@ export default function AnimatedRocket() {
       initial={{y: 400, x: -400}}
       animate={{y: 0, x: 0}}
       viewport={{once: true}}
-      transition={{duration: 1, delay: 2}}
+      transition={{duration: 1, delay: 3}}
       className="rocket-container h-min">
       <p
         className={` ${
