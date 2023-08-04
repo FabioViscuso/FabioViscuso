@@ -48,13 +48,13 @@ export default function Hero() {
             Hello! I&apos;m Fabio!
           </motion.h1>
           <motion.p className="mt-12 text-xl lg:text-4xl" variants={item}>
-            I&apos;m a full-stack developer,
+            I&apos;m a frontend developer,
           </motion.p>
           <motion.p
             className="text-xl lg:text-4xl mt-0 md:mt-3"
             variants={item}
           >
-            and I love to create amazing experiences.
+            and I love to create amazing web experiences.
           </motion.p>
           <motion.p
             className="text-xl lg:text-4xl mt-0 md:mt-3"
