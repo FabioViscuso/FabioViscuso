@@ -48,7 +48,7 @@ export default function Skills() {
                 onClick={handleScrollToContacts}
                 className=" inline-block underline px-1 hover:bg-slate-800 hover:text-white transition-all rounded-sm duration-500 "
               >
-                Let's chat!
+                Let&apos;s chat!
               </span>
             </p>
             {/* the CV part */}
