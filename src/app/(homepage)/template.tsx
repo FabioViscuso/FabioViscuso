@@ -93,7 +93,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <li></li>
       </ul>
       <main
-        className={` ${paragraph.className} relative z-10 lg:h-[100dvh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left `}
+        className={` ${paragraph.className} relative z-10 lg:h-[100svh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left `}
         ref={touchStartX}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
