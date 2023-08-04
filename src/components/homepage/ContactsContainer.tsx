@@ -4,7 +4,7 @@ import Image from "next/image"
 import icons from "../ui/IconImport"
 import onCopyHandler from "@/lib/useCopyHandler"
 
-export default function Contacts() {
+export default function ContactsContainer() {
     return (
         <ul
         className="flex flex-col items-center gap-10 flex-wrap flex-1"

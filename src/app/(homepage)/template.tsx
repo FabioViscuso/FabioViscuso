@@ -30,7 +30,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
   /* Observer code */
   const observerOptions = {
     root: null,
-    rootMargin: "0px 0px 0px -100px",
     threshold: 0.3,
   };
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
