@@ -66,7 +66,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [observerOptions]);
 
   return (
     <>
