@@ -38,7 +38,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         const light = document.querySelector("#light-point")! as HTMLElement;
         const sectionId = entry.target.getAttribute('data-auracolor');
         const colorValue = `#${sectionId}`;
-        light.style.boxShadow = `0px 0px 200px 130px ${colorValue}`;
+        light.style.boxShadow = `0px 0px 400px 150px ${colorValue}`;
       }
     });
   };
@@ -46,14 +46,19 @@ export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      cursor.style.transform = `translate(${e.clientX - 8}px, ${
-        e.clientY - 8
-      }px)`;
+      setTimeout(() => {
+        cursor.style.transform = `translate(${e.clientX - 8}px, ${
+          e.clientY - 8
+        }px)`;
+        
+      }, 10);
     });
 
     document.addEventListener("mousemove", (e) => {
-      const cursor = document.querySelector("#light-point") as HTMLElement;
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      const shadow = document.querySelector("#light-point") as HTMLElement;
+      setTimeout(() => {
+        shadow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      }, 10);
     });
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
@@ -73,7 +78,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       <Navbar isOpen={isSidebarOpen} />
       <div
         id="light-point"
-        className=" rounded-full fixed z-0 [box-shadow:0px_0px_300px_50px_#fff] will-change-transform transition-shadow duration-1000 "
+        className=" rounded-full fixed z-0 will-change-transform transition-shadow duration-1000 "
       ></div>
       <ul className="bg-icons">
         <li></li>
@@ -88,7 +93,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <li></li>
       </ul>
       <main
-        className={` ${paragraph.className} relative z-10 lg:h-[100dvh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left backdrop-blur-[2px] `}
+        className={` ${paragraph.className} relative z-10 lg:h-[100dvh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left `}
         ref={touchStartX}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

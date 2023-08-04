@@ -61,6 +61,7 @@
   width: 70px;
   height: 70px;
   animation-delay: 0s;
+  filter: invert(50%) blur(1px);
   background-image: url("../../public/icons/gamepad.png");
 }
 
@@ -87,6 +88,7 @@
   height: 60px;
   animation-delay: 0s;
   animation-duration: 18s;
+  filter: invert(50%) blur(2px);
   background-image: url("../../public/icons/rocket.png");
 }
 
@@ -112,6 +114,7 @@
   width: 85px;
   height: 85px;
   animation-delay: 7s;
+  filter: invert(50%) blur(1px);
   background-image: url("../../public/icons/pencil.png");
 }
 
