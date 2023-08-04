@@ -15,7 +15,7 @@ export function CVDownloadButton({ src, lang }: Props) {
       <Image
         src={src}
         alt={`download ${lang} curriculum`}
-        className="h-14 w-14"
+        className="h-12 w-12"
       />
     </a>
   );
