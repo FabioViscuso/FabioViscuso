@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
 import NavigationButton from "./NavigationButton";
 
 import { Raleway } from "next/font/google";
+import Image from "next/image";
+import icons from "../ui/IconImport";
+import ExternalLinkBtn from "./ExternalLinkBtn";
 const paragraph = Raleway({ weight: "200", subsets: ["latin"] });
 
 interface Props {
@@ -22,8 +25,8 @@ export default function Navbar({ isOpen }: Props) {
     <>
       <motion.span
         initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0]}}
-        transition={{ delay: 5, duration: 6 , ease: 'easeInOut'}}
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ delay: 5, duration: 6, ease: "easeInOut" }}
         viewport={{ once: true }}
         className={` ${paragraph.className} lg:hidden fixed -translate-y-1/2 top-[30dvh] rounded-2xl right-2 text-center p-2 whitespace-nowrap [text-orientation:upright] [writing-mode:vertical-lr] text-sm pointer-events-none `}
       >
@@ -48,6 +51,14 @@ export default function Navbar({ isOpen }: Props) {
               slug="/new-postit"
               content="📒+"
               label="add postit"
+            />
+          )}
+          {pathname === "/" && (
+            <ExternalLinkBtn
+              slug="https://thehomebrewbar.vercel.app/"
+              content={icons.cocktail}
+              label="The Homebrew Bar"
+              cssOverrides="[filter:drop-shadow(0px_0px_10px_#00F0FF)]"
             />
           )}
         </div>

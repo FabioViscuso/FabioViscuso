@@ -22,7 +22,8 @@ import flaguk from '../../../public/icons/flag-gb.png';
 import github from '../../../public/icons/github.png';
 import linkedin from '../../../public/icons/linkedin.png';
 import rocket from '../../../public/icons/rocketEmoji.png';
-import wavingHand from '../../../public/icons/wavingHand.png'
+import wavingHand from '../../../public/icons/wavingHand.png';
+import cocktail from '../../../public/icons/cocktail.png';
 
 export const icons = {
     avatar,
@@ -48,7 +49,8 @@ export const icons = {
     github,
     linkedin,
     rocket,
-    wavingHand
+    wavingHand,
+    cocktail
 }
 
 export default icons;
