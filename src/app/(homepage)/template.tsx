@@ -36,7 +36,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const light = document.querySelector("#light-point")! as HTMLElement;
-        const sectionId = entry.target.getAttribute('data-auracolor');
+        const sectionId = entry.target.getAttribute("data-auracolor");
         const colorValue = `#${sectionId}`;
         light.style.boxShadow = `0px 0px 400px 150px ${colorValue}`;
       }
@@ -46,19 +46,14 @@ export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      setTimeout(() => {
-        cursor.style.transform = `translate(${e.clientX - 8}px, ${
-          e.clientY - 8
-        }px)`;
-        
-      }, 10);
+      cursor.style.transform = `translate(${e.clientX - 8}px, ${
+        e.clientY - 8
+      }px)`;
     });
 
     document.addEventListener("mousemove", (e) => {
       const shadow = document.querySelector("#light-point") as HTMLElement;
-      setTimeout(() => {
-        shadow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      }, 10);
+      shadow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
