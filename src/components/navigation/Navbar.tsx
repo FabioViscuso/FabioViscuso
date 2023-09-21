@@ -61,6 +61,14 @@ export default function Navbar({ isOpen }: Props) {
               cssOverrides="[filter:drop-shadow(0px_0px_10px_#00F0FF)]"
             />
           )}
+          {pathname === "/" && (
+            <ExternalLinkBtn
+              slug="https://ecobuddy.vercel.app/"
+              content={icons.ecobuddy}
+              label="Eco Buddy"
+              cssOverrides="[filter:drop-shadow(0px_0px_10px_#00F0FF)]"
+            />
+          )}
         </div>
       </nav>
     </>

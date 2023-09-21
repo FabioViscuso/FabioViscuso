@@ -24,6 +24,7 @@ import linkedin from '../../../public/icons/linkedin.png';
 import rocket from '../../../public/icons/rocketEmoji.png';
 import wavingHand from '../../../public/icons/wavingHand.png';
 import cocktail from '../../../public/icons/cocktail.png';
+import ecobuddy from '../../../public/icons/ecobuddy.png'
 
 export const icons = {
     avatar,
@@ -50,7 +51,8 @@ export const icons = {
     linkedin,
     rocket,
     wavingHand,
-    cocktail
+    cocktail,
+    ecobuddy,
 }
 
 export default icons;
