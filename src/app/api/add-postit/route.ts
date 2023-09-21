@@ -1,20 +1,17 @@
 import { MongoClient } from "mongodb";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   if (req.method === "POST") {
     const data = await req.json();
-    const client = await MongoClient.connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
-    );
-    const db = client.db();
 
+    const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`;
+    const client = new MongoClient(url);
+    await client.connect();
+    const db = client.db('test');
     const collection = db.collection("postits");
-    const result = await collection.insertOne(data!);
-    client.close();
+    const insertion = await collection.insertOne(data!);
 
-    return NextResponse.json(result, {
-      status: 201
-    })
+    return NextResponse.json({ok: insertion.acknowledged})
   }
 }
