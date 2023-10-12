@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/navigation/Navbar";
 import { Raleway } from "next/font/google";
+import Image from "next/image";
+import icons from "@/components/ui/IconImport";
 const paragraph = Raleway({ weight: "200", subsets: ["latin"] });
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -76,16 +78,16 @@ export default function Template({ children }: { children: React.ReactNode }) {
         className=" rounded-full fixed z-0 will-change-transform transition-shadow duration-1000 "
       ></div>
       <ul className="bg-icons">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li><Image alt="" src={icons.gamepad} className="h-12 w-12" /></li>
+        <li><Image alt="" src={icons.rocketBg} className="w-40 blur-sm" /></li>
+        <li><Image alt="" src={icons.saturn} className="" /></li>
+        <li><Image alt="" src={icons.terminal} className="" /></li>
+        <li><Image alt="" src={icons.shapes} className="w-8" /></li>
+        <li><Image alt="" src={icons.saturn} className="w-60" /></li>
+        <li><Image alt="" src={icons.pencil} className="w-16" /></li>
+        <li><Image alt="" src={icons.saturn} className="w-6" /></li>
+        <li><Image alt="" src={icons.shapes} className="w-10" /></li>
+        <li><Image alt="" src={icons.terminal} className="w-60" /></li>
       </ul>
       <main
         className={` ${paragraph.className} relative z-10 lg:h-[100svh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left `}
