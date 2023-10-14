@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "@/components/navigation/Navbar";
 import { Raleway } from "next/font/google";
 import Image from "next/image";
 import icons from "@/components/ui/IconImport";
+import SectionIndicator from "@/components/homepage/SectionIndicator";
 const paragraph = Raleway({ weight: "200", subsets: ["latin"] });
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -30,17 +31,31 @@ export default function Template({ children }: { children: React.ReactNode }) {
   };
 
   /* Observer code */
-  const observerOptions = {
-    root: null,
-    threshold: 0.3,
-  };
+  const observerOptions = useMemo(() => {
+    return {
+      root: null,
+      threshold: 0.3,
+    }
+  }, []);
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const light = document.querySelector("#light-point")! as HTMLElement;
-        const sectionId = entry.target.getAttribute("data-auracolor");
-        const colorValue = `#${sectionId}`;
-        light.style.boxShadow = `0px 0px 400px 150px ${colorValue}`;
+        const colorValue = entry.target.getAttribute("data-auracolor");
+        light.style.boxShadow = `0px 0px 400px 150px #${colorValue}`;
+
+        const sectionNumber = entry.target.getAttribute("data-section-number");
+        const selectors = document.querySelectorAll(`#section-indicator li`);
+        selectors.forEach(selector => {
+          const current = selector as HTMLElement
+          if (selector.getAttribute('data-indicator') === sectionNumber) {
+            current.style.width = '1rem';
+            current.style.height = '1rem';
+          } else {
+            current.style.width = '0.5rem';
+            current.style.height = '0.5rem';
+          }
+        })
       }
     });
   };
@@ -90,11 +105,13 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <li><Image alt="" src={icons.terminal} className="w-60" /></li>
       </ul>
       <main
+        id="homepage"
         className={` ${paragraph.className} relative z-10 lg:h-[100svh] lg:overflow-y-auto lg:snap-y lg:snap-mandatory flex flex-col items-center text-center lg:text-left `}
         ref={touchStartX}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
+        <SectionIndicator />
         {children}
       </main>
     </>

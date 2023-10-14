@@ -9,6 +9,7 @@ export default function Contacts() {
     <section
       id="contacts"
       data-auracolor="FFF9C2"
+      data-section-number="4"
       className=" min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 "
     >
       <motion.article

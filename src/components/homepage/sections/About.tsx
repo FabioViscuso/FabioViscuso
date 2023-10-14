@@ -10,6 +10,7 @@ export default function About() {
     <section
       id="about"
       data-auracolor="C8FFC2"
+      data-section-number="3"
       className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 "
     >
       <motion.article

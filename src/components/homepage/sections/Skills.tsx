@@ -17,6 +17,7 @@ export default function Skills() {
     <section
       id="skills"
       data-auracolor="C2EFFF"
+      data-section-number="2"
       className="min-h-screen lg:flex-none lg:snap-start w-full px-2 lg:px-24 pt-32 md:py-32 lg:py-16"
     >
       <motion.article
