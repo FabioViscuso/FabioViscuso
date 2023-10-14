@@ -9,7 +9,7 @@ interface Props {
 
 export default function ExternalLinkBtn({ slug, content, label, cssOverrides }: Props) {
   return (
-    <a href={slug} className="group">
+    <a href={slug} target="_blank" className="group">
       <button
         type="button"
         className={`w-16 h-16 text-3xl font-semibold text-gray-800 hover:bg-gray-900 hover:text-gray-200 transition-all whitespace-nowrap`}
